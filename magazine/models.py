@@ -21,10 +21,9 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField()
     deleted_at = models.DateTimeField()
-    languages_from = models.ManyToManyField(Language, through='User_Language', through_fields=('user','user_language_from'))
-    languages_to = models.ManyToManyField(Language, through='User_Language', through_fields=('user','user_language_to'))
+    user_languages = models.ManyToManyField(Language, through='User_Language', through_fields=('user','language_from'))
     
-class User_Language_From(models.Model):
+class User_Language(models.Model):
     user = models.ForeignKey(User)
     language_from = models.ForeignKey(Language, related_name='user_language_from')
     language_to = models.ForeignKey(Language, related_name='user_language_to')
