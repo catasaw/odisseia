@@ -1,7 +1,8 @@
 from django.conf.urls import url
 
 from . import views
+from magazine.homepageview import HomepageView
 
 urlpatterns = [
-    url(r'^$', views.homepage, name='odisseia'),
+    url(r'^$', HomepageView.as_view(), name='odisseia'),
 ]

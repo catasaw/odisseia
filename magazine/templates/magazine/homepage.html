@@ -1,12 +1,17 @@
 {% extends "magazine/layout.html" %}
-
 {% block content %}
+
 <div id="article" class="container-fluid jumbotron home-issue">
     <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        {% comment "truncate string to display article preview" %}{% endcomment %}
+        <p> {{ issue.article_set.all.0.content|truncatewords:500 }} ... </p>
+        </div>
     </div>
     <div class="read-more">
         <button type="button" class="btn sprite readMoreGray" data-toggle="modal" data-target="#opinionModal"></button>
         <h5>read more</h5>
     </div>
 </div>
+
 {% endblock %}
