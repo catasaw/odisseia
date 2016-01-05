@@ -108,9 +108,13 @@ body > footer {
 }
 /*Sign in - Login form*/
 .form-signin {
-  max-width: 330px;
+  max-width: 500px;
   padding: 15px;
   margin: 0 auto;
+}
+
+.languages-box {
+  padding-bottom: 15px;
 }
 /* 5 columns */
 .col-xs-15,
@@ -144,6 +148,21 @@ body > footer {
         width: 20%;
         float: left;
     }
+}
+
+/* Select css */
+select {
+   
+    border: 1px solid #111;
+    background: transparent;
+    width: 150px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 /*Sprite for homepage */

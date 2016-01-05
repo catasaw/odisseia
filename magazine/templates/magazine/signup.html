@@ -1,0 +1,49 @@
+{% extends "magazine/layout.html" %}
+{% load i18n %}
+{% block content %}
+<div class="form-signin home-issue">
+<h2>Sign up</h2>
+
+<form action="/createuser/" method="post">
+    <div class="form-group">
+    <input class ="form-control" type="email" name="email" required placeholder= {% trans "E-Mail" %} value="{{ current_email }}">
+    </div>
+    <div class="form-group">
+        <input class ="form-control" type="password" name="password" required placeholder= {% trans "Password" %}>
+    </div>
+    <div class="form-group">
+        <input class ="form-control" type="password" name="password_repeat" required placeholder= {% trans "Password confirmation" %}>
+    </div>
+    
+    <div class="form-group">
+		<label>{% trans "Translate:" %}</label>
+		</div>
+    <div class="container-fluid languages-box">
+		
+	<div class="col-md-6">
+    	<div>
+    	<label>{% trans "From"  %}</label>
+    	</div>
+        <select multiple name="languages_from[]" required>
+            {% for language in languages %}
+            <option value="{{language.iso1_code}}">{{language.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+	<div class="col-md-6">
+        <div>
+		<label>{% trans "To" %}</label>
+		</div>
+        <select multiple name="languages_to[]" required>
+            {% for language in languages %}
+            <option value="{{language.iso1_code}}">{{language.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    </div>
+    <div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Sign up" %}</button>
+    </div>
+</form>
+</div>
+{% endblock %}
