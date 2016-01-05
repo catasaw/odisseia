@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-05 12:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\magazine\templates\magazine\homepage.html:14
+#: .\magazine\templates\magazine\homepage.html:22
+#: .\magazine\templates\magazine\homepage.html:24
+msgid "Read more"
+msgstr "Più info"
+
+#: .\magazine\templates\magazine\layout.html:35
+msgid "Start"
+msgstr ""
+
+#: .\magazine\templates\magazine\layout.html:36
+msgid "Contribute"
+msgstr "Contribuisci"
+
+#: .\magazine\templates\magazine\layout.html:37
+msgid "Statut"
+msgstr ""
+
+#: .\magazine\templates\magazine\layout.html:38
+msgid "Login"
+msgstr ""
+
+#: .\magazine\templates\magazine\layout.html:39
+msgid "Signup"
+msgstr "Registrati"
+
+#: .\magazine\templates\magazine\layout.html:48
+msgid "Impress"
+msgstr ""
+
+#: .\magazine\templates\magazine\layout.html:51
+msgid "Contact"
+msgstr "Contatti"
