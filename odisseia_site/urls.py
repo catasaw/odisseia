@@ -23,6 +23,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^', include('magazine.urls')),
     url(r'^', include('login.urls')),
+    url(r'^', include('dashboard.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
