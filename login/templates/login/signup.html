@@ -4,7 +4,7 @@
 <div class="form-signin home-issue">
 <h2>Sign up</h2>
 
-<form action="/createuser/" method="post">
+<form action="{% url 'register' %}" method="post">{% csrf_token %}
     <div class="form-group">
     <input class ="form-control" type="email" name="email" required placeholder= {% trans "E-Mail" %} value="{{ current_email }}">
     </div>
