@@ -30,9 +30,10 @@ class User_Language(models.Model):
     
 class Issue(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    approved_at = models.DateTimeField()
-    translated_at = models.DateTimeField()
-    published_at = models.DateTimeField()
+    title = models.CharField(max_length=60)
+    approved_at = models.DateTimeField(null=True)
+    translated_at = models.DateTimeField(null=True)
+    published_at = models.DateTimeField(null=True)
     issue_users = models.ManyToManyField(User, through='Issue_User')
 
 class Article(models.Model):
