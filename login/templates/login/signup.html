@@ -3,16 +3,29 @@
 {% block content %}
 <div class="form-signin home-issue">
 <h2>Sign up</h2>
-
-<form action="{% url 'register' %}" method="post">{% csrf_token %}
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}	
+<form action="." method="post">{% csrf_token %}
     <div class="form-group">
-    <input class ="form-control" type="email" name="email" required placeholder= {% trans "E-Mail" %} value="{{ current_email }}">
+    {{ form.email }}
     </div>
     <div class="form-group">
-        <input class ="form-control" type="password" name="password" required placeholder= {% trans "Password" %}>
+        {{ form.password }}
     </div>
     <div class="form-group">
-        <input class ="form-control" type="password" name="password_repeat" required placeholder= {% trans "Password confirmation" %}>
+        {{ form.password_repeat }}
     </div>
     
     <div class="form-group">

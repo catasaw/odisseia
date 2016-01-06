@@ -8,28 +8,31 @@ from magazine.models import User,User_Language,Language
 from django.views.generic import View
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
-
-def signup(request):
-    languages = Language.objects.all().order_by('name')
-    return render(request, 'login/signup.html', {'languages': languages})
+from login.registrationform import RegistrationForm
 
 @csrf_protect
-def register(self, request):
+def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = User.objects.create(
+            password=form.cleaned_data['password'],
+            email=form.cleaned_data['email'],
+            status= User.UNCONFIRMED
+            )
             return HttpResponseRedirect('/accounts/register/complete')     
     else:
-        form = UserCreationForm()
+        form = RegistrationForm()
     token = {}
     token.update(csrf(request))
     token['form'] = form
+    languages = Language.objects.all().order_by('name')
+    token['languages'] = languages    
     return render_to_response('login/signup.html', token)
 
     
     
-def registration_complete(self, request):
+def register_success(request):
     return render_to_response('login/login_successful.html')
 
 
