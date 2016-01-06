@@ -19,8 +19,8 @@ class User(models.Model):
     token = models.CharField(max_length=30)
     status = models.IntegerField(choices=STATUS_CHOICES, default=UNCONFIRMED)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField()
-    deleted_at = models.DateTimeField()
+    updated_at = models.DateTimeField(null=True)
+    deleted_at = models.DateTimeField(null=True)
     user_languages = models.ManyToManyField(Language, through='User_Language', through_fields=('user','language_from'))
     
 class User_Language(models.Model):
@@ -83,7 +83,7 @@ class Article_Translation(models.Model):
     content = models.TextField()
     publisher_name = models.CharField(max_length=60)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField()
+    updated_at = models.DateTimeField(null=True)
     is_approved = models.BooleanField(default=False)
 
 class Opinion_Translation(models.Model):
@@ -94,5 +94,5 @@ class Opinion_Translation(models.Model):
     content = models.TextField()
     publisher_name = models.CharField(max_length=60)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField()
+    updated_at = models.DateTimeField(null=True)
     is_approved = models.BooleanField(default=False)
