@@ -1,2 +1,8 @@
 {% extends "magazine/layout.html" %}
-Success!
+{% load i18n %}
+{% block content %}
+	<div class="alert alert-success">
+	    <strong>{% trans "Thank you for your contribution! Remember to confirm your account! :) " %}</strong>
+	    <strong><a href="/dashboard/">{% trans "Dashboard" %}</a></strong>
+	</div>
+{% endblock %}

@@ -2,13 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect 
-from django.contrib.auth.forms import UserCreationForm 
 from django.core.context_processors import csrf
 from magazine.models import User,User_Language,Language
-from django.views.generic import View
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
+from datetime import datetime
 
 @csrf_protect
 def register(request):
@@ -18,9 +17,9 @@ def register(request):
             user = User.objects.create(
             password=form.cleaned_data['password'],
             email=form.cleaned_data['email'],
-            status= User.UNCONFIRMED
+            status= User.UNCONFIRMED,
             )
-            return HttpResponseRedirect('/accounts/register/complete')     
+            return HttpResponseRedirect('/signup/success/')     
     else:
         form = RegistrationForm()
     token = {}
@@ -33,6 +32,7 @@ def register(request):
     
     
 def register_success(request):
+    
     return render_to_response('login/login_successful.html')
 
 
