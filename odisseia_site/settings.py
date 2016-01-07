@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'magazine',
     'login',
     'dashboard',
+    'forum',
 )
 
 MIDDLEWARE_CLASSES = (
