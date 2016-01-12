@@ -21,9 +21,9 @@ class Contributor(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True)
     deleted_at = models.DateTimeField(null=True)
-    contributor_languages = models.ManyToManyField(Language, through='User_Language', through_fields=('contributor','language_from'))
+    contributor_languages = models.ManyToManyField(Language, through='Contributor_Language', through_fields=('contributor','language_from'))
     
-class User_Language(models.Model):
+class Contributor_Language(models.Model):
     contributor = models.ForeignKey(Contributor)
     language_from = models.ForeignKey(Language, related_name='contributor_language_from')
     language_to = models.ForeignKey(Language, related_name='contributor_language_to')
