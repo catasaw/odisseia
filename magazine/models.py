@@ -1,5 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.db.models.fields import IntegerField
+from django.db.models.signals import post_save
 
 class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
@@ -14,8 +16,8 @@ class Contributor(models.Model):
                    (CONFIRMED,'CONFIRMED'),
                    (FORGOT_PASSWORD, 'FORGOT_PASSWORD'),
     )
+    user = models.OneToOneField(User)
     email = models.CharField(max_length=255, unique=True)
-    password = models.CharField(max_length=60)
     token = models.CharField(max_length=30)
     status = models.IntegerField(choices=STATUS_CHOICES, default=UNCONFIRMED)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,6 +25,15 @@ class Contributor(models.Model):
     deleted_at = models.DateTimeField(null=True)
     contributor_languages = models.ManyToManyField(Language, through='Contributor_Language', through_fields=('contributor','language_from'))
     
+    def __unicode__(self):
+        return self.email
+
+# Create User object to attach to Contributor object
+
+def create_contributor_user_callback(sender, instance, **kwargs):
+    contributor, new = Contributor.objects.get_or_create(user=instance)
+post_save.connect(create_contributor_user_callback, User)
+
 class Contributor_Language(models.Model):
     contributor = models.ForeignKey(Contributor)
     language_from = models.ForeignKey(Language, related_name='contributor_language_from')
