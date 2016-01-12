@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect 
 from django.core.context_processors import csrf
-from magazine.models import User,User_Language,Language
+from magazine.models import Contributor, Contributor_Language,Language
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
@@ -11,13 +11,14 @@ from datetime import datetime
 
 @csrf_protect
 def register(request):
+    
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = User.objects.create(
+            user = Contributor.objects.create(
             password=form.cleaned_data['password'],
             email=form.cleaned_data['email'],
-            status= User.UNCONFIRMED,
+            status= Contributor.UNCONFIRMED,
             )
             return HttpResponseRedirect('/signup/success/')     
     else:

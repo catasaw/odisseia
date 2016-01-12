@@ -1,5 +1,5 @@
 from django import forms
-from magazine.models import User
+from magazine.models import Contributor
 from django.utils.translation import ugettext_lazy as _
  
 class RegistrationForm(forms.Form):
@@ -10,8 +10,8 @@ class RegistrationForm(forms.Form):
  
     def clean_email(self):
         try:
-            user = User.objects.get(email__iexact=self.cleaned_data['email'])
-        except User.DoesNotExist:
+            user = Contributor.objects.get(email__iexact=self.cleaned_data['email'])
+        except Contributor.DoesNotExist:
             return self.cleaned_data['email']
         raise forms.ValidationError(_("The email already exists. Please try another one."))
  
