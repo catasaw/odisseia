@@ -34,7 +34,7 @@ class Issue(models.Model):
     approved_at = models.DateTimeField(null=True)
     translated_at = models.DateTimeField(null=True)
     published_at = models.DateTimeField(null=True)
-    issue_contributors = models.ManyToManyField(Contributor, through='Issue_User')
+    issue_contributors = models.ManyToManyField(Contributor, through='Issue_Contributor')
 
 class Article(models.Model):
     issue = models.ForeignKey(Issue)
@@ -60,7 +60,7 @@ class Comment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
-class Issue_User(models.Model):
+class Issue_Contributor(models.Model):
     issue = models.ForeignKey(Issue)
     contributor = models.ForeignKey(Contributor)
 
