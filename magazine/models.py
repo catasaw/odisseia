@@ -25,8 +25,8 @@ class Contributor(models.Model):
     
 class User_Language(models.Model):
     contributor = models.ForeignKey(Contributor)
-    language_from = models.ForeignKey(Language, related_name='user_language_from')
-    language_to = models.ForeignKey(Language, related_name='user_language_to')
+    language_from = models.ForeignKey(Language, related_name='contributor_language_from')
+    language_to = models.ForeignKey(Language, related_name='contributor_language_to')
     
 class Issue(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
