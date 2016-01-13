@@ -17,7 +17,6 @@ class Contributor(models.Model):
                    (FORGOT_PASSWORD, 'FORGOT_PASSWORD'),
     )
     user = models.OneToOneField(User)
-    email = models.CharField(max_length=255, unique=True)
     token = models.CharField(max_length=30)
     status = models.IntegerField(choices=STATUS_CHOICES, default=UNCONFIRMED)
     created_at = models.DateTimeField(auto_now_add=True)
