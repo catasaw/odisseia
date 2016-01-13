@@ -12,7 +12,8 @@
       <div class="row">
         <div class="col-sm-12">
 		<h3>{% trans "Check the issues currently in progress to be published!" %}</h3>
-		<p>{% trans "You can join any of them!" %}</p>
+		<h3>{% trans "Or" %}</h3>
+		<a class="btn btn-primary" href="{% url 'new_issue_view' %}">{% trans "Propose an isue!" %}</a>
         </div>
       </div>
       
@@ -21,7 +22,7 @@
         <div class="col-sm-4">
           <div class="panel panel-default">
 	          <div class="panel-heading">{{issue.title}}</div>
-	          <h3><a href="{% url 'issue-view' issue.id %}">{% trans "Join!" %}</a></h3>
+	          <h3><a class="btn btn-success" href="{% url 'issue-view' issue.id %}">{% trans "Join!" %}</a></h3>
 	          <p>
 	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
 	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
