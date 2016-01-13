@@ -11,17 +11,11 @@ class RegistrationForm(forms.Form):
  
     def clean_email(self):
         try:
-            user = User.objects.get(email__iexact=self.cleaned_data['email'])
-        except User.DoesNotExist:
+            user = Contributor.objects.get(email__iexact=self.cleaned_data['email'])
+        except Contributor.DoesNotExist:
             return self.cleaned_data['email']
         raise forms.ValidationError(_("The email already exists. Please try another one."))
     
-    def clean_username(self):
-        try:
-            user = User.objects.get(username__iexact=self.cleaned_data['email'])
-        except User.DoesNotExist:
-            return self.cleaned_data['email']
-        raise forms.ValidationError(_("The email already exists. Please try another one."))
  
     def clean(self):
         if 'password' in self.cleaned_data and 'password_repeat' in self.cleaned_data:

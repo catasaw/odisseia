@@ -16,15 +16,14 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            new_user = User.objects.create_user(
-            username=form.cleaned_data['email'],
+            new_contributor = Contributor.objects.create_user(
             email=form.cleaned_data['email'],
             password=form.cleaned_data['password'],
+            status=Contributor.UNCONFIRMED
             )
-            new_user.save()
-            new_contributor = new_user.profile
-            new_contributor.status= Contributor.UNCONFIRMED
-            new_contributor.save()     
+            new_contributor.save()
+            user=authenticate(email=form.cleaned_data['email'],password=form.cleaned_data['password'])
+            login(request,user)
             return HttpResponseRedirect('/signup/success/')     
     else:
         form = RegistrationForm()
@@ -42,7 +41,7 @@ def register_success(request):
     return render_to_response('login/login_successful.html')
 
 
-def login(self, request):
+def login(request):
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
