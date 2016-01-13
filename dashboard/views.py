@@ -32,4 +32,4 @@ def new_issue_view(request):
     context = {}
     context.update(csrf(request))
     context['form'] = form
-    return render_to_response('dashboard/new_issue_view.html', context)
+    return render(request, 'dashboard/new_issue_view.html', context)
