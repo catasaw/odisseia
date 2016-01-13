@@ -4,16 +4,11 @@
 
 <div class="container text-center">    
   <div class="row">
-    <div class="col-sm-2">
-    </div>
-    
-	<div class="col-sm-8">
+	<div class="col-sm-10">
     
       <div class="row">
         <div class="col-sm-12">
 		<h3>{% trans "Check the issues currently in progress to be published!" %}</h3>
-		<h3>{% trans "Or" %}</h3>
-		<a class="btn btn-primary" href="{% url 'new_issue_view' %}">{% trans "Propose an isue!" %}</a>
         </div>
       </div>
       
@@ -36,6 +31,9 @@
       
     </div>
     <div class="col-sm-2">
+    	<div class="well">
+        	<a class="btn btn-primary" href="{% url 'new_issue_view' %}">{% trans "Propose an isue!" %}</a>
+      	</div>    	
     </div>
   </div>
 </div>

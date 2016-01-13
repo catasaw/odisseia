@@ -109,6 +109,9 @@ class Issue(models.Model):
     translated_at = models.DateTimeField(null=True)
     published_at = models.DateTimeField(null=True)
     issue_contributors = models.ManyToManyField(Contributor, through='Issue_Contributor')
+    
+    def __str__(self):              # __unicode__ on Python 2
+        return self.title
 
 class Article(models.Model):
     issue = models.ForeignKey(Issue)
@@ -137,6 +140,7 @@ class Comment(models.Model):
 class Issue_Contributor(models.Model):
     issue = models.ForeignKey(Issue)
     contributor = models.ForeignKey(Contributor)
+    joined_at = models.DateTimeField(auto_now_add=True)
 
 class Article_Vote(models.Model):
     issue = models.ForeignKey(Issue)
