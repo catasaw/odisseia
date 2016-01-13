@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
+from django.contrib.auth import logout
 
 @csrf_protect
 def register(request):
@@ -41,7 +42,7 @@ def register_success(request):
     return render_to_response('login/login_successful.html')
 
 
-def login(request):
+def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
@@ -57,3 +58,7 @@ def login(request):
     else:
         # Return an 'invalid login' error message.
         return render(request, 'magazine/signup.html', {'languages': languages})
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')     
