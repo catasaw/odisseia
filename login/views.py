@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
 from django.contrib.auth import logout
+from login.loginform import LoginForm
 
 @csrf_protect
 def register(request):
@@ -41,23 +42,36 @@ def register_success(request):
     
     return render_to_response('login/login_successful.html')
 
-
+@csrf_protect
 def login_view(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(username=username, password=password)
-    languages = Language.objects.all().order_by('name')
-    if user is not None:
-        if user.is_active:
-            login(request, user)
-            # Redirect to a success page.
-            return render(request, 'magazine/dashboard.html')
-        else:
-            # Return a 'disabled account' error message
-            return render(request, 'magazine/signup.html', {'languages': languages})
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/dashboard/')      
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+            
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    # Redirect to a success page.
+                    return HttpResponseRedirect('/dashboard/')  
+                else:
+                    # Return a 'disabled account' error message
+                    return render(request, 'login/disabled_account.html')
+            else:
+                # Return an 'invalid login' error message.
+                return HttpResponseRedirect('/accounts/signup/')     
+    
     else:
-        # Return an 'invalid login' error message.
-        return render(request, 'magazine/signup.html', {'languages': languages})
+        form = LoginForm()
+    context = {}
+    context.update(csrf(request))
+    context['form'] = form   
+    return render_to_response('login/login.html', context)
+    
 
 def logout_view(request):
     logout(request)
