@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
@@ -11,6 +12,25 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Contributor',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('password', models.CharField(max_length=128, verbose_name='password')),
+                ('last_login', models.DateTimeField(null=True, verbose_name='last login', blank=True)),
+                ('email', models.EmailField(unique=True, max_length=255)),
+                ('token', models.CharField(max_length=30)),
+                ('status', models.IntegerField(default=0, choices=[(0, b'UNCONFIRMED'), (1, b'CONFIRMED'), (2, b'FORGOT_PASSWORD')])),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(null=True)),
+                ('deleted_at', models.DateTimeField(null=True)),
+                ('is_active', models.BooleanField(default=True)),
+                ('is_admin', models.BooleanField(default=False)),
+            ],
+            options={
+                'abstract': False,
+            },
+        ),
+        migrations.CreateModel(
             name='Article',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
@@ -18,6 +38,7 @@ class Migration(migrations.Migration):
                 ('content', models.TextField()),
                 ('is_approved', models.BooleanField(default=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -27,9 +48,10 @@ class Migration(migrations.Migration):
                 ('content', models.TextField()),
                 ('publisher_name', models.CharField(max_length=60)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField()),
+                ('updated_at', models.DateTimeField(null=True)),
                 ('is_approved', models.BooleanField(default=False)),
                 ('article', models.ForeignKey(to='magazine.Article')),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -38,6 +60,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('vote', models.IntegerField()),
                 ('article', models.ForeignKey(to='magazine.Article')),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -46,6 +69,14 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('content', models.TextField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Contributor_Language',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
@@ -53,15 +84,17 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('approved_at', models.DateTimeField()),
-                ('translated_at', models.DateTimeField()),
-                ('published_at', models.DateTimeField()),
+                ('title', models.CharField(max_length=60)),
+                ('approved_at', models.DateTimeField(null=True)),
+                ('translated_at', models.DateTimeField(null=True)),
+                ('published_at', models.DateTimeField(null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Issue_User',
+            name='Issue_Contributor',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
                 ('issue', models.ForeignKey(to='magazine.Issue')),
             ],
         ),
@@ -81,6 +114,7 @@ class Migration(migrations.Migration):
                 ('content', models.TextField()),
                 ('is_approved', models.BooleanField(default=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
                 ('issue', models.ForeignKey(to='magazine.Issue')),
                 ('language', models.ForeignKey(to='magazine.Language')),
             ],
@@ -92,8 +126,9 @@ class Migration(migrations.Migration):
                 ('content', models.TextField()),
                 ('publisher_name', models.CharField(max_length=60)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField()),
+                ('updated_at', models.DateTimeField(null=True)),
                 ('is_approved', models.BooleanField(default=False)),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
                 ('language_from', models.ForeignKey(related_name='opinion_language_from', to='magazine.Language')),
                 ('language_to', models.ForeignKey(related_name='opinion_language_to', to='magazine.Language')),
                 ('opinion', models.ForeignKey(to='magazine.Opinion')),
@@ -104,61 +139,25 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('vote', models.IntegerField()),
+                ('contributor', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
                 ('issue', models.ForeignKey(to='magazine.Issue')),
                 ('opinion', models.ForeignKey(to='magazine.Opinion')),
             ],
         ),
-        migrations.CreateModel(
-            name='User',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('email', models.CharField(unique=True, max_length=255)),
-                ('password', models.CharField(max_length=60)),
-                ('token', models.CharField(max_length=30)),
-                ('status', models.IntegerField(default=0, choices=[(0, b'UNCONFIRMED'), (1, b'CONFIRMED'), (2, b'FORGOT_PASSWORD')])),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField()),
-                ('deleted_at', models.DateTimeField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='User_Language',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('language_from', models.ForeignKey(related_name='user_language_from', to='magazine.Language')),
-                ('language_to', models.ForeignKey(related_name='user_language_to', to='magazine.Language')),
-                ('user', models.ForeignKey(to='magazine.User')),
-            ],
-        ),
-        migrations.AddField(
-            model_name='user',
-            name='user_languages',
-            field=models.ManyToManyField(to='magazine.Language', through='magazine.User_Language'),
-        ),
-        migrations.AddField(
-            model_name='opinion_vote',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
-        migrations.AddField(
-            model_name='opinion_translation',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
-        migrations.AddField(
-            model_name='opinion',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
-        migrations.AddField(
-            model_name='issue_user',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
         migrations.AddField(
             model_name='issue',
-            name='issue_users',
-            field=models.ManyToManyField(to='magazine.User', through='magazine.Issue_User'),
+            name='issue_contributors',
+            field=models.ManyToManyField(to=settings.AUTH_USER_MODEL, through='magazine.Issue_Contributor'),
+        ),
+        migrations.AddField(
+            model_name='contributor_language',
+            name='language_from',
+            field=models.ForeignKey(related_name='contributor_language_from', to='magazine.Language'),
+        ),
+        migrations.AddField(
+            model_name='contributor_language',
+            name='language_to',
+            field=models.ForeignKey(related_name='contributor_language_to', to='magazine.Language'),
         ),
         migrations.AddField(
             model_name='comment',
@@ -166,19 +165,9 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(to='magazine.Issue'),
         ),
         migrations.AddField(
-            model_name='comment',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
-        migrations.AddField(
             model_name='article_vote',
             name='issue',
             field=models.ForeignKey(to='magazine.Issue'),
-        ),
-        migrations.AddField(
-            model_name='article_vote',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
         ),
         migrations.AddField(
             model_name='article_translation',
@@ -191,11 +180,6 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(related_name='article_language_to', to='magazine.Language'),
         ),
         migrations.AddField(
-            model_name='article_translation',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
-        ),
-        migrations.AddField(
             model_name='article',
             name='issue',
             field=models.ForeignKey(to='magazine.Issue'),
@@ -206,8 +190,8 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(to='magazine.Language'),
         ),
         migrations.AddField(
-            model_name='article',
-            name='user',
-            field=models.ForeignKey(to='magazine.User'),
+            model_name='contributor',
+            name='contributor_languages',
+            field=models.ManyToManyField(to='magazine.Language', through='magazine.Contributor_Language'),
         ),
     ]

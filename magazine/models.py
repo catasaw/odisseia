@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractBaseUser, UserManager,\
+    BaseUserManager
 from django.db.models.fields import IntegerField
 from django.db.models.signals import post_save
 
@@ -7,7 +8,38 @@ class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
     name = models.CharField(max_length=200)
 
-class Contributor(models.Model):
+
+
+class ContributorManager(BaseUserManager):
+    def create_user(self, email, status, password=None):
+        """
+        Creates and saves a User with the given email, status and password.
+        """
+        if not email:
+            raise ValueError('Contributors must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            status=status,
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, status, password):
+        """
+        Creates and saves a superuser with the given email, status and password.
+        """
+        user = self.create_user(email,
+            password=password,
+            status=status
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+    
+class Contributor(AbstractBaseUser):
     UNCONFIRMED = 0
     CONFIRMED = 1
     FORGOT_PASSWORD = 2
@@ -16,7 +48,7 @@ class Contributor(models.Model):
                    (CONFIRMED,'CONFIRMED'),
                    (FORGOT_PASSWORD, 'FORGOT_PASSWORD'),
     )
-    user = models.OneToOneField(User)
+    email = models.EmailField(max_length=255, unique=True)
     token = models.CharField(max_length=30)
     status = models.IntegerField(choices=STATUS_CHOICES, default=UNCONFIRMED)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -24,8 +56,40 @@ class Contributor(models.Model):
     deleted_at = models.DateTimeField(null=True)
     contributor_languages = models.ManyToManyField(Language, through='Contributor_Language', through_fields=('contributor','language_from'))
     
-    def __unicode__(self):
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+    
+    objects     =   ContributorManager()
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['status']
+
+    def get_full_name(self):
+        # The user is identified by their email address
         return self.email
+
+    def get_short_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 
 # Create User object to attach to Contributor object
 
