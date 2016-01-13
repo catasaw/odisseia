@@ -4,31 +4,36 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect 
 from django.core.context_processors import csrf
 from magazine.models import Contributor, Contributor_Language,Language
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
-from datetime import datetime
 
 @csrf_protect
 def register(request):
-    
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/dashboard/')      
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = Contributor.objects.create(
-            password=form.cleaned_data['password'],
+            new_user = User.objects.create_user(
+            username=form.cleaned_data['email'],
             email=form.cleaned_data['email'],
-            status= Contributor.UNCONFIRMED,
+            password=form.cleaned_data['password'],
             )
+            new_user.save()
+            new_contributor = new_user.profile
+            new_contributor.status= Contributor.UNCONFIRMED
+            new_contributor.save()     
             return HttpResponseRedirect('/signup/success/')     
     else:
         form = RegistrationForm()
-    token = {}
-    token.update(csrf(request))
-    token['form'] = form
+    context = {}
+    context.update(csrf(request))
+    context['form'] = form
     languages = Language.objects.all().order_by('name')
-    token['languages'] = languages    
-    return render_to_response('login/signup.html', token)
+    context['languages'] = languages    
+    return render_to_response('login/signup.html', context)
 
     
     
