@@ -6,7 +6,8 @@
   <div class="row">
     <div class="col-sm-3 well">
       <div class="well">
-        <p>{{ issue.title }}</p>
+        <h2>{{ issue.title }}</h2>
+      	<a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
         <p><span class="label label-success">{% trans "Created at" %} {{issue.created_at|date:"M d'y "}}</span></p>
       </div>
       <div class="well">
@@ -39,9 +40,9 @@
             <div class="panel-body">
             	<form action="." method="post">{% csrf_token %}
       			{{ form }}
-      				<div>
+      			<div>
         			<button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Submit comment" %}</button>
-    				</div>
+    			</div>
       			</form>  
             </div>
           </div>

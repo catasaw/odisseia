@@ -36,7 +36,6 @@ def new_issue_view(request):
 
 @login_required
 def join_issue_view(request, issue_id):
-    
     try:
         issue_contributor=Issue_Contributor.objects.get(issue_id=issue_id, contributor_id= request.user.id)
     except Issue_Contributor.DoesNotExist:
@@ -46,6 +45,5 @@ def join_issue_view(request, issue_id):
             )
         new_issue_contributor.save() 
     
-    return redirect('issue-view', issue_id = issue_id) 
-            
-            
+    return redirect('issue_view', issue_id = issue_id)
+    
