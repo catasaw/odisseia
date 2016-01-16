@@ -17,7 +17,7 @@
         <div class="col-sm-4">
           <div class="panel panel-default">
 	          <div class="panel-heading">{{issue.title}}</div>
-	          <h3><a class="btn btn-success" href="{% url 'issue-view' issue.id %}">{% trans "Join!" %}</a></h3>
+	          <h3><a class="btn btn-success" href="{% url 'join_issue_view' issue.id %}">{% trans "Join!" %}</a></h3>
 	          <p>
 	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
 	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
 from magazine.models import Issue, Issue_Contributor
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
@@ -33,3 +33,19 @@ def new_issue_view(request):
     context.update(csrf(request))
     context['form'] = form
     return render(request, 'dashboard/new_issue_view.html', context)
+
+@login_required
+def join_issue_view(request, issue_id):
+    
+    try:
+        issue_contributor=Issue_Contributor.objects.get(issue_id=issue_id, contributor_id= request.user.id)
+    except Issue_Contributor.DoesNotExist:
+        new_issue_contributor = Issue_Contributor(
+            issue_id=issue_id,
+            contributor=request.user
+            )
+        new_issue_contributor.save() 
+    
+    return redirect('issue-view', issue_id = issue_id) 
+            
+            
