@@ -9,7 +9,7 @@ from django.template.context_processors import csrf
 @login_required
 def dashboard(request):
     latest_issues = Issue.objects.order_by('created_at').filter(published_at__isnull=True)[:6]
-    return render(request, 'dashboard/issues_dashboard.html', {'issues': latest_issues,})
+    return render(request, 'dashboard/issues_dashboard.html', {'issues': latest_issues, 'issues_current_user': request.user.issue_set.all,})
 
 @login_required
 @csrf_protect
@@ -46,4 +46,5 @@ def join_issue_view(request, issue_id):
         new_issue_contributor.save() 
     
     return redirect('issue_view', issue_id = issue_id)
+    
     

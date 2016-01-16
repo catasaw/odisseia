@@ -33,6 +33,12 @@
     <div class="col-sm-2">
     	<div class="well">
         	<a class="btn btn-primary" href="{% url 'new_issue_view' %}">{% trans "Propose an isue!" %}</a>
+      	</div>
+      	<div class="well">
+      		<p>{% trans "My issues" %}</p>
+      		{% for issue_current_user in issues_current_user %}
+        	<p><a href="{% url 'issue_view' issue_current_user.id %}">{{ issue_current_user.title }}</a></p>        	
+        	{% endfor %}
       	</div>    	
     </div>
   </div>
