@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from magazine.models import Opinion
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from opinion.opinionform import OpinionForm
@@ -11,7 +12,13 @@ def opinions_view(request, issue_id):
     if request.method == 'POST':
         form = OpinionForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/dashboard/')     
+            opinion = Opinion.objects.create(
+            content=form.cleaned_data['content'],
+            contributor=request.user,
+            issue_id = issue_id,
+            language = form.cleaned_data['language']
+            )
+            return redirect('issue_view', issue_id = issue_id)  
     else:
         form = OpinionForm()
     context = {}
