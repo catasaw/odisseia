@@ -7,6 +7,9 @@ from django.db.models.signals import post_save
 class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
     name = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
 
 
 
@@ -110,7 +113,7 @@ class Issue(models.Model):
     published_at = models.DateTimeField(null=True)
     issue_contributors = models.ManyToManyField(Contributor, through='Issue_Contributor')
     
-    def __str__(self):              # __unicode__ on Python 2
+    def __str__(self):
         return self.title
 
 class Article(models.Model):
