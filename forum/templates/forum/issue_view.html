@@ -7,33 +7,26 @@
     <div class="col-sm-3 well">
       <div class="well">
         <h2>{{ issue.title }}</h2>
-      	<a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
+        {% if is_contributor = False %}
+      		<a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
+      	{% else %}
+      		<p>{% trans "You are already part of this issue!" %}</p>
+      	{% endif %}
         <p><span class="label label-success">{% trans "Created at" %} {{issue.created_at|date:"M d'y "}}</span></p>
       </div>
       <div class="well">
         <p>{% trans "Contributors: " %} {{ issue.issue_users.count }}</p>
         <p>
-
         </p>
       </div>
     </div>
     <div class="col-sm-7">
 	<div class="row">
+	{% if is_contributor = True %}
 	  {% if not comments %}
 	  	<h3>{% trans "Be the first one to write an opinion about it!" %}</h3>
 	  {% endif %}
 	  
-      {% for comment in comments %}
-        <div class="col-sm-12">
-          <div class="panel panel-default">
-	          <div class="panel-heading">{{comment.created_at}}</div>
-	          <p>{{comment.content}}</p>
-          </div>
-        </div>
-      {% endfor %}
-
-      </div>
-      
 	  <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default">
@@ -48,6 +41,19 @@
           </div>
         </div>
        </div>
+       
+       {% endif %}
+	  
+      {% for comment in comments %}
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+	          <div class="panel-heading">{{comment.created_at}}</div>
+	          <p>{{comment.content}}</p>
+          </div>
+        </div>
+      {% endfor %}
+
+      </div>
       
     </div>
     <div class="col-sm-2 well">

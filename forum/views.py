@@ -1,5 +1,5 @@
 from django.shortcuts import render, render_to_response, redirect
-from magazine.models import Issue, Comment
+from magazine.models import Issue, Comment, Issue_Contributor
 from forum.commentform import CommentForm
 from django.views.decorators.csrf import csrf_protect
 from django.core.context_processors import csrf
@@ -28,5 +28,13 @@ def issue_view(request, issue_id):
     token['form'] = form
     all_comments = Comment.objects.filter(issue_id=issue_id).order_by('created_at')
     token['comments'] = all_comments
-    token['issue'] = issue   
+    token['issue'] = issue
+    
+    # TODO Don't access database every time that comment is post it. Split functionality
+    token['is_contributor'] = True
+    try:
+        issue_contributor=Issue_Contributor.objects.get(issue_id=issue_id, contributor_id= request.user.id)
+    except Issue_Contributor.DoesNotExist:
+        token['is_contributor'] = False  
+        
     return render(request, 'forum/issue_view.html', token)

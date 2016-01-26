@@ -43,8 +43,17 @@ def join_issue_view(request, issue_id):
             issue_id=issue_id,
             contributor=request.user
             )
-        new_issue_contributor.save() 
+        new_issue_contributor.save()
+        request.session['issue_id'] = issue_id
+        return redirect('join_issue_successful_view', issue_id = issue_id)
     
     return redirect('issue_view', issue_id = issue_id)
+
+@login_required
+def join_issue_successful_view(request, issue_id):
+    context = {}
+    context['issue_id'] = issue_id
+    return render(request, 'dashboard/join_issue_successful.html', context)
+    
     
     
