@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^', include('login.urls')),
     url(r'^', include('dashboard.urls')),
     url(r'^', include('forum.urls')),
+    url(r'^', include('article.urls')),
+    url(r'^', include('opinion.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

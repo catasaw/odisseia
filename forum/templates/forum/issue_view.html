@@ -57,12 +57,14 @@
       
     </div>
     <div class="col-sm-2 well">
-      <div class="well">
-        <p>{% trans "Opinions" %}</p>
-      </div>      
-      <div class="well">
-        <p>{% trans "Articles" %}</p>
-      </div>
+    	<div class="well">
+        	<p>{% trans "Articles" %}</p>
+        	<a class="btn btn-info" href="{% url 'articles_view' issue.id %}">{% trans "Check Articles!" %}</a>
+      	</div>
+      	<div class="well">
+	        <p>{% trans "Opinions" %}</p>
+	        <a class="btn btn-info" href="{% url 'opinions_view' issue.id %}">{% trans "Check Opinions!" %}</a>
+      	</div>      
     </div>
   </div>
 </div>

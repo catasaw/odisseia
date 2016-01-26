@@ -43,6 +43,8 @@ INSTALLED_APPS = (
     'login',
     'dashboard',
     'forum',
+    'article',
+    'opinion',
 )
 
 MIDDLEWARE_CLASSES = (
