@@ -26,6 +26,7 @@ def opinions_view(request, issue_id):
     context['form'] = form
     
     # TODO: Order by most positive votes
+    # TODO: Write this in a Manager?
     all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at')
     context['opinions'] = all_opinions
     return render(request, 'opinion/opinion_view.html', context)

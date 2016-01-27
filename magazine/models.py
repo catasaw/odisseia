@@ -115,6 +115,16 @@ class Issue(models.Model):
     
     def __str__(self):
         return self.title
+    
+    # TODO: Check if this methods should be in a manager in a different file
+    def amount_contributors(self):
+        return self.issue_contributors.count()
+    
+    def amount_opinions(self):
+        return Opinion.objects.filter(issue_id=self.id).count()
+    
+    def amount_articles(self):
+        return Article.objects.filter(issue_id=self.id).count()
 
 class Article(models.Model):
     issue = models.ForeignKey(Issue)
