@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from magazine.models import Opinion
+from magazine.models import Opinion, Opinion_Vote
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from opinion.opinionform import OpinionForm
@@ -30,3 +30,21 @@ def opinions_view(request, issue_id):
     all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at')
     context['opinions'] = all_opinions
     return render(request, 'opinion/opinion_view.html', context)
+
+@login_required
+def vote_view(request, issue_id, opinion_id, vote_type):
+    # TODO: REFACTOR vote. Check if opinion and issue exist and correspond
+    vote = 1
+    
+    if vote_type == 'down':
+        vote = -1
+        
+    new_vote = Opinion_Vote.objects.create(
+    issue_id = issue_id,
+    opinion_id = opinion_id,
+    contributor=request.user,
+    vote = vote,     
+    )
+    
+    # TODO: Double check if redirect is ok
+    return redirect('opinions_view', issue_id = issue_id)

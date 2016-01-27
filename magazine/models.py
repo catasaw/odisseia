@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, AbstractBaseUser, UserManager,\
     BaseUserManager
 from django.db.models.fields import IntegerField
 from django.db.models.signals import post_save
+from django.db.models import Sum
 
 class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
@@ -143,6 +144,14 @@ class Opinion(models.Model):
     content = models.TextField()
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.content[:4]
+    
+    # TODO: Move to Manager?
+    def get_votes_count(self):
+        votes_array = Opinion_Vote.objects.filter(opinion_id=self.id).aggregate(Sum(('vote')))
+        return votes_array['vote__sum']
 
 class Comment(models.Model):
     issue = models.ForeignKey(Issue)
@@ -162,6 +171,7 @@ class Article_Vote(models.Model):
     vote = IntegerField()
     
 class Opinion_Vote(models.Model):
+    # TODO: do we need a foreign key to issue?
     issue = models.ForeignKey(Issue)
     opinion = models.ForeignKey(Opinion)
     contributor = models.ForeignKey(Contributor)

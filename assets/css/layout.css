@@ -166,8 +166,10 @@ select {
 }
 
 /*Sprite for homepage */
-.sprite { background: url('../img/sprites/homepage.png') no-repeat top left;  }  
+.sprite { background: url('../img/sprites/homepage.png') no-repeat top left; width: 30px; height: 16px;  } 
 .sprite.headerLogo { background-position: 0 0; width: 385px; height: 109px; } 
 .sprite.languages { background-position: 0 -119px; width: 69px; height: 55px; } 
 .sprite.readMore { background-position: 0 -184px; width: 65px; height: 35px; } 
 .sprite.readMoreGray { background-position: 0 -229px; width: 66px; height: 30px; } 
+.sprite.upVote { background-position: 0 -269px; } 
+.sprite.downVote { background-position: 0 -295px; } 
