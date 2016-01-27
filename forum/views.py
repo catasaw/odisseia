@@ -26,7 +26,7 @@ def issue_view(request, issue_id):
     token = {}
     token.update(csrf(request))
     token['form'] = form
-    all_comments = Comment.objects.filter(issue_id=issue_id).order_by('created_at')
+    all_comments = Comment.objects.filter(issue_id=issue_id).order_by('-created_at')
     token['comments'] = all_comments
     token['issue'] = issue
     

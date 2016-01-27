@@ -73,7 +73,7 @@ class Contributor(AbstractBaseUser):
 
     def get_short_name(self):
         # The user is identified by their email address
-        return self.email
+        return self.email[:3] + '...'
 
     def __str__(self):              # __unicode__ on Python 2
         return self.email

@@ -24,4 +24,8 @@ def opinions_view(request, issue_id):
     context = {}
     context.update(csrf(request))
     context['form'] = form
+    
+    # TODO: Order by most positive votes
+    all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at')
+    context['opinions'] = all_opinions
     return render(request, 'opinion/opinion_view.html', context)
