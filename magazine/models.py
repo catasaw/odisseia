@@ -171,11 +171,13 @@ class Article_Vote(models.Model):
     vote = IntegerField()
     
 class Opinion_Vote(models.Model):
+    MAX_VOTES_PER_CONTRIBUTOR = 5
+    
     # TODO: do we need a foreign key to issue?
-    issue = models.ForeignKey(Issue)
-    opinion = models.ForeignKey(Opinion)
+    issue       = models.ForeignKey(Issue)
+    opinion     = models.ForeignKey(Opinion)
     contributor = models.ForeignKey(Contributor)
-    vote = IntegerField()
+    vote        = IntegerField()
     
 class Article_Translation(models.Model):
     article = models.ForeignKey(Article)

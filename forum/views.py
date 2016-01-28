@@ -30,7 +30,7 @@ def issue_view(request, issue_id):
     token['comments'] = all_comments
     token['issue'] = issue
     
-    # TODO Don't access database every time that comment is post it. Split functionality
+    # TODO: Don't access database every time that comment is post it. Split functionality
     token['is_contributor'] = True
     try:
         issue_contributor=Issue_Contributor.objects.get(issue_id=issue_id, contributor_id= request.user.id)

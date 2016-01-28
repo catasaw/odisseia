@@ -41,6 +41,13 @@
        	    		<div class="col-sm-3">
 			          <div class="well">
 			           <p>{% trans "Votes: " %}</p>
+			           <!-- # TODO: Refactor not to make a for here!   -->
+			           {% for opinion_vote in opinion.opinion_vote_set.all %}
+				           {% if opinion_vote.contributor_id = contributor_id %}
+				           <h3><span class="label label-success">{% trans "You voted " %} {{ opinion_vote.vote }}</span></h3>				           
+				           {% endif %}
+			           {% endfor %}
+			           
 			           <a href="{% url 'vote_view' opinion.issue_id opinion.id 'up'%}">
 			           <img class="sprite upVote"/>
 			           </a>			           
