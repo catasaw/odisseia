@@ -5,11 +5,23 @@ from django.views.decorators.csrf import csrf_protect
 from dashboard.issueform import IssueForm
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.template.context_processors import csrf
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 @login_required
 def dashboard(request):
-    latest_issues = Issue.objects.order_by('created_at').filter(published_at__isnull=True)[:6]
-    return render(request, 'dashboard/issues_dashboard.html', {'issues': latest_issues, 'issues_current_user': request.user.issue_set.all,})
+    latest_issues = Issue.objects.order_by('-created_at').filter(published_at__isnull=True)
+    paginator = Paginator(latest_issues, 12)
+    page = request.GET.get('page')
+    try:
+        issues = paginator.page(page)
+    except PageNotAnInteger:
+        #If page is not an integer, return first page
+        issues = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range, return last page of results
+        issues = paginator.page(paginator.num_pages)
+
+    return render(request, 'dashboard/issues_dashboard.html', {'issues': issues, 'issues_current_user': request.user.issue_set.all,})
 
 @login_required
 @csrf_protect

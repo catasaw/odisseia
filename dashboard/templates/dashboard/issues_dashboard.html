@@ -29,6 +29,21 @@
       {% endfor %}
       </div>
       
+      <nav>
+      <ul class="pagination">
+    	<li>
+        {% if issues.has_previous %}
+            <a href="?page={{ issues.previous_page_number }}">{% trans "Previous" %}</a>
+        {% endif %}
+		</li>
+		<li>
+        {% if issues.has_next %}
+            <a href="?page={{ issues.next_page_number }}">{% trans "Next" %}</a>
+        {% endif %}
+    	</li>
+	  </ul>
+	  </nav>
+      
     </div>
     <div class="col-sm-2">
     	<div class="well">
