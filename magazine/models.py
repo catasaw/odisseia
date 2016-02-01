@@ -107,12 +107,14 @@ class Contributor_Language(models.Model):
     language_to = models.ForeignKey(Language, related_name='contributor_language_to')
     
 class Issue(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=60)
-    approved_at = models.DateTimeField(null=True)
-    translated_at = models.DateTimeField(null=True)
-    published_at = models.DateTimeField(null=True)
-    issue_contributors = models.ManyToManyField(Contributor, through='Issue_Contributor')
+    MIN_AMOUNT_CONTRIBUTORS = 6
+    
+    created_at          = models.DateTimeField(auto_now_add=True)
+    title               = models.CharField(max_length=60)
+    approved_at         = models.DateTimeField(null=True)
+    translated_at       = models.DateTimeField(null=True)
+    published_at        = models.DateTimeField(null=True)
+    issue_contributors  = models.ManyToManyField(Contributor, through='Issue_Contributor')
     
     def __str__(self):
         return self.title
@@ -137,13 +139,15 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Opinion(models.Model):
-    issue = models.ForeignKey(Issue)
-    contributor = models.ForeignKey(Contributor)
-    language = models.ForeignKey(Language)
-    publisher_name = models.CharField(max_length=60)
-    content = models.TextField()
-    is_approved = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    TOTAL_OPINIONS_IN_ISSUE = 5
+    
+    issue           = models.ForeignKey(Issue)
+    contributor     = models.ForeignKey(Contributor)
+    language        = models.ForeignKey(Language)
+    publisher_name  = models.CharField(max_length=60)
+    content         = models.TextField()
+    is_approved     = models.BooleanField(default=False)
+    created_at      = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.content[:4]
@@ -172,7 +176,7 @@ class Article_Vote(models.Model):
     
 class Opinion_Vote(models.Model):
     MAX_VOTES_PER_CONTRIBUTOR = 5
-    
+    MIN_PERCENTAGE_VOTES_IN_ISSUE = 0.8
     # TODO: do we need a foreign key to issue?
     issue       = models.ForeignKey(Issue)
     opinion     = models.ForeignKey(Opinion)

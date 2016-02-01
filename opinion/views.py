@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from magazine.models import Opinion, Opinion_Vote
+from magazine.models import Opinion, Opinion_Vote, Issue
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from opinion.opinionform import OpinionForm
@@ -8,6 +8,7 @@ from django.template.context_processors import csrf
 from django.db.models import Sum
 from django.db.models.expressions import Case
 from django.utils.translation import gettext as _
+from django.db.models.aggregates import Count
 
 @login_required
 @csrf_protect
@@ -70,8 +71,33 @@ def vote_view(request, issue_id, opinion_id, vote_type):
             vote = vote,     
             )
         else:
-            return render(request, 'opinion/invalid_vote_view.html', {'message': _('You have voted more than 5 times! Please, remove one of your votes to vote again!',)})
+            
+            return render(request, 'opinion/invalid_vote_view.html', {'message': _('You have voted more than 5 times! Please, remove one of your votes to vote again!')})
         
     
     # TODO: Double check if redirect is ok
     return redirect('opinions_view', issue_id = issue_id)
+
+# Check if issue is ready to go to translation
+# TODO: Validate votes against Article
+def is_issue_to_translation(issue_id):
+    issue_array = Issue.objects.filter(id=issue_id).aggregate(Count('issue_contributor'))
+    if issue_array['issue_contributor__count'] < Issue.MIN_AMOUNT_CONTRIBUTORS:
+        return False
+
+    # Every opinion must have a positive vote.
+    total_opinions_up_votes =  Opinion_Vote.objects.filter(issue_id = issue_id).filter(vote=1).values_list('opinion_id', flat=True).distinct().count()
+    if total_opinions_up_votes < Opinion.TOTAL_OPINIONS_IN_ISSUE:
+        return False
+    
+    # Total amount of possible votes must be 80%
+    total_votes_in_opinions = Opinion_Vote.objects.filter(issue_id = issue_id).count()
+    if total_votes_in_opinions < issue_array['issue_contributor__count'] * Opinion_Vote.MIN_PERCENTAGE_VOTES_IN_ISSUE * Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
+        return False
+    
+    return True
+    
+    
+    
+    
+    
