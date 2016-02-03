@@ -9,7 +9,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 @login_required
 def dashboard(request):
-    latest_issues = Issue.objects.exclude(issue_contributors__id = request.user.id).order_by('-created_at').filter(published_at__isnull=True)
+    latest_issues = Issue.objects.exclude(issue_contributors__id = request.user.id).order_by('-created_at').filter(status = Issue.IN_PROGRESS)
     paginator = Paginator(latest_issues, 12)
     page = request.GET.get('page')
     try:
