@@ -142,6 +142,9 @@ class Issue(models.Model):
     
     def amount_articles(self):
         return Article.objects.filter(issue_id=self.id).count()
+    
+    def is_pending(self):
+        return self.status == Issue.PENDING
 
 class Article(models.Model):
     issue = models.ForeignKey(Issue)

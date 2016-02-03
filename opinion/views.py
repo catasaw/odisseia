@@ -33,7 +33,10 @@ def opinions_view(request, issue_id):
     
     # TODO: Order by most positive votes
     # TODO: Write this in a Manager?
-    all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at').select_related().all()                                                                                    
+    all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at').select_related().all()
+    
+    # TODO: THe status should be gotten from the session? so there is not query to DB every time!
+    context['issue_is_pending'] = Issue.objects.get(id=issue_id).is_pending()                                                                                    
     context['opinions'] = all_opinions
     return render(request, 'opinion/opinion_view.html', context)
 
@@ -62,8 +65,8 @@ def vote_view(request, issue_id, opinion_id, vote_type):
         opposite_votes[0].delete()
     else:
         # Check if contributor is allowed to vote: If it has more than 5 votes
-        amount_contributor_votes = Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id)
-        if len(amount_contributor_votes) < Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
+        amount_contributor_votes = Opinion_Vote.objects.filter(issue_id = issue_id).filter(contributor_id = request.user.id).count()
+        if amount_contributor_votes < Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
             # Make new vote
             new_vote = Opinion_Vote.objects.create(
             issue_id = issue_id,
@@ -102,7 +105,7 @@ def is_issue_to_be_pending(issue_id):
     # Change status of issue
     issue = Issue.objects.get(id = issue_id)
     issue.status = Issue.PENDING
-    issue.status_changed_at = datetime.datetime.now()
+    issue.status_changed_at = datetime.now()
     issue.save(update_fields=['status', 'status_changed_at']) 
     return True
     

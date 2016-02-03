@@ -6,6 +6,11 @@
 	<div class="row">
 		<div class="col-sm-9">
       		<div class="row">
+      		{% if issue_is_pending == True %}
+      			<div class="alert alert-success" role="alert">
+      			<h3>{% trans "Well done! Your opinions are being revised to be published soon!" %}</h3>
+      			</div>
+      		{% else %}
       		<h3>{% trans "Propose an opinion to be voted" %}</h3>
       			<div class="row">					
 		      		<div class="col-sm-12">
@@ -36,6 +41,7 @@
 					  </div>
       				</div>
        	    	</div>
+       	    	{% endif %}
        	    	<div class="row">
        	    	{% for opinion in opinions %}
        	    		<div class="col-sm-3">
