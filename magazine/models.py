@@ -9,6 +9,7 @@ class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
     name = models.CharField(max_length=200)
     
+    
     def __str__(self):
         return self.name
 
@@ -109,11 +110,24 @@ class Contributor_Language(models.Model):
 class Issue(models.Model):
     MIN_AMOUNT_CONTRIBUTORS = 6
     
+    IN_PROGRESS         = 0
+    PENDING             = 1
+    APPROVED            = 2
+    PUBLISHED           = 3
+    REJECTED            = 4
+    
+    STATUS_CHOICES = (
+                   (IN_PROGRESS, 'IN_PROGRESS'),
+                   (PENDING,'PENDING'),
+                   (APPROVED, 'APPROVED'),
+                   (PUBLISHED, 'PUBLISHED'),
+                   (REJECTED, 'REJECTED')
+    )
     created_at          = models.DateTimeField(auto_now_add=True)
     title               = models.CharField(max_length=60)
-    approved_at         = models.DateTimeField(null=True)
-    translated_at       = models.DateTimeField(null=True)
-    published_at        = models.DateTimeField(null=True)
+    status              = models.IntegerField(choices=STATUS_CHOICES, default=IN_PROGRESS)
+    #TODO: Make trigger to update this field when status changes
+    status_changed_at   = models.DateTimeField(null=True)
     issue_contributors  = models.ManyToManyField(Contributor, through='Issue_Contributor')
     
     def __str__(self):
