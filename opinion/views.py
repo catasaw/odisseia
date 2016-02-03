@@ -9,6 +9,7 @@ from django.db.models import Sum
 from django.db.models.expressions import Case
 from django.utils.translation import gettext as _
 from django.db.models.aggregates import Count
+from datetime import date, datetime
 
 @login_required
 @csrf_protect
@@ -70,6 +71,9 @@ def vote_view(request, issue_id, opinion_id, vote_type):
             contributor=request.user,
             vote = vote,     
             )
+            # Check if this is a vote that allows the issue to go to PENDING state
+            if is_issue_to_be_pending == True:
+                return render(request, 'issue/pending_view.html') 
         else:
             
             return render(request, 'opinion/invalid_vote_view.html', {'message': _('You have voted more than 5 times! Please, remove one of your votes to vote again!')})
@@ -78,9 +82,9 @@ def vote_view(request, issue_id, opinion_id, vote_type):
     # TODO: Double check if redirect is ok
     return redirect('opinions_view', issue_id = issue_id)
 
-# Check if issue is ready to go to translation
+# Check if issue is ready to go be approved by Creators
 # TODO: Validate votes against Article
-def is_issue_to_translation(issue_id):
+def is_issue_to_be_pending(issue_id):
     issue_array = Issue.objects.filter(id=issue_id).aggregate(Count('issue_contributor'))
     if issue_array['issue_contributor__count'] < Issue.MIN_AMOUNT_CONTRIBUTORS:
         return False
@@ -95,6 +99,11 @@ def is_issue_to_translation(issue_id):
     if total_votes_in_opinions < issue_array['issue_contributor__count'] * Opinion_Vote.MIN_PERCENTAGE_VOTES_IN_ISSUE * Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
         return False
     
+    # Change status of issue
+    issue = Issue.objects.get(id = issue_id)
+    issue.status = Issue.PENDING
+    issue.status_changed_at = datetime.datetime.now()
+    issue.save(update_fields=['status', 'status_changed_at']) 
     return True
     
     
