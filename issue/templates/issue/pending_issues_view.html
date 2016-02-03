@@ -1,0 +1,32 @@
+{% extends "magazine/layout.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container text-center">   
+	<div class="table-responsive">
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <th>ID</th>
+	        <th>Title</th>
+	        <th>Go to issue</th>
+	        <th>Approve</th>
+	        <th>Reject</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    <tr>
+	    {% for issue in issues %}
+	    <tr>
+	    <td>{{issue.id}}</td>
+	    <td>{{issue.title}}</td>
+	    <td><a class="btn btn-primary" href="{% url 'issue_view' issue.id %}">{% trans "Go to issue" %}</a></td>
+	    <td><a class="btn btn-success" href="{% url 'issue_view' issue.id %}">{% trans "Approve" %}</a></td>
+	    <td><a class="btn btn-danger" href="{% url 'issue_view' issue.id %}">{% trans "Reject" %}</a></td>
+	    </tr>
+	    {% endfor %}
+	    </tbody>
+		</table>
+	</div>
+</div>
+              
+{% endblock %}

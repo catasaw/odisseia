@@ -9,12 +9,12 @@
 
     <title>Odisseia</title>
 
-    <link href="{% static 'css/bootstrap/css/bootstrap.min.css' %}"
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    
-    <link rel="shortcut icon" href= "/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href= "{% static 'img/favicon.ico' %}" type="image/x-icon"/>
 </head>
 
 <body>
@@ -35,6 +35,12 @@
                 <li class="active"><a href="/#opinion">{% trans "Start" %}</a></li>
                 <li><a href="/#contribute">{% trans "Contribute" %}</a></li>
                 <li><a href="/#statut">{% trans "Statut" %}</a></li>
+                {% if user.is_authenticated %}
+        		<li><a href="/dashboard/">{% trans "Explore" %}</a></li>
+        			{% if user.is_staff %}
+        			<li><a href="{% url 'pending_issues_view' %}">{% trans "Issues to be approved" %}</a></li>
+        			{% endif %}
+        		{% endif %}
                 {% if user.is_authenticated %}
                 <li><a href="/accounts/logout">{% trans "Logout" %}</a></li>
                 {% else %}

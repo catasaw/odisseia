@@ -4,8 +4,10 @@ from forum.commentform import CommentForm
 from django.views.decorators.csrf import csrf_protect
 from django.core.context_processors import csrf
 from django.http.response import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 @csrf_protect
+@login_required
 def issue_view(request, issue_id):   
     try: 
         issue=Issue.objects.get(pk=issue_id)

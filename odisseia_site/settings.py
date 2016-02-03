@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'forum',
     'article',
     'opinion',
+    'issue',
 )
 
 MIDDLEWARE_CLASSES = (
