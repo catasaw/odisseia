@@ -20,8 +20,8 @@
 	    <td>{{issue.id}}</td>
 	    <td>{{issue.title}}</td>
 	    <td><a class="btn btn-primary" href="{% url 'issue_view' issue.id %}">{% trans "Go to issue" %}</a></td>
-	    <td><a class="btn btn-success" href="{% url 'issue_view' issue.id %}">{% trans "Approve" %}</a></td>
-	    <td><a class="btn btn-danger" href="{% url 'issue_view' issue.id %}">{% trans "Reject" %}</a></td>
+	    <td><a class="btn btn-success" href="{% url 'update_status_issue_view' issue.id 'approve' %}">{% trans "Approve" %}</a></td>
+	    <td><a class="btn btn-danger" href="{% url 'update_status_issue_view' issue.id 'reject' %}">{% trans "Reject" %}</a></td>
 	    </tr>
 	    {% endfor %}
 	    </tbody>
