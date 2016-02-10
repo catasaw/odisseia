@@ -28,57 +28,8 @@
     
 </div>
 
-<div id="statut" class="container-fluid">
-    <div class="col-md-2">
-        <p class="menu-item-vertical-text">Statut</p>
-    </div>
-    
-    {% comment "TODO Change parameter in loop" %}{% endcomment %}
-     {% for stat in issue.opinion_set.all %}
-    <div class="col-md-2">
-        <p>Ed ut perspiciatis unde omnis iste
-		natus error sit voluptatem accusantium doloremque laudantium, totam
-		rem aperiam, eaque ipsa quae ab illo
-		inventore veritatis et quasi architecto
-		beatae vitae dicta sunt explicabo.
-		Nemo enim ipsam voluptatem quia
-		voluptas sit aspernatur aut odit aut
-		fugit, sed quia consequuntur magni
-		dolores eos qui ratione voluptatem
-		sequi nesciunt.
-		Neque porro quisquam est,
-		qui dolorem ipsum quia dolor sit
-		amet, consectetur, adipisci velit, sed
-		quia non numquam eius modi tempora
-		incidunt ut labore et dolore magnam
-		aliquam quaerat voluptatem. Ut enim
-		ad minima veniam, quis nostrum
-		exercitationem ullam corporis suscipit</p>
-    </div>
-    {% endfor %}
-</div>
+{% include "magazine/statut.html" with issue=issue %}
+{% include "magazine/contribute.html" %}
 
-<div id="contribute" class="container-fluid">
-	<div class="col-md-3">
-		<p class="menu-item-vertical-text">Contribute</p>
-    </div>
-    <div class="col-md-6">
-		<p>Das Projekt, eine europäische Öffentlichkeit zu begründen, kann nicht von einer 
-kleinen Gruppe bewerkstelligt werden.
-Wir rufen daher alle auf, sich mit uns in einem Netzwerk zusammenzuschließen, die zu diesem Vorhaben beitragen wollen.
-Ein arbeitsfähiges Netzwerk kann leicht durch ein Schneeballsystem entstehen. 
-Wenn alle diesen Aufruf weiterleiten, wird schnell ein Team entstehen, so vielfältig 
-und sprachenreich wie Europa selbst.
-Das Netzwerk soll dann gemeinschaftlich die Themen für die Magazin-Ausgaben 
-abstimmen und passende Autorinnen und Autoren finden. Hierfür kommen alle 
-innerhalb oder außerhalb des Netzwerkes in Betracht, die einen europäischen 
-Dialog bereichern können.
-Die Übersetzungsarbeit wird als Open Source gestaltet, sodass die Arbeit gleichmäßig verteilt ist. Gleichzeitig wird dadurch die sprachliche Überprüfung der 
-Texte durch die anderen Übersetzerinnen und Übersetzer derselben Sprache 
-gewährleistet.
-Am Ende dieses Prozesses steht dann ein europäisches Magazin, der Beginn einer 
-europäischen Öffentlichkeit.
-Wer beitragen möchte, kann sich an odisseia@gmx.netwenden.</p>
-	</div>  
-</div>
+
 {% endblock %}
