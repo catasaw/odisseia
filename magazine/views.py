@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Opinion,Article,Issue
-from datetime import datetime
+from datetime import datetime, timedelta
+from django.utils.timezone import utc
 
 def homepage(request):
     # TODO: If first time to query issue, then cache it?
@@ -17,14 +18,17 @@ def homepage(request):
         return render(request, 'magazine/homepage.html', {'issue': earliest_approved_issue})
 
     # if Issue exist, check that is longer than 2 weeks
-    if last_published_issue.status_changed_at > '2 weeks ':
-        earliest_approved_issue= publish_earliest_approved_issue()
+    earliest_approved_issue = publish_earliest_approved_issue()
+    
+    if (datetime.now().replace(tzinfo=utc) - last_published_issue.status_changed_at.replace(tzinfo=utc)).days   > 14:
+    #if datetime.now() -  timedelta(weeks=2) < last_published_issue.status_changed_at  :
         if earliest_approved_issue is None:
             # Render homepage with previous issue
             return render(request, 'magazine/homepage.html', {'issue': last_published_issue})
         
-        # Render homepage with earliest approved issue
-        return render(request, 'magazine/homepage.html', {'issue': earliest_approved_issue})
+    
+    # Render homepage with earliest approved issue
+    return render(request, 'magazine/homepage.html', {'issue': last_published_issue})
 
 # view method
 def publish_earliest_approved_issue():
