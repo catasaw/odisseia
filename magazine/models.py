@@ -5,6 +5,11 @@ from django.db.models.fields import IntegerField
 from django.db.models.signals import post_save
 from django.db.models import Sum
 
+#TODO: Check a better way to set default encoding
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 class Language(models.Model):
     iso1_code = models.CharField(max_length = 2)
     name = models.CharField(max_length=200)
