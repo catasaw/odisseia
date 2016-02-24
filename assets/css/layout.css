@@ -12,10 +12,10 @@ p {
     line-height: 2em;
 }
 
-body > header {
-    padding-top: 20px;
-    text-align: center;
-}
+/* body > header { */
+/*     padding-top: 20px; */
+/*     text-align: center; */
+/* } */
 body > header .logo {
     display: block;
     margin-left: auto;
@@ -23,21 +23,21 @@ body > header .logo {
 }
 
 /* Navigation Homepage */
-body > header .navbar-header {
-    float: left;
-    padding: 15px;
-    text-align: left;
-    width: 100%;
-}
-body > header .navbar-nav {
-    float: none;
-    margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-}
-body > header .navbar-nav a {
-    color: #000;
-}
+/* body > header .navbar-header { */
+/*     float: left; */
+/*     padding: 15px; */
+/*     text-align: left; */
+/*     width: 100%; */
+/* } */
+/* body > header .navbar-nav { */
+/*     float: none; */
+/*     margin: 0 auto; */
+/*     display: table; */
+/*     table-layout: fixed; */
+/* } */
+/* body > header .navbar-nav a { */
+/*     color: #000; */
+/* } */
 
 /* style issues homepage */
 .home-issue {
