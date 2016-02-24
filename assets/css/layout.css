@@ -16,6 +16,11 @@ p {
 /*     padding-top: 20px; */
 /*     text-align: center; */
 /* } */
+
+body {
+	font-family: "TabletGothic","Helvetica Neue",Helvetica,Arial,FreeSans,sans-serif;
+	font-size: 17px;
+}
 body > header .logo {
     display: block;
     margin-left: auto;
