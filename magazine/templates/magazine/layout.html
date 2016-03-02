@@ -24,7 +24,7 @@
 
         <div class='logo sprite headerLogo'></div>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,13 +46,14 @@
         	{% endif %}
         {% endif %}
       </ul>
+      {% include "magazine/set_language_view.html" %}
       <ul class="nav navbar-nav navbar-right">
        {% if user.is_authenticated %}
         <li><a href="/accounts/logout"><span class="glyphicon glyphicon-log-in"></span>  {% trans "Logout" %}</a></li>
         {% else %}
         <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span>  {% trans "Login" %}</a></li>
         <li><a href="/accounts/signup">{% trans "Signup" %}</a></li>
-        {% endif %}
+        {% endif %}        
       </ul>
     </div>
   </div>
