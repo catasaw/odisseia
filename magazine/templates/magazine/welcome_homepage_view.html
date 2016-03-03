@@ -6,9 +6,9 @@
 
 </div>
 
-<div class="container">
+<div id="contribute" class="container">
 <div class="row">
-<h1 class="display-3">Contribute!</h1>
+<p class="menu-item-horizontal-text">Contribute</p>
         <div class="col-md-4">
           <div class="contribute-propose"></div>
           <h2>Propose an issue</h2>
@@ -61,5 +61,38 @@
     </div>
     {% endfor %}
 </div>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a[href='#opinion'], .navbar a[href='#contribute'], .navbar a[href='#statut'], footer a[href='#myPage']").on('click', function(event) {
 
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
 {% endblock %}

@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href= "{% static 'img/favicon.ico' %}" type="image/x-icon"/>
 </head>
 
-<body>
+<body id="myPage">
     <header>
 
         <div class='logo sprite headerLogo'></div>
@@ -36,7 +36,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-		<li class="active"><a href="/#opinion">{% trans "Start" %}</a></li>
+		<li><a href="/#opinion">{% trans "Start" %}</a></li>
         <li><a href="/#contribute">{% trans "Contribute" %}</a></li>
         <li><a href="/#statut">{% trans "Statut" %}</a></li>
         {% if user.is_authenticated %}
@@ -61,15 +61,6 @@
     </header>
 	{% block content %} {% endblock %}
 
-    <footer>
-        <div id="footer-row-brand" class="container">
-            <div class="col-xs-6 text-center">
-                <a href="">{% trans "Impress" %}</a>
-            </div>
-            <div class="col-xs-6 text-center">
-                <a href="">{% trans "Contact" %}</a>
-            </div>
-        </div>
-    </footer>
+{% include "magazine/footer.html" %}
 </body>
 </html>

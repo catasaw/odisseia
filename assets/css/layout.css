@@ -27,6 +27,20 @@ body > header .logo {
     margin-right: auto 
 }
 
+/* Menu behaviour */
+  .navbar li a, .navbar .navbar-brand {
+      color: !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #3c4ba7 !important;
+      background-color: #e7e7e7 !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+
+
 .welcomeimage {
 	background-image: url('../img/homepageImage.jpg') ; 
     margin-right: -15px; 
@@ -113,6 +127,13 @@ body > header .logo {
     text-transform: uppercase;
 }
 
+/* Horizontal Menu Item text for Homepage */
+.menu-item-horizontal-text {
+    color: #3c4ba7;
+    font-size: 550%;
+    text-transform: uppercase;
+}
+
 
 .menu-item {
     padding-top: 10%;
@@ -143,10 +164,10 @@ body > header .logo {
 }
 
 #opinions,
-#statut,
-#contribute {
+#statut {
     padding: 200px 0;
 }
+
 
 #statut {
     background: #eee;
