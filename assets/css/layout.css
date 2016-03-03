@@ -51,8 +51,8 @@ body > header .logo {
     background-size: cover;
 }
 
-.contribute-propose {
-	background-image: url('../img/propose.png') ; 
+.contribute-thumbnail {
+	background-image: url('../img/contribute-thumbnail.png') ; 
     margin-right: -15px; 
     margin-left: -15px;  
     padding-bottom: 62.5%;
@@ -60,29 +60,6 @@ body > header .logo {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.contribute-discuss {
-	background-image: url('../img/discuss.png') ; 
-    margin-right: -15px; 
-    margin-left: -15px;  
-    padding-bottom: 62.5%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.contribute-vote {
-	background-image: url('../img/vote.png') ; 
-    margin-right: -15px; 
-    margin-left: -15px;  
-    padding-bottom: 62.5%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-
 
   
 /* Navigation Homepage */
@@ -134,6 +111,51 @@ body > header .logo {
     text-transform: uppercase;
 }
 
+/*Animate menu*/
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  
+    @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
 
 .menu-item {
     padding-top: 10%;
