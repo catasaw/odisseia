@@ -27,6 +27,50 @@ body > header .logo {
     margin-right: auto 
 }
 
+.welcomeimage {
+	background-image: url('../img/homepageImage.jpg') ; 
+    margin-right: -15px; 
+    margin-left: -15px;  
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contribute-propose {
+	background-image: url('../img/propose.png') ; 
+    margin-right: -15px; 
+    margin-left: -15px;  
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contribute-discuss {
+	background-image: url('../img/discuss.png') ; 
+    margin-right: -15px; 
+    margin-left: -15px;  
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contribute-vote {
+	background-image: url('../img/vote.png') ; 
+    margin-right: -15px; 
+    margin-left: -15px;  
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+  
 /* Navigation Homepage */
 /* body > header .navbar-header { */
 /*     float: left; */
