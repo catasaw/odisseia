@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect 
 from django.core.context_processors import csrf
-from magazine.models import Contributor, Contributor_Language,Language
+from magazine.models import Contributor,Language, Language_Contributor
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect
@@ -24,6 +24,24 @@ def register(request):
             status=Contributor.UNCONFIRMED
             )
             new_contributor.save()
+
+
+            for language_from in form.cleaned_data['languages_from']:
+                new_contributor_language = Language_Contributor(
+                contributor=new_contributor,
+                language=language_from,
+                type=Language_Contributor.FIRST_LANGUAGE
+                )
+                
+            for language_to in form.cleaned_data['languages_to']:
+                new_contributor_language = Language_Contributor(
+                contributor=new_contributor,
+                language=language_to,
+                type=Language_Contributor.SECOND_LANGUAGE
+                )
+                
+            new_contributor_language.save()
+           
             user=authenticate(email=form.cleaned_data['email'],password=form.cleaned_data['password'])
             login(request,user)
             return HttpResponseRedirect('/signup/success/')     
@@ -36,8 +54,6 @@ def register(request):
     context['languages'] = languages    
     return render_to_response('login/signup.html', context)
 
-    
-    
 def register_success(request):
     
     return render_to_response('login/login_successful.html')

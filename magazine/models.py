@@ -64,7 +64,7 @@ class Contributor(AbstractBaseUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True)
     deleted_at = models.DateTimeField(null=True)
-    contributor_languages = models.ManyToManyField(Language, through='Contributor_Language', through_fields=('contributor','language_from'))
+    contributor_languages = models.ManyToManyField(Language, through='Language_Contributor', through_fields=('contributor','language'))
     
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -103,14 +103,18 @@ class Contributor(AbstractBaseUser):
 
 # Create User object to attach to Contributor object
 
-def create_contributor_user_callback(sender, instance, **kwargs):
-    contributor, new = Contributor.objects.get_or_create(user=instance)
-post_save.connect(create_contributor_user_callback, User)
 
-class Contributor_Language(models.Model):
+
+class Language_Contributor(models.Model):
+    FIRST_LANGUAGE = 0
+    SECOND_LANGUAGE = 1
+    LANGUAGES_CHOICES = (
+                   (FIRST_LANGUAGE, 'FIRST_LANGUAGE'),
+                   (SECOND_LANGUAGE,'SECOND_LANGUAGE'),
+    )
     contributor = models.ForeignKey(Contributor)
-    language_from = models.ForeignKey(Language, related_name='contributor_language_from')
-    language_to = models.ForeignKey(Language, related_name='contributor_language_to')
+    language = models.ForeignKey(Language, related_name='contributor_languages')
+    type = models.IntegerField(choices=LANGUAGES_CHOICES, default=FIRST_LANGUAGE)
     
 class Issue(models.Model):
     MIN_AMOUNT_CONTRIBUTORS = 6
