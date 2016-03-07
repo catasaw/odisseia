@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'article',
     'opinion',
     'issue',
+    'contributor_profile',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -32,15 +32,17 @@ def register(request):
                 language=language_from,
                 type=Language_Contributor.FIRST_LANGUAGE
                 )
-                
+                new_contributor_language.save()
+            
+            
             for language_to in form.cleaned_data['languages_to']:
                 new_contributor_language = Language_Contributor(
                 contributor=new_contributor,
                 language=language_to,
                 type=Language_Contributor.SECOND_LANGUAGE
                 )
+                new_contributor_language.save()
                 
-            new_contributor_language.save()
            
             user=authenticate(email=form.cleaned_data['email'],password=form.cleaned_data['password'])
             login(request,user)

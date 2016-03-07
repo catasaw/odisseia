@@ -29,6 +29,7 @@ urlpatterns = i18n_patterns('',
     url(r'^', include('article.urls')),
     url(r'^', include('opinion.urls')),
     url(r'^', include('issue.urls')),
+    url(r'^', include('contributor_profile.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

@@ -1,0 +1,75 @@
+{% extends "magazine/layout.html" %}
+{% load i18n %}
+{% block content %}
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "My Details" %}</div>
+        <div class="panel-body">
+        <p><i class="glyphicon glyphicon-envelope"></i> {{contributor.email}}</p>
+        <p><i class="glyphicon glyphicon-user"></i> {{contributor.created_at}}</p>
+        </div>
+       </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "I can translate from" %}</div>
+        <div class="panel-body">
+	        {% for language in first_language %}
+	        <p>{{language.name}}</p>
+	        {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "To these languages" %}</div>
+        <div class="panel-body">
+	        {% for language in second_language %}
+	        <p>{{language.name}}</p>
+	        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  	 <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "Already published issues" %}</div>
+        <div class="panel-body">
+	        {% for issue in published_issues %}
+	        <p>{{issue.title}}</p>
+	        {% endfor %}
+        </div>
+       </div>
+    </div>
+  </div>
+    <div class="row">
+  	 <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "Issues waiting for approval" %}</div>
+        <div class="panel-body">
+	        {% for issue in pending_issues %}
+	        <p>{{issue.title}}</p>
+	        {% endfor %}
+        </div>
+       </div>
+    </div>
+  </div>
+    <div class="row">
+  	 <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">{% trans "Issues in progress" %}</div>
+        <div class="panel-body">
+	        {% for issue in in_progress_issues %}
+	        <p>{{issue.title}}</p>
+	        {% endfor %}
+        </div>
+       </div>
+    </div>
+  </div>
+</div>
+	
+{% endblock %}
