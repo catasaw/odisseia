@@ -51,10 +51,8 @@ def register(request):
             
             sg = sendgrid.SendGridClient(settings.SENDGRID_USERNAME, settings.SENDGRID_PASSWORD)
             message = sendgrid.Mail(to=form.cleaned_data['email'], subject='Welcome to Odisseia!', from_email='odisseia@posteo.net')
-            message.add_filter('templates', 
-                   { "enable", "template_id"}, 
-                   { 1, settings.EMAIL_TEMPLATE}
-                   )
+            message.add_filter('templates', 'enable', '1')
+            message.add_filter('templates', 'template_id', settings.EMAIL_TEMPLATE)
             status, msg = sg.send(message)
             print(status, msg)
         
