@@ -117,8 +117,8 @@ LANGUAGES = [
 ]
 
 #Emails
-SENDGRID_USERNAME = ''
-SENDGRID_PASSWORD = ''
+SENDGRID_USERNAME = os.environ['SENDGRID_USERNAME']
+SENDGRID_PASSWORD = os.environ['SENDGRID_PASSWORD']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
