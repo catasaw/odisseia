@@ -129,5 +129,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),          
      )
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 # Local files for translations
 LOCALE_PATHS = (os.path.join(os.path.dirname(__file__), '../locale/'),)
