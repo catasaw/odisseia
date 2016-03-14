@@ -10,6 +10,8 @@ from django.views.decorators.csrf import csrf_protect
 from login.registrationform import RegistrationForm
 from django.contrib.auth import logout
 from login.loginform import LoginForm
+import sendgrid
+from django.conf import settings
 
 @csrf_protect
 def register(request):
@@ -46,6 +48,12 @@ def register(request):
            
             user=authenticate(email=form.cleaned_data['email'],password=form.cleaned_data['password'])
             login(request,user)
+            
+            sg = sendgrid.SendGridClient(settings.SENDGRID_USERNAME, settings.SENDGRID_PASSWORD)
+            message = sendgrid.Mail(to=form.cleaned_data['email'], subject='Example', html='Body', text='Body', from_email='odisseia@posteo.net')
+            status, msg = sg.send(message)
+            print(status, msg)
+        
             return HttpResponseRedirect('/signup/success/')     
     else:
         form = RegistrationForm()
@@ -57,7 +65,6 @@ def register(request):
     return render_to_response('login/signup.html', context)
 
 def register_success(request):
-    
     return render_to_response('login/login_successful.html')
 
 @csrf_protect
