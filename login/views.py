@@ -50,9 +50,15 @@ def register(request):
             login(request,user)
             
             sg = sendgrid.SendGridClient(settings.SENDGRID_USERNAME, settings.SENDGRID_PASSWORD)
-            message = sendgrid.Mail(to=form.cleaned_data['email'], subject='Welcome to Odisseia!', body='Welcome!', from_email='odisseia@posteo.net')
+            message = sendgrid.Mail()
+            message.add_to(form.cleaned_data['email'])
+            message.set_subject('Welcome to Odisseia!')
+            message.set_from('odisseia@posteo.net')
+            message.set_html(' ')
+            message.set_text(' ')
             message.add_filter('templates', 'enable', '1')
             message.add_filter('templates', 'template_id', settings.EMAIL_TEMPLATE)
+            
             status, msg = sg.send(message)
             print(status, msg)
         
