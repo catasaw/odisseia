@@ -18,11 +18,7 @@
         {% if user.is_authenticated %}
         <li><a href="/profile">{% trans "My profile" %}</a></li>
         <li><a href="/dashboard/">{% trans "Explore" %}</a></li>
-        <li>
-        	<form action="{% url 'new_issue_view' %}">
-    		<button type="button" class="btn btn-primary navbar-btn">{% trans "Propose an isue!" %}</button>
-			</form>
-		</li>        
+        <li><a href="{% url 'new_issue_view' %}"><span class="label label-default">{% trans "Propose an isue!" %}</span></a></li>   
         	{% if user.is_staff %}
         	<li><a href="{% url 'pending_issues_view' %}">{% trans "Issues to be approved" %}</a></li>
         	{% endif %}
