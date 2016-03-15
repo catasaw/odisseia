@@ -42,7 +42,6 @@ body > header .logo {
 
 
 .welcomeimage {
-	height: 200px;
 	background-image: url('../img/backgroundImage.jpg') ; 
     margin-right: -15px; 
     margin-left: -15px;  
