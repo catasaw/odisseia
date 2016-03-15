@@ -15,15 +15,23 @@
       <div class="row">
       {% for issue in issues %}
         <div class="col-sm-4">
-          <div class="panel panel-default">
-	          <div class="panel-heading">{{issue.title}}</div>
-	          <h3><a class="btn btn-success" href="{% url 'issue_view' issue.id %}">{% trans "Check it!" %}</a></h3>
-	          <p>
+          <div class="panel panel-default form_hover">
+          <div class="panel-body">
+          {{issue.title}}
+		  <p>
+	          <span class="label label-warning">{% trans "Contributors" %} {{issue.issue_contributors.count}}</span> 
+	          <span class="label label-primary">{% trans "Comments" %} {{issue.comment_set.count}}</span>
 	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
 	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
-	          <span class="label label-primary">{% trans "Contributors" %} {{issue.issue_users.count}}</span> 
-	          <span class="label label-info">{% trans "Created at" %} {{issue.created_at|date:"M d'y "}}</span>
-	          </p>
+	       </p>	       
+	       {{issue.comment_set.last.content|truncatewords:10 }}
+	       </div>
+          <div class="header">
+	      <div class="panel-footer">
+	          <h3><a class="btn btn-success" href="{% url 'issue_view' issue.id %}">{% trans "Check it!" %}</a></h3>
+	       </div>
+	       </div>
+	          
           </div>
         </div>
       {% endfor %}

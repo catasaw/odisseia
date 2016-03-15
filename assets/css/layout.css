@@ -256,6 +256,58 @@ select {
     appearance: none;
 }
 
+
+
+/*Dashboard hover*/
+
+    .form_hover {
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+    }
+
+        .form_hover:hover .header {
+            opacity: 1;
+            transform: translateY(-172px);
+            -webkit-transform: translateY(-172px);
+            -moz-transform: translateY(-172px);
+            -ms-transform: translateY(-172px);
+            -o-transform: translateY(-172px);
+        }
+
+        .form_hover img {
+            z-index: 4;
+        }
+
+        .form_hover .header {
+            position: absolute;
+            top: 290px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form_hover .blur {
+            height: 240px;
+            z-index: 5;
+            position: absolute;
+            width: 100%;
+        }
+
+        .form_hover .caption-text {
+            z-index: 10;
+            color: #fff;
+            position: absolute;
+            height: 240px;
+            text-align: center;
+            top: -20px;
+            width: 100%;
+        }
+
 /*Sprite for homepage */
 .sprite { background: url('../img/sprites/homepage.png') no-repeat top left; width: 30px; height: 16px;  } 
 .sprite.headerLogo { background-position: 0 0; width: 385px; height: 109px; } 
