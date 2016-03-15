@@ -31,6 +31,7 @@ def issue_view(request, issue_id):
     all_comments = Comment.objects.filter(issue_id=issue_id).order_by('-created_at')
     token['comments'] = all_comments
     token['issue'] = issue
+    token['contributors'] = issue.issue_contributors.all()
     
     # TODO: Don't access database every time that comment is post it. Split functionality
     token['is_contributor'] = True

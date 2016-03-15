@@ -17,6 +17,11 @@
       <div class="well">
       	<h3>{% trans "Number of Contributors: " %}</h3>
         <h3><span class="label label-warning">{{ issue.amount_contributors }}</span></h3>
+        <ul class="list-unstyled">
+        {% for contributor in contributors %}
+        	<li>{{ contributor.email }}</li>
+        {% endfor %}
+        </ul>
       </div>
     </div>
     <div class="col-sm-7">
