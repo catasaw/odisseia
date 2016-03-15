@@ -4,65 +4,23 @@
 
 <div class="container text-center">    
   <div class="row">
-	<div class="col-sm-10">
+	<div class="col-sm-12">
     
       <div class="row">
+      {% if issues_current_user %}
+      	<div class="col-sm-12">
+      	
+		<h3>{% trans "My issues" %}</h3>   
+        </div>
+        {% include "dashboard/single_issue_view.html" with issues=issues_current_user %}
+         {% endif %}
+      
         <div class="col-sm-12">
 		<h3>{% trans "Check the issues currently in progress to be published!" %}</h3>
         </div>
       </div>
+      {% include "dashboard/single_issue_view.html" with issues=issues %}
       
-      <div class="row">
-      {% for issue in issues %}
-        <div class="col-sm-4">
-          <div class="panel panel-default form_hover">
-          <div class="panel-body">
-          {{issue.title}}
-		  <p>
-	          <span class="label label-warning">{% trans "Contributors" %} {{issue.issue_contributors.count}}</span> 
-	          <span class="label label-primary">{% trans "Comments" %} {{issue.comment_set.count}}</span>
-	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
-	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
-	       </p>	       
-	       {{issue.comment_set.last.content|truncatewords:10 }}
-	       </div>
-          <div class="header">
-	      <div class="panel-footer">
-	          <h3><a class="btn btn-success" href="{% url 'issue_view' issue.id %}">{% trans "Check it!" %}</a></h3>
-	       </div>
-	       </div>
-	          
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-      
-      <nav>
-      <ul class="pagination">
-    	<li>
-        {% if issues.has_previous %}
-            <a href="?page={{ issues.previous_page_number }}">{% trans "Previous" %}</a>
-        {% endif %}
-		</li>
-		<li>
-        {% if issues.has_next %}
-            <a href="?page={{ issues.next_page_number }}">{% trans "Next" %}</a>
-        {% endif %}
-    	</li>
-	  </ul>
-	  </nav>
-      
-    </div>
-    <div class="col-sm-2">
-    	<div class="well">
-        	<a class="btn btn-primary" href="{% url 'new_issue_view' %}">{% trans "Propose an isue!" %}</a>
-      	</div>
-      	<div class="well">
-      		<p>{% trans "My issues" %}</p>
-      		{% for issue_current_user in issues_current_user %}
-        	<p><a href="{% url 'issue_view' issue_current_user.id %}">{{ issue_current_user.title }}</a></p>        	
-        	{% endfor %}
-      	</div>    	
     </div>
   </div>
 </div>

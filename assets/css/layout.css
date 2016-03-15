@@ -282,7 +282,7 @@ select {
 
         .form_hover .header {
             position: absolute;
-            top: 290px;
+            top: 320px;
             -webkit-transition: all 0.3s ease;
             -moz-transition: all 0.3s ease;
             -o-transition: all 0.3s ease;
