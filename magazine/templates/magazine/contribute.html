@@ -1,25 +1,27 @@
 {% load i18n %}
 
-<div id="contribute" class="container-fluid">
-	<div class="col-md-3">
-		<p class="menu-item-vertical-text">{% trans "Contribute" %}</p>
-    </div>
-    <div class="col-md-6">
-		<p>Das Projekt, eine europäische Öffentlichkeit zu begründen, kann nicht von einer 
-kleinen Gruppe bewerkstelligt werden.
-Wir rufen daher alle auf, sich mit uns in einem Netzwerk zusammenzuschließen, die zu diesem Vorhaben beitragen wollen.
-Ein arbeitsfähiges Netzwerk kann leicht durch ein Schneeballsystem entstehen. 
-Wenn alle diesen Aufruf weiterleiten, wird schnell ein Team entstehen, so vielfältig 
-und sprachenreich wie Europa selbst.
-Das Netzwerk soll dann gemeinschaftlich die Themen für die Magazin-Ausgaben 
-abstimmen und passende Autorinnen und Autoren finden. Hierfür kommen alle 
-innerhalb oder außerhalb des Netzwerkes in Betracht, die einen europäischen 
-Dialog bereichern können.
-Die Übersetzungsarbeit wird als Open Source gestaltet, sodass die Arbeit gleichmäßig verteilt ist. Gleichzeitig wird dadurch die sprachliche Überprüfung der 
-Texte durch die anderen Übersetzerinnen und Übersetzer derselben Sprache 
-gewährleistet.
-Am Ende dieses Prozesses steht dann ein europäisches Magazin, der Beginn einer 
-europäischen Öffentlichkeit.
-Wer beitragen möchte, kann sich an odisseia@gmx.netwenden.</p>
-	</div>  
+<div id="contribute" class="container">
+<p class="menu-item-horizontal-text">{% trans "Contribute" %}</p>
+<div class="row">
+        <div class="col-md-3 slideanim">
+          <div class="contribute-thumbnail"></div>
+          <h2>{% trans "Propose an issue" %}</h2>
+          <p>{% trans "Propose an issue that you find interesting in your community" %}</p>
+        </div>
+        <div class="col-md-3 slideanim">
+          <div class="contribute-thumbnail"></div>
+          <h2>{% trans "Discuss" %}</h2>
+          <p>{% trans "Join issues proposed by others and discuss your proposed issues" %}</p>
+       </div>
+        <div class="col-md-3 slideanim">
+          <div class="contribute-thumbnail"></div>
+          <h2>{% trans "Vote" %}</h2>
+          <p>{% trans "Vote for your prefer Opinions and Articles!" %}</p>
+        </div>
+        <div class="col-md-3 slideanim">
+          <div class="contribute-thumbnail"></div>
+          <h2>{% trans "Publish" %}</h2>
+          <p>{% trans "After Opinions and Articles are choosen, or team will publish the fresh issue!" %}</p>
+        </div>
+      </div> 
 </div>

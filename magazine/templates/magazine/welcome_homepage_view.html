@@ -3,64 +3,21 @@
 {% block content %}
 
 <div  class=" welcomeimage">
-<h2><span>Europa und der Welt die Möglichkeit der Utopie zurückgeben
+<h2>
+<span>In light of the many and varied crises that currently mark this continent, and the need for new opportunities for action, we feel we have a responsibility. 
 <span class='spacer'></span><br />
-<span class='spacer'></span>Eine Stimme geben, Gehör finden und eine Stimme sein
+<span class='spacer'></span>We want to use our potential – contacts beyond national borders, a desire to write, and a desire for productive debate and discussion – to found a European magazine.
+<span class='spacer'></span><br />
+<span class='spacer'></span>With this magazine, we want to contribute to a European public. To this end, we set ourselves the <a href="/#statut">{% trans "following goals" %}</a>
 <span class='spacer'></span><br />
 <span class='spacer'></span><h4><a href="https://www.flickr.com/photos/mademoralesrodriguez/">Photo Rights</a></h4></span>
 </h2>
 </div>
 
-<div id="contribute" class="container">
-<div class="row">
-<p class="menu-item-horizontal-text">Contribute</p>
-        <div class="col-md-4 slideanim">
-          <div class="contribute-thumbnail"></div>
-          <h2>Propose an issue</h2>
-          <p>Propose an issue that you find interesting in your community</p>
-        </div>
-        <div class="col-md-4 slideanim">
-          <div class="contribute-thumbnail"></div>
-          <h2>Discuss</h2>
-          <p>Discuss other's and your issue. Join issues and discuss your own issues</p>
-       </div>
-        <div class="col-md-4 slideanim">
-          <div class="contribute-thumbnail"></div>
-          <h2>Vote</h2>
-          <p>Vote for your prefer Opinions and Articles!</p>
-        </div>
-      </div> 
-</div>
+{% include "magazine/contribute.html" %}
 
-<div id="statut" class="container-fluid">
-    <div class="col-md-2">
-        <p class="menu-item-vertical-text">Statut</p>
-    </div>
-    
-    {% comment "TODO Change parameter in loop" %}{% endcomment %}
-     {% for stat in issue.opinion_set.all %}
-    <div class="col-md-2">
-        <p>Ed ut perspiciatis unde omnis iste
-		natus error sit voluptatem accusantium doloremque laudantium, totam
-		rem aperiam, eaque ipsa quae ab illo
-		inventore veritatis et quasi architecto
-		beatae vitae dicta sunt explicabo.
-		Nemo enim ipsam voluptatem quia
-		voluptas sit aspernatur aut odit aut
-		fugit, sed quia consequuntur magni
-		dolores eos qui ratione voluptatem
-		sequi nesciunt.
-		Neque porro quisquam est,
-		qui dolorem ipsum quia dolor sit
-		amet, consectetur, adipisci velit, sed
-		quia non numquam eius modi tempora
-		incidunt ut labore et dolore magnam
-		aliquam quaerat voluptatem. Ut enim
-		ad minima veniam, quis nostrum
-		exercitationem ullam corporis suscipit</p>
-    </div>
-    {% endfor %}
-</div>
+{% include "magazine/statut.html" with issue=issue %}
+
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link

@@ -12,6 +12,11 @@ p {
     line-height: 2em;
 }
 
+mark {
+	background: #3c4ba7;
+	color: white;
+}
+
 /* body > header { */
 /*     padding-top: 20px; */
 /*     text-align: center; */
@@ -53,7 +58,7 @@ body > header .logo {
 
 .welcomeimage h2 { 
    color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
+   font: bold 30px/45px Helvetica, Sans-Serif; 
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
@@ -205,8 +210,7 @@ body > header .logo {
   padding-top: 10%;
 }
 
-#opinions,
-#statut {
+#opinions {
     padding: 200px 0;
 }
 
