@@ -24,7 +24,29 @@
         </ul>
       </div>
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-9">
+    <div class="row">
+    	<div class="col-sm-6">
+    	    	<div class="well">
+    		<h3>{% trans "Number of Articles" %}</h3>
+    		<h3><span class="label label-warning">{{ issue.amount_articles }}</span></h3>
+	        {% if issue.amount_articles = 0 %}
+	        	<p>{% trans "Be the first one to propose an Article!" %}</p>
+	        {% endif %}
+	        <p><a class="btn btn-info" href="{% url 'articles_view' issue.id %}">{% trans "Check Articles!" %}</a></p>
+      	</div>
+    	</div>
+    	<div class="col-sm-6">
+    	      	<div class="well">
+	        <h3>{% trans "Number of Opinions" %}</h3>
+	        <h3><span class="label label-warning">{{ issue.amount_opinions }}</span></h3>
+	        {% if issue.amount_opinions = 0%}
+	         <p>{% trans "Be the first one to propose an Opinion!" %}</p>
+	        {% endif %}
+	        <p><a class="btn btn-info" href="{% url 'opinions_view' issue.id %}">{% trans "Check Opinions!" %}</a></p>
+      	</div> 
+    	</div>   
+    </div>
 	<div class="row">
 	{% if is_contributor = True %}
 	  {% if not comments %}
@@ -62,24 +84,6 @@
 
       </div>
       
-    </div>
-    <div class="col-sm-2 well">
-    	<div class="well">
-    		<h3>{% trans "Number of Articles" %}</h3>
-    		<h3><span class="label label-warning">{{ issue.amount_articles }}</span></h3>
-	        {% if issue.amount_articles = 0 %}
-	        	<p>{% trans "Be the first one to propose an Article!" %}</p>
-	        {% endif %}
-	        <p><a class="btn btn-info" href="{% url 'articles_view' issue.id %}">{% trans "Check Articles!" %}</a></p>
-      	</div>
-      	<div class="well">
-	        <h3>{% trans "Number of Opinions" %}</h3>
-	        <h3><span class="label label-warning">{{ issue.amount_opinions }}</span></h3>
-	        {% if issue.amount_opinions = 0%}
-	         <p>{% trans "Be the first one to propose an Opinion!" %}</p>
-	        {% endif %}
-	        <p><a class="btn btn-info" href="{% url 'opinions_view' issue.id %}">{% trans "Check Opinions!" %}</a></p>
-      	</div>      
     </div>
   </div>
 </div>
