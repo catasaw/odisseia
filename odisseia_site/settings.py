@@ -49,6 +49,8 @@ INSTALLED_APPS = (
     'opinion',
     'issue',
     'contributor_profile',
+    'django_wysiwyg',
+    'tinymce',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,6 +84,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'odisseia_site.wsgi.application'
+
+#TINYMCE settings
+DJANGO_WYSIWYG_FLAVOR = "tinymce"
 
 
 # Database

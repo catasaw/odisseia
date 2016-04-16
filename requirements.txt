@@ -1,5 +1,7 @@
 dj-database-url==0.4.0
 Django==1.8.5
+django-tinymce==2.3.0
+django-wysiwyg==0.7.1
 gunicorn==19.4.5
 https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.3.tar.gz
 mysql-python==1.2.3
