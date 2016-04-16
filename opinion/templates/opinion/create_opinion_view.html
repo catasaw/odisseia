@@ -45,6 +45,40 @@
       				</div>
        	    	</div>
        	    	{% endif %}
+       	    	<div class="row">
+       	    	{% for opinion in opinions %}
+       	    		<div class="col-sm-3">
+			          <div class="well">
+			           <p>{% trans "Votes: " %}</p>
+			           <!-- # TODO: Refactor not to make a for here!   -->
+			           {% for opinion_vote in opinion.opinion_vote_set.all %}
+				           {% if opinion_vote.contributor_id = contributor_id %}
+				           <h3><span class="label label-success">{% trans "You voted " %} {{ opinion_vote.vote }}</span></h3>				           
+				           {% endif %}
+			           {% endfor %}
+			           
+			           <a href="{% url 'vote_view' opinion.issue_id opinion.id 'up'%}">
+			           <img class="sprite upVote"/>
+			           </a>			           
+			           <h3><span class="label label-warning">{{ opinion.get_votes_count }}</span></h3>
+			           <a href="{% url 'vote_view' opinion.issue_id opinion.id 'down'%}">
+			           <img class="sprite downVote"/>
+			           </a>
+			          </div>
+        			</div>
+			        <div class="col-sm-9">
+			          <div class="panel panel-default">
+				          <div class="panel-heading">
+				          	<span class="label label-primary">{% trans "By: " %} {{opinion.contributor.get_short_name}}</span>
+				          	<span class="label label-success">{{opinion.created_at}}</span>
+				          </div>
+				          <div class="panel-body">
+				          <p>{{ opinion.content |safe }}</p>
+				          </div>
+			          </div>
+			        </div>
+			      {% endfor %}
+			      </div>
       		</div>
       		
     	</div>

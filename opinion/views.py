@@ -117,4 +117,16 @@ def create_opinion_view(request, issue_id):
     context['contributor_id'] = request.user.id
     context['issue_id'] = issue_id
     return render(request, 'opinion/create_opinion_view.html', context)
+
+def read_opinion_view(request, issue_id, opinion_id):
+    context = {}
+    context['contributor_id'] = request.user.id
+    context['issue_id'] = issue_id
+    
+    # TODO: Order by most positive votes
+    # TODO: Write this in a Manager?
+    opinion = Opinion.objects.get(id=opinion_id)
+                                                                                 
+    context['opinion'] = opinion
+    return render(request, 'opinion/read_opinion_view.html', context)
     

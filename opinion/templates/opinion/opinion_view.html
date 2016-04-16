@@ -12,9 +12,9 @@
       			<h3>{% trans "Well done! Your opinions are being revised to be published soon!" %}</h3>
       			</div>
       		{% else %}
-      			<div>
+      			<p>
       			<a class="btn btn-primary" href="{% url 'create_opinion_view' issue_id %}">{% trans "Propose an opinion!" %}</a>
-      			</div>
+      			</p>
        	    {% endif %}
        	    	<div class="row">
        	    	{% for opinion in opinions %}
@@ -44,7 +44,8 @@
 				          	<span class="label label-success">{{opinion.created_at}}</span>
 				          </div>
 				          <div class="panel-body text-left">
-				          <p>{{ opinion.content |safe }}</p>
+				          <p>{{ opinion.content |safe |truncatewords:50 }}</p>
+				          <a href="{% url 'read_opinion_view' opinion.issue_id opinion.id %}">{% trans "Read more" %}</a>
 				          </div>
 			          </div>
 			        </div>
