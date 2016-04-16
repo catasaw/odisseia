@@ -5,46 +5,17 @@
 
 <div class="container text-center">    
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
       		<div class="row">
       		{% if issue_is_pending == True %}
       			<div class="alert alert-success" role="alert">
       			<h3>{% trans "Well done! Your opinions are being revised to be published soon!" %}</h3>
       			</div>
       		{% else %}
-      		<h3>{% trans "Propose an opinion to be voted" %}</h3>
-      			<div class="row">					
-		      		<div class="col-sm-12">
-				      <div class="panel panel-default">
-				      <div class="panel-body">
-						<h2>{% trans "New Opinion" %}</h2>
-						{% if form.errors %}
-						    {% for field in form %}
-						        {% for error in field.errors %}
-						            <div class="alert alert-danger">
-						                <strong>{{ error|escape }}</strong>
-						            </div>
-						        {% endfor %}
-						    {% endfor %}
-						    {% for error in form.non_field_errors %}
-						        <div class="alert alert-danger">	
-						            <strong>{{ error|escape }}</strong>
-						        </div>
-						    {% endfor %}
-						{% endif %}	
-						{% wysiwyg_setup %}
-						<form action="." method="post" novalidate>{% csrf_token %}
-						    {{ form }}
-						    <div>
-						        <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Propose Opinion" %}</button>
-						    </div>
-						</form>
-						{% wysiwyg_editor "opinion_field" %}
-						</div>
-					  </div>
-      				</div>
-       	    	</div>
-       	    	{% endif %}
+      			<div>
+      			<a class="btn btn-primary" href="{% url 'create_opinion_view' issue_id %}">{% trans "Propose an opinion!" %}</a>
+      			</div>
+       	    {% endif %}
        	    	<div class="row">
        	    	{% for opinion in opinions %}
        	    		<div class="col-sm-3">
@@ -72,7 +43,7 @@
 				          	<span class="label label-primary">{% trans "By: " %} {{opinion.contributor.get_short_name}}</span>
 				          	<span class="label label-success">{{opinion.created_at}}</span>
 				          </div>
-				          <div class="panel-body">
+				          <div class="panel-body text-left">
 				          <p>{{ opinion.content |safe }}</p>
 				          </div>
 			          </div>
@@ -82,17 +53,7 @@
       		</div>
       		
     	</div>
-    <div class="col-sm-3">
-    	<div class="panel panel-danger">
-    	<div class="panel-heading"><h3 class="panel-title">{% trans "Rules" %}</h3></div>
-      	</div>
-      	<ul class="list-group">
-  			<li class="list-group-item ">{% trans "All content must be original. Unoriginal or reposted content will be removed." %}</li>
-			<li class="list-group-item">{% trans "No puns/wordplay." %}</li>
-  			<li class="list-group-item ">{% trans "All content must be original. Unoriginal or reposted content will be removed." %}</li>
-			<li class="list-group-item  ">{% trans "No puns/wordplay." %}</li>
-		</ul>	
-    </div>
+
   </div>
 </div>
 	
