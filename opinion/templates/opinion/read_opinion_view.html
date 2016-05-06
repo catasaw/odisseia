@@ -24,7 +24,7 @@
 				          <div class="panel-heading text-left">
 				          	<span class="opinion-contributor">{% trans "By: " %} {{opinion.contributor.get_short_name}}</span> 
 				          	<span class="opinion-created_at">| {{opinion.created_at|date:"M d'y "}}</span>
-				          	{% include "opinion/vote_opinion_view.html" with opinion=opinion user_voted=user_voted total_votes=total_votes %}				          	
+				          	{% include "opinion/vote_opinion_view.html" with opinion=opinion user_voted=user_voted total_votes=total_votes is_user_opinion=is_user_opinion%}				          	
 				          </div>
 				          <div class="panel-body text-left">
 				          <p>{{ opinion.content |safe }}</p>

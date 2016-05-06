@@ -123,6 +123,13 @@ def read_opinion_view(request, issue_id, opinion_id):
     context['contributor_id'] = request.user.id
     context['issue_id'] = issue_id
     # TODO: NOT DO IT HERE!
+    is_user_opinion= True
+    try:
+        is_user_opinion = Opinion.objects.filter(id = opinion_id).filter(contributor_id = request.user.id)
+    except Opinion.DoesNotExist:
+        is_user_opinion= False
+        
+    context['is_user_opinon']= is_user_opinion
     user_voted =  Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
     if user_voted == 1:
         context['user_voted']= True

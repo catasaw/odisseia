@@ -2,11 +2,14 @@
 
 
 <!-- # TODO: Refactor not to make a for here!   -->
-{% if user_voted == True %}
-		 | <span class="glyphicon glyphicon-ok opinion-contributor"> {% trans "You voted " %}</span>				           
+{% if is_user_opinion == False %} 
+	{% if user_voted == True %}
+			 | <span class="glyphicon glyphicon-ok opinion-contributor"> {% trans "You voted " %}</span>				           
+	{% else %}
+		 <span class="btn btn-primary"><a href="{% url 'vote_view' opinion.issue_id opinion.id 'up'%}">{% trans "Vote" %}</a></span>
+	{% endif %}
+	 | <span class="opinion-created_at">{% trans "Total Votes " %}{{ opinion.get_votes_count }}</span>
 {% else %}
-	 <span class="btn btn-primary"><a href="{% url 'vote_view' opinion.issue_id opinion.id 'up'%}">{% trans "Vote" %}</a></span>
+	| <span class="opinion-contributor"> {% trans "Your propose opinion" %}</span>	
 {% endif %}
- | <span class="opinion-created_at">{% trans "Total Votes " %}{{ opinion.get_votes_count }}</span>
-
 
