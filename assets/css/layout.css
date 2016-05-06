@@ -337,6 +337,29 @@ select {
             top: -20px;
             width: 100%;
         }
+        
+/*Styling for buttons */
+.btn {
+    display: inline-block;
+    padding: .5em .75em .375em .75em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: "simplon","Helvetica","Arial",sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    -webkit-transition: all,0.4s;
+    -moz-transition: all,0.4s;
+    transition: all,0.4s;
+}
+.btn-primary {
+	background-color: transparent;
+	color:  #3c4ba7;
+	border-color:  #3c4ba7
+}
 
 /*Styligin for divs into issue*/
 .opinions_issue_panel {
