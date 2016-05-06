@@ -30,7 +30,7 @@ urlpatterns = i18n_patterns('',
     url(r'^', include('opinion.urls')),
     url(r'^', include('issue.urls')),
     url(r'^', include('contributor_profile.urls')),
-    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
 )

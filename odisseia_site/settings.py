@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     'issue',
     'contributor_profile',
     'django_wysiwyg',
-    'tinymce',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,9 +85,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'odisseia_site.wsgi.application'
 
-#TINYMCE settings
-DJANGO_WYSIWYG_FLAVOR = "tinymce"
-
+#CKEDITOR settings
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

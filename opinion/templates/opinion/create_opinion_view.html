@@ -1,5 +1,8 @@
 {% extends "magazine/layout.html" %}
 {% load i18n %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 {% block content %}
 {% load wysiwyg %}
 
