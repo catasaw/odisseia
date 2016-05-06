@@ -50,8 +50,10 @@
 	        <h3><span class="label label-warning">{{ issue.amount_opinions }}</span></h3>
 	        {% if issue.amount_opinions = 0%}
 	         <p>{% trans "Be the first one to propose an Opinion!" %}</p>
-	        {% endif %}
+	         <p><a class="btn btn-info" href="{% url 'create_opinion_view' issue.id %}">{% trans "Propose an opinion" %}</a></p>
+	        {% else %}
 	        <p><a class="btn btn-info" href="{% url 'opinions_view' issue.id %}">{% trans "Check Opinions!" %}</a></p>
+	        {% endif %}
       	</div> 
     	</div>   
     </div>
