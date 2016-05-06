@@ -1,5 +1,6 @@
 dj-database-url==0.4.0
 Django==1.8.5
+django-bootstrap-breadcrumbs==0.7.3
 django-ckeditor==5.0.3
 django-wysiwyg==0.7.1
 gunicorn==19.4.5

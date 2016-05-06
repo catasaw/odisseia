@@ -1,6 +1,16 @@
-{% extends "magazine/layout.html" %}
+{% extends "opinion/opinion_view.html" %}
+{% load django_bootstrap_breadcrumbs %}
 {% load i18n %}
 {% block content %}
+
+{% block breadcrumbs %}
+{% clear_breadcrumbs %}
+	{{ block.super }}
+	{% breadcrumb "Opinion" "read_opinion_view" issue_id opinion_id %}
+{% endblock %}
+
+{% render_breadcrumbs %}
+
 {% load wysiwyg %}
 
 <div class="container text-center">    

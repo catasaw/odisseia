@@ -1,7 +1,15 @@
 {% extends "magazine/layout.html" %}
+{% load django_bootstrap_breadcrumbs %}	
 {% load i18n %}
 {% block content %}
 
+{% block breadcrumbs %}
+{% clear_breadcrumbs %}
+	{% breadcrumb "Dashboard" "dashboard" %}
+	{% breadcrumb "Issue" "issue_view" issue_id %}
+{% endblock %}
+
+{% render_breadcrumbs %}
 <div class="container text-center">    
   <div class="row">
     <div class="col-sm-3 well">

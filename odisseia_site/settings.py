@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'contributor_profile',
     'django_wysiwyg',
     'ckeditor',
+    'django_bootstrap_breadcrumbs',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
