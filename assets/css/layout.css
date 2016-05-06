@@ -338,6 +338,44 @@ select {
             width: 100%;
         }
 
+/*Styligin for divs into issue*/
+.opinions_issue_panel {
+	font-size: 14px;
+	border-color: transparent;
+}
+
+.opinions_issue_panel .panel-heading {
+	font-size: 14px;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.opinion-contributor {
+	color: #3c4ba7;
+	font-weight: bold;
+}
+
+.opinion-created_at {
+	color: black;
+	font-weight: bold;
+}
+
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 8px auto;
+   height: 0;
+   width: 100%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top: 1px solid #aaaaaa;
+   border-bottom: 1px solid #ffffff;
+}
+
 /*Sprite for homepage */
 .sprite { background: url('../img/sprites/homepage.png') no-repeat top left; width: 30px; height: 16px;  } 
 .sprite.headerLogo { background-position: 0 0; width: 385px; height: 109px; } 
