@@ -71,7 +71,7 @@ def vote_view(request, issue_id, opinion_id, vote_type):
         
     
     # TODO: Double check if redirect is ok
-    return redirect('opinions_view', issue_id = issue_id)
+    return redirect('read_opinion_view', issue_id = issue_id, opinion_id=opinion_id)
 
 # Check if issue is ready to go be approved by Creators
 # TODO: Validate votes against Article
@@ -122,6 +122,13 @@ def read_opinion_view(request, issue_id, opinion_id):
     context = {}
     context['contributor_id'] = request.user.id
     context['issue_id'] = issue_id
+    # TODO: NOT DO IT HERE!
+    user_voted =  Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
+    if user_voted == 1:
+        context['user_voted']= True
+    else:
+        context['user_voted'] = False
+    context['total_votes'] = Opinion_Vote.objects.filter(opinion_id = opinion_id).count()
     
     # TODO: Order by most positive votes
     # TODO: Write this in a Manager?

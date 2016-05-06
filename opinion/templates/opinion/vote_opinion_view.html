@@ -1,0 +1,12 @@
+{% load i18n %}
+
+
+<!-- # TODO: Refactor not to make a for here!   -->
+{% if user_voted == True %}
+		 | <span class="glyphicon glyphicon-ok opinion-contributor"> {% trans "You voted " %}</span>				           
+{% else %}
+	 <span class="btn btn-primary"><a href="{% url 'vote_view' opinion.issue_id opinion.id 'up'%}">{% trans "Vote" %}</a></span>
+{% endif %}
+ | <span class="opinion-created_at">{% trans "Total Votes " %}{{ opinion.get_votes_count }}</span>
+
+
