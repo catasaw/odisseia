@@ -358,7 +358,24 @@ select {
 .btn-primary {
 	background-color: transparent;
 	color:  #3c4ba7;
-	border-color:  #3c4ba7
+	border-color:  #3c4ba7;
+}
+
+.btn-primary:hover {
+    border-color: #3c4ba7;
+    color: #fff;
+}
+
+.btn-info {	
+    color: #fff;
+    background-color: #3c4ba7;
+    border-color: #3c4ba7;
+}
+
+.btn-info:hover {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
 }
 
 /*Styligin for divs into issue*/
