@@ -87,7 +87,9 @@
 	          <span class="label label-primary">{% trans "By: " %} {{comment.contributor.get_short_name}}</span>
 	          <span class="label label-success">{{comment.created_at}}</span>
 	          </div>
+	          <div class="panel-body text-left">
 	          <p>{{comment.content | safe}}</p>
+	          </div>
           </div>
         </div>
       {% endfor %}
