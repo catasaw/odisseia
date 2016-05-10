@@ -338,6 +338,11 @@ select {
             width: 100%;
         }
         
+        .form_hover .panel-footer {
+        	background-color: #3c4ba7;
+        	color: #fff;
+        }
+        
 /*Styling for buttons */
 .btn {
     display: inline-block;

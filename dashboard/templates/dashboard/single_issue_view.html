@@ -2,13 +2,13 @@
 
       <div class="row">
       {% for issue in issues %}
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="panel panel-default form_hover">
           <div class="panel-body">
           <h2><a href="{% url 'issue_view' issue.id %}">{{issue.title}}</a></h2>
 		  <p>
-	          <span class="label label-warning">{% trans "Contributors" %} {{issue.issue_contributors.count}}</span> 
-	          <span class="label label-primary">{% trans "Comments" %} {{issue.comment_set.count}}</span>
+	          <span>{% trans "Contributors" %} </span> <span class="label label-primary"> {{issue.issue_contributors.count}}</span> 
+	          <span>{% trans "Comments" %} </span> <span class="label label-primary">{{issue.comment_set.count}}</span>
 	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
 	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
 	       </p>
