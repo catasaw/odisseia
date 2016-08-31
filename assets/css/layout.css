@@ -41,6 +41,11 @@ body > header .logo {
   .navbar li a, .navbar .navbar-brand {
       color: !important;
   }
+  
+  .navbar-default {
+  	background-color: white !important;
+    border-color: white;
+  }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #3c4ba7 !important;
       background-color: #e7e7e7 !important;
@@ -82,13 +87,37 @@ body > header .logo {
 
 
 .contribute-thumbnail {
-	background-image: url('../img/contribute-thumbnail.png') ; 
     margin-right: -15px; 
-    margin-left: -15px;  
+    margin-left: 55px;  
     padding-bottom: 62.5%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.contribute-thumbnail {
+	width: 100%;
+	background-image: url('../img/contribute-thumbnail.png') ; 
+}
+
+.propose-thumbnail {
+	width: 60%;
+	background-image: url('../img/propose-thumbnail.png') ; 
+}
+
+.discuss-thumbnail {
+	width: 70%;
+	background-image: url('../img/discuss-thumbnail.png') ; 
+}
+
+.vote-thumbnail {
+	width: 60%;
+	background-image: url('../img/vote-thumbnail.png') ; 
+}
+
+.publish-thumbnail {
+	width: 70%;
+	background-image: url('../img/publish-thumbnail.png') ; 
 }
 
   
