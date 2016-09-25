@@ -21,10 +21,10 @@
 
 <body id="myPage">
     <header>
-
-        <div class='logo sprite headerLogo'></div>
-
-{% include "magazine/menu.html" with user=user %}
+    	<div class='mobile-hide'>
+        	<div class='logo sprite headerLogo'></div>
+        </div>
+    {% include "magazine/menu.html" with user=user %}
     </header>
 	{% block content %} {% endblock %}
 

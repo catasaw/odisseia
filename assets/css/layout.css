@@ -185,7 +185,7 @@ body > header .logo {
 
 @media only screen and (max-width: 28.75em) {
   .menu-item-horizontal-text {
-   font-size: 300%;
+   font-size: 250%;
   }
 }
 
@@ -471,8 +471,27 @@ hr {
 }
 
 /*Sprite for homepage */
+.sprite.headerLogo { 
+	background-image:url('../img/headerLogo.png'); 
+	width: 385px; 
+	height: 109px; 
+}
+
+
+.small-headerLogo {
+	background-image:url('../img/small-headerLogo.png'); 
+	height: 60px;
+	width: 230px;
+	float: left;
+  }
+}
+
+/* Overriding Bootrap toogle menu so that it fits together with small logo*/
+/* .navbar-toggle { */
+/*     margin-top: 30px !important; this is the only property that changes */
+/* } */
 .sprite { background: url('../img/sprites/homepage.png') no-repeat top left; width: 30px; height: 16px;  } 
-.sprite.headerLogo { background-position: 0 0; width: 385px; height: 109px; } 
+ 
 .sprite.languages { background-position: 0 -119px; width: 69px; height: 55px; } 
 .sprite.readMore { background-position: 0 -184px; width: 65px; height: 35px; } 
 .sprite.readMoreGray { background-position: 0 -229px; width: 66px; height: 30px; } 
