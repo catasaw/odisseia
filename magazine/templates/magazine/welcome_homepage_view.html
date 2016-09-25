@@ -2,7 +2,8 @@
 {% load i18n %}
 {% block content %}
 
-<div  class=" welcomeimage">
+<div class="welcomeimage">
+<div class="mobile-hide">
 <h2>
 <span>{% trans "In light of the many and varied crises that currently mark this continent, and the need for new opportunities for action, we feel we have a responsibility." %} 
 <span class='spacer'></span><br />
@@ -12,6 +13,14 @@
 <span class='spacer'></span><br />
 <span class='spacer'></span><h4><a href="https://www.flickr.com/photos/mademoralesrodriguez/">Photo Rights</a></h4></span>
 </h2>
+</div>
+<div class="mobile-show">
+<h2>
+<span>{% trans "We want to use our potential – contacts beyond national borders, a desire to write, and a desire for productive debate and discussion – to found a European magazine." %}
+<span class='spacer'></span><br />
+<span class='spacer'></span><h4><a href="https://www.flickr.com/photos/mademoralesrodriguez/">Photo Rights</a></h4></span>
+</h2>
+</div>
 </div>
 
 {% include "magazine/contribute.html" %}
