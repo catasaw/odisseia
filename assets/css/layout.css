@@ -53,7 +53,10 @@ body > header .logo {
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
+      margin-top: 25px;
+      padding: 0;
   }
+  
  
 /*Mobile View*/
 
@@ -486,10 +489,6 @@ hr {
   }
 }
 
-/* Overriding Bootrap toogle menu so that it fits together with small logo*/
-/* .navbar-toggle { */
-/*     margin-top: 30px !important; this is the only property that changes */
-/* } */
 .sprite { background: url('../img/sprites/homepage.png') no-repeat top left; width: 30px; height: 16px;  } 
  
 .sprite.languages { background-position: 0 -119px; width: 69px; height: 55px; } 
