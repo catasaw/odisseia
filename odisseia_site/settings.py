@@ -26,9 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-a&bj_$#_%_a#d3uajyr%$rll2*kzvhu^qbwls%!num0karl^g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'staging.odisseia.eu']
+DEBUG = True
 
 
 # Application definition
@@ -97,7 +95,14 @@ CKEDITOR_ALLOW_NONIMAGE_FILES = False
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {}
+    'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'odisseia',
+         'USER': 'root',
+         'PASSWORD': 'root',
+         'HOST': 'localhost',
+         'PORT': '3306'
+                }
 }
 
 db_from_env = dj_database_url.config()
@@ -126,9 +131,9 @@ LANGUAGES = [
 ]
 
 #Emails
-SENDGRID_USERNAME = os.environ['SENDGRID_USERNAME']
-SENDGRID_PASSWORD = os.environ['SENDGRID_PASSWORD']
-EMAIL_TEMPLATE = os.environ['EMAIL_TEMPLATE']
+#SENDGRID_USERNAME = os.environ['SENDGRID_USERNAME']
+#SENDGRID_PASSWORD = os.environ['SENDGRID_PASSWORD']
+#EMAIL_TEMPLATE = os.environ['EMAIL_TEMPLATE']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
