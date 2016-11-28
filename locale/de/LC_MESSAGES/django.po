@@ -250,32 +250,33 @@ msgid "Contribute"
 msgstr ""
 
 #: .\magazine\templates\magazine\contribute.html:8
-msgid "Propose an issue"
-msgstr ""
+msgid "Propose a topic"
+msgstr "Ideen einbringen"
 
 #: .\magazine\templates\magazine\contribute.html:9
-msgid "Propose an issue that you find interesting in your community"
-msgstr ""
+msgid "Propose a topic that you find interesting in your
+community"
+msgstr "Bring Themen für eine neue Ausgabe ein, die Du spannend findest"
 
 #: .\magazine\templates\magazine\contribute.html:13
 msgid "Discuss"
-msgstr ""
+msgstr "Diskutieren"
 
 #: .\magazine\templates\magazine\contribute.html:14
-msgid "Join issues proposed by others and discuss your proposed issues"
-msgstr ""
+msgid "Join topics proposed by others and discuss"
+msgstr "Diskutiere mit anderen über deren Ausgabe und über deine Ideen."
 
 #: .\magazine\templates\magazine\contribute.html:18
 msgid "Vote"
-msgstr ""
+msgstr "Abstimmen"
 
 #: .\magazine\templates\magazine\contribute.html:19
-msgid "Vote for your prefer Opinions and Articles!"
-msgstr ""
+msgid "Vote for your prefered opinions and articles"
+msgstr "Stimme über die Beiträge und Themen ab, die Dir am besten gefallen"
 
 #: .\magazine\templates\magazine\contribute.html:23
 msgid "Publish"
-msgstr ""
+msgstr "Veröffentlichen"
 
 #: .\magazine\templates\magazine\contribute.html:24
 msgid ""
