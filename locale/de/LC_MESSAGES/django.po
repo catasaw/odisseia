@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-16 13:40+0100\n"
+"POT-Creation-Date: 2016-11-28 23:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,321 +18,326 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\article\templates\article\article_view.html:5
+#: article/templates/article/article_view.html:5
 msgid "List of Articles"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:9
+#: contributor_profile/templates/contributor_profile/profile_view.html:9
 msgid "My Details"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:18
+#: contributor_profile/templates/contributor_profile/profile_view.html:18
 msgid "I can translate from"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:28
+#: contributor_profile/templates/contributor_profile/profile_view.html:28
 msgid "To these languages"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:40
+#: contributor_profile/templates/contributor_profile/profile_view.html:40
 msgid "Already published issues"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:52
+#: contributor_profile/templates/contributor_profile/profile_view.html:52
 msgid "Issues waiting for approval"
 msgstr ""
 
-#: .\contributor_profile\templates\contributor_profile\profile_view.html:64
+#: contributor_profile/templates/contributor_profile/profile_view.html:64
 msgid "Issues in progress"
 msgstr ""
 
-#: .\dashboard\issueform.py:7
+#: dashboard/issueform.py:7
 msgid "Write title here"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\issues_dashboard.html:13
+#: dashboard/templates/dashboard/issues_dashboard.html:13
 msgid "My issues"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\issues_dashboard.html:19
+#: dashboard/templates/dashboard/issues_dashboard.html:19
 msgid "Check the issues currently in progress to be published!"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\join_issue_successful.html:5
+#: dashboard/templates/dashboard/join_issue_successful.html:5
 msgid ""
 "Now you are part of this issue! Click on the link below go to back to issue"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\join_issue_successful.html:6
-#: .\issue\templates\issue\pending_issues_view.html:22
+#: dashboard/templates/dashboard/join_issue_successful.html:6
+#: issue/templates/issue/pending_issues_view.html:22
 msgid "Go to issue"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\new_issue_view.html:5
+#: dashboard/templates/dashboard/new_issue_view.html:5
 msgid "New Issue"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\new_issue_view.html:25
+#: dashboard/templates/dashboard/new_issue_view.html:25
 msgid "Post Issue"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\pending_view.html:5
+#: dashboard/templates/dashboard/pending_view.html:5
 msgid ""
 "This issue has completed the votes to go be pending. Wait for the approval "
 "of the Discussion board and we will get back to you!"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\pending_view.html:6
+#: dashboard/templates/dashboard/pending_view.html:6
 msgid "Go to dashboard"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:10
+#: dashboard/templates/dashboard/single_issue_view.html:10
 msgid "Contributors"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:11
+#: dashboard/templates/dashboard/single_issue_view.html:11
 msgid "Comments"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:12
+#: dashboard/templates/dashboard/single_issue_view.html:12
 msgid "Proposed articles"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:13
+#: dashboard/templates/dashboard/single_issue_view.html:13
 msgid "Proposed opinions"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:21
+#: dashboard/templates/dashboard/single_issue_view.html:21
 msgid "Be te first one to write a comment!"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:35
+#: dashboard/templates/dashboard/single_issue_view.html:35
 msgid "Previous"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:40
+#: dashboard/templates/dashboard/single_issue_view.html:40
 msgid "Next"
 msgstr ""
 
-#: .\forum\commentform.py:7 .\opinion\opinionform.py:7
+#: forum/commentform.py:7
 msgid "Write your comment here ..."
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:11
+#: forum/templates/forum/issue_view.html:19
 msgid "Join the team!"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:13
+#: forum/templates/forum/issue_view.html:21
 msgid "You are already part of this issue!"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:15
+#: forum/templates/forum/issue_view.html:23
 msgid "Created at"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:18
+#: forum/templates/forum/issue_view.html:26
 msgid "Number of Contributors: "
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:31
-msgid "Be the first one to write an opinion about it!"
-msgstr ""
-
-#: .\forum\templates\forum\issue_view.html:41
-msgid "Submit comment"
-msgstr ""
-
-#: .\forum\templates\forum\issue_view.html:55
-#: .\opinion\templates\opinion\opinion_view.html:69
-msgid "By: "
-msgstr ""
-
-#: .\forum\templates\forum\issue_view.html:68
+#: forum/templates/forum/issue_view.html:39
 msgid "Number of Articles"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:71
+#: forum/templates/forum/issue_view.html:42
 msgid "Be the first one to propose an Article!"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:73
+#: forum/templates/forum/issue_view.html:44
 msgid "Check Articles!"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:76
+#: forum/templates/forum/issue_view.html:49
 msgid "Number of Opinions"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:79
+#: forum/templates/forum/issue_view.html:52
 msgid "Be the first one to propose an Opinion!"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:81
+#: forum/templates/forum/issue_view.html:53
+#, fuzzy
+#| msgid "Propose a topic"
+msgid "Propose an opinion"
+msgstr "Ideen einbringen"
+
+#: forum/templates/forum/issue_view.html:55
 msgid "Check Opinions!"
 msgstr ""
 
-#: .\issue\templates\issue\pending_issues_view.html:23
+#: forum/templates/forum/issue_view.html:63
+msgid "Be the first one to write an opinion about it!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:73
+msgid "Submit comment"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:87
+#: opinion/templates/opinion/create_opinion_view.html:85
+#: opinion/templates/opinion/opinion_view.html:34
+#: opinion/templates/opinion/read_opinion_view.html:25
+msgid "By: "
+msgstr ""
+
+#: issue/templates/issue/pending_issues_view.html:23
 msgid "Approve"
 msgstr ""
 
-#: .\issue\templates\issue\pending_issues_view.html:24
+#: issue/templates/issue/pending_issues_view.html:24
 msgid "Reject"
 msgstr ""
 
-#: .\issue\templates\issue\successful_change_status.html:5
+#: issue/templates/issue/successful_change_status.html:5
 msgid "This issue was updated! :) "
 msgstr ""
 
-#: .\issue\templates\issue\successful_change_status.html:6
+#: issue/templates/issue/successful_change_status.html:6
 msgid "Pending issues view"
 msgstr ""
 
-#: .\login\loginform.py:8 .\login\registrationform.py:9
+#: login/loginform.py:8 login/registrationform.py:9
 msgid "E-mail"
 msgstr ""
 
-#: .\login\loginform.py:8 .\login\registrationform.py:9
+#: login/loginform.py:8 login/registrationform.py:9
 msgid "Email address"
 msgstr ""
 
-#: .\login\loginform.py:9 .\login\registrationform.py:10
+#: login/loginform.py:9 login/registrationform.py:10
 msgid "Password"
 msgstr ""
 
-#: .\login\registrationform.py:11
+#: login/registrationform.py:11
 msgid "Repeat Password"
 msgstr ""
 
-#: .\login\registrationform.py:11
+#: login/registrationform.py:11
 msgid "Password (again)"
 msgstr ""
 
-#: .\login\registrationform.py:20
+#: login/registrationform.py:20
 msgid "The email already exists. Please try another one."
 msgstr ""
 
-#: .\login\registrationform.py:26
+#: login/registrationform.py:26
 msgid "The two password fields did not match."
 msgstr ""
 
-#: .\login\templates\login\disabled_accountl.html:5
+#: login/templates/login/disabled_accountl.html:5
 msgid "Your account is disabled :( "
 msgstr ""
 
-#: .\login\templates\login\login.html:5 .\login\templates\login\login.html:28
-#: .\magazine\templates\magazine\menu.html:32
+#: login/templates/login/login.html:5 login/templates/login/login.html.py:28
+#: magazine/templates/magazine/menu.html:36
 msgid "Login"
 msgstr ""
 
-#: .\login\templates\login\login_successful.html:5
+#: login/templates/login/login_successful.html:5
 msgid "Thank you for your contribution! Remember to confirm your account! :) "
 msgstr ""
 
-#: .\login\templates\login\login_successful.html:6
+#: login/templates/login/login_successful.html:6
 msgid "Dashboard"
 msgstr ""
 
-#: .\login\templates\login\signup.html:35
+#: login/templates/login/signup.html:35
 msgid "I can translate from:"
 msgstr ""
 
-#: .\login\templates\login\signup.html:43
+#: login/templates/login/signup.html:43
 msgid "To:"
 msgstr ""
 
-#: .\login\templates\login\signup.html:51
+#: login/templates/login/signup.html:51
 msgid "Sign up"
 msgstr ""
 
-#: .\magazine\templates\magazine\contribute.html:4
-#: .\magazine\templates\magazine\menu.html:16
+#: magazine/templates/magazine/contribute.html:4
+#: magazine/templates/magazine/menu.html:20
 msgid "Contribute"
 msgstr ""
 
-#: .\magazine\templates\magazine\contribute.html:8
+#: magazine/templates/magazine/contribute.html:8
 msgid "Propose a topic"
 msgstr "Ideen einbringen"
 
-#: .\magazine\templates\magazine\contribute.html:9
-msgid "Propose a topic that you find interesting in your
-community"
+#: magazine/templates/magazine/contribute.html:9
+msgid "Propose a topic that you find interesting in your community"
 msgstr "Bring Themen für eine neue Ausgabe ein, die Du spannend findest"
 
-#: .\magazine\templates\magazine\contribute.html:13
+#: magazine/templates/magazine/contribute.html:13
 msgid "Discuss"
 msgstr "Diskutieren"
 
-#: .\magazine\templates\magazine\contribute.html:14
+#: magazine/templates/magazine/contribute.html:14
 msgid "Join topics proposed by others and discuss"
 msgstr "Diskutiere mit anderen über deren Ausgabe und über deine Ideen."
 
-#: .\magazine\templates\magazine\contribute.html:18
+#: magazine/templates/magazine/contribute.html:18
+#: opinion/templates/opinion/vote_opinion_view.html:9
 msgid "Vote"
 msgstr "Abstimmen"
 
-#: .\magazine\templates\magazine\contribute.html:19
+#: magazine/templates/magazine/contribute.html:19
 msgid "Vote for your prefered opinions and articles"
 msgstr "Stimme über die Beiträge und Themen ab, die Dir am besten gefallen"
 
-#: .\magazine\templates\magazine\contribute.html:23
+#: magazine/templates/magazine/contribute.html:23
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: .\magazine\templates\magazine\contribute.html:24
-msgid "After opinions and articles are chosen, our team will publish your topic"
-msgstr "Nachdem die Beiträge ausgewählt sind, werden sie durch unser Team veröffentlicht und frei zugänglich gemacht"
-
-#: .\magazine\templates\magazine\footer.html:11
+#: magazine/templates/magazine/footer.html:11
 msgid "Impress"
 msgstr ""
 
-#: .\magazine\templates\magazine\footer.html:14
+#: magazine/templates/magazine/footer.html:14
 msgid "Contact"
 msgstr ""
 
-#: .\magazine\templates\magazine\homepage.html:14
-#: .\magazine\templates\magazine\homepage.html:22
-#: .\magazine\templates\magazine\homepage.html:24
+#: magazine/templates/magazine/homepage.html:14
+#: magazine/templates/magazine/homepage.html:22
+#: magazine/templates/magazine/homepage.html:24
+#: opinion/templates/opinion/opinion_view.html:40
 msgid "Read more"
 msgstr "Lies weiter"
 
-#: .\magazine\templates\magazine\menu.html:15
+#: magazine/templates/magazine/menu.html:19
 msgid "Start"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:17
+#: magazine/templates/magazine/menu.html:21
 msgid "Statute"
 msgstr "Statut"
 
-#: .\magazine\templates\magazine\menu.html:19
+#: magazine/templates/magazine/menu.html:23
 msgid "My profile"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:20
+#: magazine/templates/magazine/menu.html:24
 msgid "Explore"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:21
+#: magazine/templates/magazine/menu.html:25
 msgid "Propose an isue!"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:23
+#: magazine/templates/magazine/menu.html:27
 msgid "Issues to be approved"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:30
+#: magazine/templates/magazine/menu.html:34
 msgid "Logout"
 msgstr ""
 
-#: .\magazine\templates\magazine\menu.html:33
+#: magazine/templates/magazine/menu.html:37
 msgid "Signup"
 msgstr "Registrieren"
 
-#: .\magazine\templates\magazine\statut.html:6
+#: magazine/templates/magazine/statut.html:6
 msgid "Statut"
 msgstr "Statut"
 
-#: .\magazine\templates\magazine\statut.html:8
+#: magazine/templates/magazine/statut.html:8
 msgid ""
 "\n"
 "\t          <h2>To give Europe back the chance of utopia</h2>\n"
@@ -358,7 +363,7 @@ msgstr ""
 "\t\t\t  <small><em>* 1 Homer, Odyssey, Book I, Lines 3-5.</em></small>\n"
 "\t\t\t\t"
 
-#: .\magazine\templates\magazine\statut.html:17
+#: magazine/templates/magazine/statut.html:17
 msgid ""
 "\t        \n"
 "\t        <h2>To give a voice, to be heard, to be a voice</h2>\n"
@@ -393,7 +398,7 @@ msgstr ""
 "\t\t\t\t</p>\n"
 "\t\t\t\t"
 
-#: .\magazine\templates\magazine\statut.html:26
+#: magazine/templates/magazine/statut.html:26
 msgid ""
 "\n"
 "\t        <h2>Manifestation, opinion, action</h2>\n"
@@ -421,7 +426,7 @@ msgstr ""
 "positiven und performativen Journalismus begründen.</mark>\n"
 "\t\t\t\t"
 
-#: .\magazine\templates\magazine\statut.html:35
+#: magazine/templates/magazine/statut.html:35
 msgid ""
 "\n"
 "\t        <h2>Connection of societies and languages</h2>\n"
@@ -471,95 +476,129 @@ msgstr ""
 "small>\n"
 "\t\t\t\t"
 
-#: .\magazine\templates\magazine\welcome_homepage_view.html:7
+#: magazine/templates/magazine/welcome_homepage_view.html:8
 msgid ""
 "In light of the many and varied crises that currently mark this continent, "
 "and the need for new opportunities for action, we feel we have a "
 "responsibility."
-msgstr "In Anbetracht der vielfältigen Krisen, die diesen Kontinent derzeit kennzeichnen, und der Notwendigkeit neue Handlungsmöglichkeiten zu denken, fühlen wir uns in der Verantwortung."
+msgstr ""
+"In Anbetracht der vielfältigen Krisen, die diesen Kontinent derzeit "
+"kennzeichnen, und der Notwendigkeit neue Handlungsmöglichkeiten zu denken, "
+"fühlen wir uns in der Verantwortung."
 
-#: .\magazine\templates\magazine\welcome_homepage_view.html:9
+#: magazine/templates/magazine/welcome_homepage_view.html:10
 msgid ""
 "We want to use our potential – contacts beyond national borders, a desire to "
 "write, and a desire for productive debate and discussion – to found a "
 "European magazine."
-msgstr "Wir wollen unser Potential –Kontakte über Ländergrenzen hinaus, Lust am Schreiben und an der produktiven Auseinandersetzung – einsetzen, um ein europäisches Magazin zu gründen."
+msgstr ""
+"Wir wollen unser Potential –Kontakte über Ländergrenzen hinaus, Lust am "
+"Schreiben und an der produktiven Auseinandersetzung – einsetzen, um ein "
+"europäisches Magazin zu gründen."
 
-#: .\magazine\templates\magazine\welcome_homepage_view.html:11
+#: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid ""
 "With this magazine, we want to contribute to a European public. To this end, "
 "we set ourselves the "
-msgstr "Hiermit wollen wir zu einer europäische Öffentlichkeit beitragen. Dabei setzen wir uns "
+msgstr ""
+"Hiermit wollen wir zu einer europäische Öffentlichkeit beitragen. Dabei "
+"setzen wir uns "
 
-#: .\magazine\templates\magazine\welcome_homepage_view.html:11
+#: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid "following goals"
 msgstr "folgende Ziele"
 
-#: .\odisseia_site\settings.py:119
+#: magazine/templates/magazine/welcome_homepage_view.html:19
+msgid "We want to use our potential to found a European magazine."
+msgstr ""
+
+#: odisseia_site/settings.py:126
 msgid "German"
 msgstr ""
 
-#: .\odisseia_site\settings.py:120
+#: odisseia_site/settings.py:127
 msgid "English"
 msgstr ""
 
-#: .\odisseia_site\settings.py:121
+#: odisseia_site/settings.py:128
 msgid "French"
 msgstr ""
 
-#: .\odisseia_site\settings.py:122
+#: odisseia_site/settings.py:129
 msgid "Italian"
 msgstr ""
 
-#: .\odisseia_site\settings.py:123
+#: odisseia_site/settings.py:130
 msgid "Spanish"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:11
+#: opinion/opinionform.py:13
+msgid "Opinion must be minimum 250 char"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:25
+#: opinion/templates/opinion/opinion_view.html:22
 msgid "Well done! Your opinions are being revised to be published soon!"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:14
+#: opinion/templates/opinion/create_opinion_view.html:28
 msgid "Propose an opinion to be voted"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:19
+#: opinion/templates/opinion/create_opinion_view.html:33
 msgid "New Opinion"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:37
+#: opinion/templates/opinion/create_opinion_view.html:52
 msgid "Propose Opinion"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:49
+#: opinion/templates/opinion/create_opinion_view.html:65
 msgid "Votes: "
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:53
+#: opinion/templates/opinion/create_opinion_view.html:69
+#: opinion/templates/opinion/vote_opinion_view.html:7
 msgid "You voted "
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:84
+#: opinion/templates/opinion/create_opinion_view.html:100
 msgid "Rules"
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:87
-#: .\opinion\templates\opinion\opinion_view.html:89
+#: opinion/templates/opinion/create_opinion_view.html:103
+#: opinion/templates/opinion/create_opinion_view.html:105
 msgid ""
 "All content must be original. Unoriginal or reposted content will be removed."
 msgstr ""
 
-#: .\opinion\templates\opinion\opinion_view.html:88
-#: .\opinion\templates\opinion\opinion_view.html:90
+#: opinion/templates/opinion/create_opinion_view.html:104
+#: opinion/templates/opinion/create_opinion_view.html:106
 msgid "No puns/wordplay."
 msgstr ""
 
-#: .\opinion\views.py:59
+#: opinion/templates/opinion/opinion_view.html:26
+#, fuzzy
+#| msgid "Propose a topic"
+msgid "Propose an opinion!"
+msgstr "Ideen einbringen"
+
+#: opinion/templates/opinion/vote_opinion_view.html:11
+msgid "Total Votes "
+msgstr ""
+
+#: opinion/views.py:47
 msgid "You have already voted for this opinion!"
 msgstr ""
 
-#: .\opinion\views.py:82
+#: opinion/views.py:70
 msgid ""
 "You have voted more than 5 times! Please, remove one of your votes to vote "
 "again!"
 msgstr ""
+
+#~ msgid ""
+#~ "After opinions and articles are chosen, our team will publish your topic"
+#~ msgstr ""
+#~ "Nachdem die Beiträge ausgewählt sind, werden sie durch unser Team "
+#~ "veröffentlicht und frei zugänglich gemacht"
