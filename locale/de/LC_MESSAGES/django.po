@@ -279,10 +279,8 @@ msgid "Publish"
 msgstr "Veröffentlichen"
 
 #: .\magazine\templates\magazine\contribute.html:24
-msgid ""
-"After Opinions and Articles are choosen, or team will publish the fresh "
-"issue!"
-msgstr ""
+msgid "After opinions and articles are chosen, our team will publish your topic"
+msgstr "Nachdem die Beiträge ausgewählt sind, werden sie durch unser Team veröffentlicht und frei zugänglich gemacht"
 
 #: .\magazine\templates\magazine\footer.html:11
 msgid "Impress"
