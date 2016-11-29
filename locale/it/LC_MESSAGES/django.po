@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 12:48+0100\n"
+"POT-Creation-Date: 2016-11-29 00:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,36 +18,574 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\magazine\templates\magazine\homepage.html:14
-#: .\magazine\templates\magazine\homepage.html:22
-#: .\magazine\templates\magazine\homepage.html:24
-msgid "Read more"
-msgstr "Più info"
-
-#: .\magazine\templates\magazine\layout.html:35
-msgid "Start"
+#: article/templates/article/article_view.html:5
+msgid "List of Articles"
 msgstr ""
 
-#: .\magazine\templates\magazine\layout.html:36
-msgid "Contribute"
+#: contributor_profile/templates/contributor_profile/profile_view.html:9
+msgid "My Details"
+msgstr ""
+
+#: contributor_profile/templates/contributor_profile/profile_view.html:18
+msgid "I can translate from"
+msgstr ""
+
+#: contributor_profile/templates/contributor_profile/profile_view.html:28
+msgid "To these languages"
+msgstr ""
+
+#: contributor_profile/templates/contributor_profile/profile_view.html:40
+msgid "Already published issues"
+msgstr ""
+
+#: contributor_profile/templates/contributor_profile/profile_view.html:52
+msgid "Issues waiting for approval"
+msgstr ""
+
+#: contributor_profile/templates/contributor_profile/profile_view.html:64
+msgid "Issues in progress"
+msgstr ""
+
+#: dashboard/issueform.py:7
+msgid "Write title here"
+msgstr ""
+
+#: dashboard/templates/dashboard/issues_dashboard.html:13
+msgid "My issues"
+msgstr ""
+
+#: dashboard/templates/dashboard/issues_dashboard.html:19
+msgid "Check the issues currently in progress to be published!"
+msgstr ""
+
+#: dashboard/templates/dashboard/join_issue_successful.html:5
+msgid ""
+"Now you are part of this issue! Click on the link below go to back to issue"
+msgstr ""
+
+#: dashboard/templates/dashboard/join_issue_successful.html:6
+#: issue/templates/issue/pending_issues_view.html:22
+msgid "Go to issue"
+msgstr ""
+
+#: dashboard/templates/dashboard/new_issue_view.html:5
+msgid "New Issue"
+msgstr ""
+
+#: dashboard/templates/dashboard/new_issue_view.html:25
+msgid "Post Issue"
+msgstr ""
+
+#: dashboard/templates/dashboard/pending_view.html:5
+msgid ""
+"This issue has completed the votes to go be pending. Wait for the approval "
+"of the Discussion board and we will get back to you!"
+msgstr ""
+
+#: dashboard/templates/dashboard/pending_view.html:6
+msgid "Go to dashboard"
+msgstr ""
+
+#: dashboard/templates/dashboard/single_issue_view.html:10
+#, fuzzy
+#| msgid "Contribute"
+msgid "Contributors"
 msgstr "Contribuisci"
 
-#: .\magazine\templates\magazine\layout.html:37
-msgid "Statut"
+#: dashboard/templates/dashboard/single_issue_view.html:11
+msgid "Comments"
 msgstr ""
 
-#: .\magazine\templates\magazine\layout.html:38
+#: dashboard/templates/dashboard/single_issue_view.html:12
+msgid "Proposed articles"
+msgstr ""
+
+#: dashboard/templates/dashboard/single_issue_view.html:13
+msgid "Proposed opinions"
+msgstr ""
+
+#: dashboard/templates/dashboard/single_issue_view.html:21
+msgid "Be te first one to write a comment!"
+msgstr ""
+
+#: dashboard/templates/dashboard/single_issue_view.html:35
+msgid "Previous"
+msgstr ""
+
+#: dashboard/templates/dashboard/single_issue_view.html:40
+msgid "Next"
+msgstr ""
+
+#: forum/commentform.py:7
+msgid "Write your comment here ..."
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:19
+msgid "Join the team!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:21
+msgid "You are already part of this issue!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:23
+msgid "Created at"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:26
+msgid "Number of Contributors: "
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:39
+msgid "Number of Articles"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:42
+msgid "Be the first one to propose an Article!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:44
+msgid "Check Articles!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:49
+msgid "Number of Opinions"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:52
+msgid "Be the first one to propose an Opinion!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:53
+msgid "Propose an opinion"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:55
+msgid "Check Opinions!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:63
+msgid "Be the first one to write an opinion about it!"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:73
+msgid "Submit comment"
+msgstr ""
+
+#: forum/templates/forum/issue_view.html:87
+#: opinion/templates/opinion/create_opinion_view.html:85
+#: opinion/templates/opinion/opinion_view.html:34
+#: opinion/templates/opinion/read_opinion_view.html:25
+msgid "By: "
+msgstr ""
+
+#: issue/templates/issue/pending_issues_view.html:23
+msgid "Approve"
+msgstr ""
+
+#: issue/templates/issue/pending_issues_view.html:24
+msgid "Reject"
+msgstr ""
+
+#: issue/templates/issue/successful_change_status.html:5
+msgid "This issue was updated! :) "
+msgstr ""
+
+#: issue/templates/issue/successful_change_status.html:6
+msgid "Pending issues view"
+msgstr ""
+
+#: login/loginform.py:8 login/registrationform.py:9
+msgid "E-mail"
+msgstr ""
+
+#: login/loginform.py:8 login/registrationform.py:9
+msgid "Email address"
+msgstr ""
+
+#: login/loginform.py:9 login/registrationform.py:10
+msgid "Password"
+msgstr ""
+
+#: login/registrationform.py:11
+msgid "Repeat Password"
+msgstr ""
+
+#: login/registrationform.py:11
+msgid "Password (again)"
+msgstr ""
+
+#: login/registrationform.py:20
+msgid "The email already exists. Please try another one."
+msgstr ""
+
+#: login/registrationform.py:26
+msgid "The two password fields did not match."
+msgstr ""
+
+#: login/templates/login/disabled_accountl.html:5
+msgid "Your account is disabled :( "
+msgstr ""
+
+#: login/templates/login/login.html:5 login/templates/login/login.html.py:28
+#: magazine/templates/magazine/menu.html:36
 msgid "Login"
 msgstr ""
 
-#: .\magazine\templates\magazine\layout.html:39
+#: login/templates/login/login_successful.html:5
+msgid "Thank you for your contribution! Remember to confirm your account! :) "
+msgstr ""
+
+#: login/templates/login/login_successful.html:6
+msgid "Dashboard"
+msgstr ""
+
+#: login/templates/login/signup.html:35
+msgid "I can translate from:"
+msgstr ""
+
+#: login/templates/login/signup.html:43
+msgid "To:"
+msgstr ""
+
+#: login/templates/login/signup.html:51
+#, fuzzy
+#| msgid "Signup"
+msgid "Sign up"
+msgstr "Registrati"
+
+#: magazine/templates/magazine/contribute.html:4
+#: magazine/templates/magazine/menu.html:20
+msgid "Contribute"
+msgstr "Contribuisci"
+
+#: magazine/templates/magazine/contribute.html:8
+msgid "Propose a topic"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:9
+msgid "Propose a topic that you find interesting in your community"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:13
+msgid "Discuss"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:14
+msgid "Join topics proposed by others and discuss"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:18
+#: opinion/templates/opinion/vote_opinion_view.html:9
+msgid "Vote"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:19
+msgid "Vote for your prefered opinions and articles"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:23
+msgid "Publish"
+msgstr ""
+
+#: magazine/templates/magazine/contribute.html:24
+msgid ""
+"After opinions and articles are chosen, our team will publish your topic"
+msgstr ""
+
+#: magazine/templates/magazine/footer.html:11
+msgid "Imprint"
+msgstr ""
+
+#: magazine/templates/magazine/footer.html:14
+msgid "Contact"
+msgstr "Contatti"
+
+#: magazine/templates/magazine/homepage.html:14
+#: magazine/templates/magazine/homepage.html:22
+#: magazine/templates/magazine/homepage.html:24
+#: opinion/templates/opinion/opinion_view.html:40
+msgid "Read more"
+msgstr "Più info"
+
+#: magazine/templates/magazine/menu.html:19
+msgid "Start"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:21
+msgid "Statute"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:23
+msgid "My profile"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:24
+msgid "Explore"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:25
+msgid "Propose an isue!"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:27
+msgid "Issues to be approved"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:34
+msgid "Logout"
+msgstr ""
+
+#: magazine/templates/magazine/menu.html:37
 msgid "Signup"
 msgstr "Registrati"
 
-#: .\magazine\templates\magazine\layout.html:48
-msgid "Impress"
+#: magazine/templates/magazine/statut.html:6
+msgid "Statue"
 msgstr ""
 
-#: .\magazine\templates\magazine\layout.html:51
-msgid "Contact"
-msgstr "Contatti"
+#: magazine/templates/magazine/statut.html:8
+msgid ""
+"\n"
+"\t          <h2>To give Europe back the chance of utopia</h2>\n"
+"\t          <p>\n"
+"\t\t\t  We want the cosmopolitan idea to be striven for. We should bear in "
+"mind the odyssey of Odysseus, the first modern European, who ruled his own "
+"fate, who <mark>‘saw the cities of many peoples and […] learnt their ways, "
+"[…] to preserve his life and bring his comrades home’.*</mark>\n"
+"\t\t\t  </p>\n"
+"\t\t\t  <small><em>* 1 Homer, Odyssey, Book I, Lines 3-5.</em></small>\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t          <h2Restituire all’Europa la possibilitá di un’utopia</h2>\n"
+"\t          <p>\n"
+"\t\t\t  Vorremmo creare qualcosa di reale attorno all’idea del cosmopolitismo. Ci siamo lasciati inspirare "
+"dalla storia di Odisseoo, l’uomo <mark>“che cittá vide molti, e delle genti l’indole conobbe; "
+"che sovr’esso il Mare molti dentro del cor sofferse affanni”*</mark>, "
+"la storia del primo uomo moderno europeo, che riescí a governare sul proprio destino durante la sua peregrinazione.\n"
+"\t\t\t  </p>\n"
+"\t\t\t  <small><em>* 1 Omero, Odissea, canto primo, versi 3-6.</em></small>\n"
+"\t\t\t\t"
+
+#: magazine/templates/magazine/statut.html:17
+msgid ""
+"\t        \n"
+"\t        <h2>To give a voice, to be heard, to be a voice</h2>\n"
+"\t          <p>\n"
+"\t\t\t\tThe magazine is to be a voice of many, indeed diverging, voices. "
+"European topics will be discussed and read. <mark>A handful of (five) "
+"submitted contributions should stimulate further action.</mark> Every "
+"possible opinion can find its place. A line will only be drawn if a "
+"contribution infringes fundamental values enshrined in human rights.\n"
+"\t\t\t\tEach edition of the magazine will have a theme. At the beginning of "
+"each edition, a neutral introduction to the topic will be given. With this, "
+"we want to prise open the connection between neutral reporting, opinion and "
+"personal appeals, in order to make positions in their diversity recognisable "
+"as such, open to debate, and open to criticism.\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t"
+msgstr ""
+"\t        \n"
+"\t        <h2>Dare una voce, trovare ascolto ed essere una voce</h2>\n"
+"\t          <p>\n"
+"\t\t\t\tIl magazine vuole offrire possibilitá di espressione a molte e svariate voci. "
+"Verrano elaborati, discussi e letti temi di politica mondiale.  <mark>Come le cinquedita della mano, "
+"verranno presentati cinque articoli nella forma di “contributi”, i quali serviranno da stimolo per nuove azioni. </mark> "
+"Qualunque punto di vista potrá trovare il suo spazio. "
+"Verrá dato un limite solamente nel caso in cui uno dei “contributi” violi diritti umani fondamentali.\n"
+"\t\t\t\tOgni edizione si baserá su una tematica particolare; un articolo di introduzione, "
+"neutrale e obiettivo, aprirá l’edizione. In questo modo cerchiamo di "
+"indebolire il collegamento tra comunicato, opinione e appello: aspiriamo a "
+"rendere qualunque atteggiamento riconoscibile nella sua molteplicitá, "
+"discutibile e criticabile.\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t"
+
+#: magazine/templates/magazine/statut.html:26
+msgid ""
+"\n"
+"\t        <h2>Manifestation, opinion, action</h2>\n"
+"\t          <p>\n"
+"We are looking for a form where societal involvement in our time can take "
+"place. This will begin in the virtual sphere, and from that starting point, "
+"will bear further fruit.\n"
+"We want to facilitate positive action in order to displace destructive "
+"criticism. Shortcomings, divergences and inequalities, as well as amazing "
+"things and positive developments should be illustrated, and concrete "
+"alternatives and actions – even unexpected ones – should be found. <mark>We "
+"want to found a new form of positive and performative journalism.</mark>\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t        <h2>Manifestazione, opinione, azione</h2>\n"
+"\t          <p>\n"
+"Siamo alla ricerca della forma, in cui si possa partecipare realmente alla "
+"societá attuale e siamo dell’opinione che l’inizio di questo processo possa "
+"avvenire per mezzo di uno spazio virtuale, dal quale si trarranno poi nuovi frutti.\n"
+"Aspiriamo affinché il nostro agire e le nostre posizioni siano positive e cosí sostituire ogni forma distruttiva di "
+"critica: verranno mostrate incomprensioni, divergenze e differenze; "
+"al loro posto si scopriranno sviluppi positivi, "
+"ome anche reazioni e risposte da direzioni inaspettate. <mark>Il nostro obiettivo é di dar forma ad "
+"un giornalismo positivo e basato sulla performance.</mark>\n"
+"\t\t\t\t"
+
+
+#: magazine/templates/magazine/statut.html:35
+msgid ""
+"\n"
+"\t        <h2>Connection of societies and languages</h2>\n"
+"\t          <p>\n"
+"\t\t\t  <mark>‘The limits of my language mean the limits of my world.’*</"
+"mark> We call for, and encourage, a discourse which cuts through and "
+"connects social classes and milieus and overcomes linguistic barriers. We "
+"want to provide a space for this exchange and coordinate translation work in "
+"order to do justice to European communities in their linguistic diversity.\t"
+"\t\t  \n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<small><em>* Ludwig Wittgenstein, Tractatus logico-philosophicus, "
+"1922, sentence 5.6.</em></small>\n"
+"\t\t\t\t<h2>Critiquing criticism</h2>\n"
+"\t\t\t\t<p>\n"
+"\t\t\t\tCritiquing criticism should and must be possible. <mark>We want to "
+"be the doubter who considers the acts of every day.*</mark> We should and "
+"must, therefore, be challenged ourselves, and call upon others to "
+"challenge.\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<small><em>* 3 In reference to Bertolt Brecht, The doubter.</em></"
+"small>\n"
+"\t\t\t\t"
+msgstr ""
+"\n"
+"\t        <h2>Connessione delle societá e delle lingue</h2>\n"
+"\t          <p>\n"
+"\t\t\t  <mark>“I limiti del mio linguaggio significano i limiti del mio mondo”*</"
+"mark> reclamiamo e sosteniamo una forma di discorso, che attraversi le diverse "
+"classi e i diversi ambienti sociali, che li unisca tra loro e sia in grado di "
+"superare le barriere linguistiche. Vogliamo preparare il terreno per questo scambio e "
+"coordinare i lavori di traduzioni, per rendere giustizia alle comunitá nella loro ricchezza linguistica.\t"
+"\t\t  \n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<small><em>* Ludwig Wittgenstein, Tractatus logico-philosophicus, "
+"1922, 5.6.</em></small>\n"
+"\t\t\t\t<h2>Critica della critica</h2>\n"
+"\t\t\t\t<p>\n"
+"\t\t\t\tPuó e deve essere possibile una critica della critica. Vogliamo essere <mark>“il dubbio "
+"che contempla l’opera di ogni giorno”.*</mark> A questo scopo vogliamo e "
+"dobbiamo anche noi stessi essere messi in discussione e intimiamo, "
+"affinché ció avvenga.\n"
+"\t\t\t\t</p>\n"
+"\t\t\t\t<small><em>* 3 Brecht Bertolt, The doubter.</em></"
+"small>\n"
+"\t\t\t\t"
+
+#: magazine/templates/magazine/welcome_homepage_view.html:8
+msgid ""
+"In light of the many and varied crises that currently mark this continent, "
+"and the need for new opportunities for action, we feel we have a "
+"responsibility."
+msgstr ""
+
+#: magazine/templates/magazine/welcome_homepage_view.html:10
+msgid ""
+"We want to use our potential – contacts beyond national borders, a desire to "
+"write, and a desire for productive debate and discussion – to found a "
+"European magazine."
+msgstr ""
+
+#: magazine/templates/magazine/welcome_homepage_view.html:12
+msgid ""
+"With this magazine, we want to contribute to a European public. To this end, "
+"we set ourselves the "
+msgstr ""
+
+#: magazine/templates/magazine/welcome_homepage_view.html:12
+msgid "following goals"
+msgstr ""
+
+#: magazine/templates/magazine/welcome_homepage_view.html:19
+msgid "We want to use our potential to found a European magazine."
+msgstr ""
+
+#: odisseia_site/settings.py:126
+msgid "German"
+msgstr ""
+
+#: odisseia_site/settings.py:127
+msgid "English"
+msgstr ""
+
+#: odisseia_site/settings.py:128
+msgid "French"
+msgstr ""
+
+#: odisseia_site/settings.py:129
+msgid "Italian"
+msgstr ""
+
+#: odisseia_site/settings.py:130
+msgid "Spanish"
+msgstr ""
+
+#: opinion/opinionform.py:13
+msgid "Opinion must be minimum 250 char"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:25
+#: opinion/templates/opinion/opinion_view.html:22
+msgid "Well done! Your opinions are being revised to be published soon!"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:28
+msgid "Propose an opinion to be voted"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:33
+msgid "New Opinion"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:52
+msgid "Propose Opinion"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:65
+msgid "Votes: "
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:69
+#: opinion/templates/opinion/vote_opinion_view.html:7
+msgid "You voted "
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:100
+msgid "Rules"
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:103
+#: opinion/templates/opinion/create_opinion_view.html:105
+msgid ""
+"All content must be original. Unoriginal or reposted content will be removed."
+msgstr ""
+
+#: opinion/templates/opinion/create_opinion_view.html:104
+#: opinion/templates/opinion/create_opinion_view.html:106
+msgid "No puns/wordplay."
+msgstr ""
+
+#: opinion/templates/opinion/opinion_view.html:26
+msgid "Propose an opinion!"
+msgstr ""
+
+#: opinion/templates/opinion/vote_opinion_view.html:11
+msgid "Total Votes "
+msgstr ""
+
+#: opinion/views.py:47
+msgid "You have already voted for this opinion!"
+msgstr ""
+
+#: opinion/views.py:70
+msgid ""
+"You have voted more than 5 times! Please, remove one of your votes to vote "
+"again!"
+msgstr ""
