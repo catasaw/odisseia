@@ -485,6 +485,9 @@ msgid ""
 "and the need for new opportunities for action, we feel we have a "
 "responsibility."
 msgstr ""
+"Considerando le svariate crisi che distinguono attualmente il continente Europeo "
+"e con riguardo alla necessitá di pensare a nuovi possibili modi di agire, sosteniamo di avere una parte della "
+"responsabilitá."
 
 #: magazine/templates/magazine/welcome_homepage_view.html:10
 msgid ""
@@ -492,16 +495,21 @@ msgid ""
 "write, and a desire for productive debate and discussion – to found a "
 "European magazine."
 msgstr ""
+"Vogliamo investire il nostro potenziale – le nostre conoscenze in diversi paesi, "
+"la voglia di scrivere e di confrontarsi in maniera produttiva su tematiche differenti – "
+"fondando un magazine europeo."
 
 #: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid ""
 "With this magazine, we want to contribute to a European public. To this end, "
 "we set ourselves the "
 msgstr ""
+"Vogliamo infatti contribuire attivamente all’opinione pubblica Europea. "
+"In questo progetto ci siamo "
 
 #: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid "following goals"
-msgstr ""
+msgstr "posti i seguenti obiettivi"
 
 #: magazine/templates/magazine/welcome_homepage_view.html:19
 msgid "We want to use our potential to found a European magazine."
