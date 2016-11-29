@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from django.utils.timezone import utc
 
 def homepage(request):
+    return render(request, 'magazine/welcome_homepage_view.html')
     # TODO: If first time to query issue, then cache it?
     # Check latest PUBLISHED issue
     try:
@@ -41,3 +42,6 @@ def publish_earliest_approved_issue():
     last_issue.status_changed_at = datetime.now()
     last_issue.save(update_fields=['status', 'status_changed_at'])
     return last_issue
+
+def imprint(request):
+    return render(request, 'magazine/imprint.html')

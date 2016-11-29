@@ -255,7 +255,7 @@ msgstr ""
 #: magazine/templates/magazine/contribute.html:4
 #: magazine/templates/magazine/menu.html:20
 msgid "Contribute"
-msgstr ""
+msgstr "Beitragen"
 
 #: magazine/templates/magazine/contribute.html:8
 msgid "Propose a topic"
