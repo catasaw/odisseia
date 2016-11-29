@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 23:48+0000\n"
+"POT-Creation-Date: 2016-11-29 00:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -286,13 +286,20 @@ msgstr "Stimme über die Beiträge und Themen ab, die Dir am besten gefallen"
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: magazine/templates/magazine/footer.html:11
-msgid "Impress"
+#: magazine/templates/magazine/contribute.html:24
+msgid ""
+"After opinions and articles are chosen, our team will publish your topic"
 msgstr ""
+"Nachdem die Beiträge ausgewählt sind, werden sie durch unser Team "
+"veröffentlicht und frei zugänglich gemacht"
+
+#: magazine/templates/magazine/footer.html:11
+msgid "Imprint"
+msgstr "Impressum"
 
 #: magazine/templates/magazine/footer.html:14
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: magazine/templates/magazine/homepage.html:14
 #: magazine/templates/magazine/homepage.html:22
@@ -334,8 +341,10 @@ msgid "Signup"
 msgstr "Registrieren"
 
 #: magazine/templates/magazine/statut.html:6
-msgid "Statut"
-msgstr "Statut"
+#, fuzzy
+#| msgid "Statute"
+msgid "Statue"
+msgstr "Statue"
 
 #: magazine/templates/magazine/statut.html:8
 msgid ""
@@ -455,11 +464,11 @@ msgstr ""
 "\t        <h2>Verbindung der Gesellschaften und der Sprachen</h2>\n"
 "\t          <p>\n"
 "\t\t\t  <mark>„Die Grenzen meiner Sprache bedeuten die Grenzen meiner "
-"Welt“*</mark> Wirfordern und fördern einen Diskurs, der gesellschaftliche Schichten und "
-"Milieus durchdringt und verbindet, sprachliche Barrieren überwindet. Wir "
-"fordern und fördern einen Diskurs, der gesellschaftliche Schichten und "
-"Milieus durchdringt und verbindet, sprachliche Barrieren überwindet. Wir "
-"wollen einen Ort für diesen Austausch bereitstellen und die "
+"Welt“*</mark> Wirfordern und fördern einen Diskurs, der gesellschaftliche "
+"Schichten und Milieus durchdringt und verbindet, sprachliche Barrieren "
+"überwindet. Wir fordern und fördern einen Diskurs, der gesellschaftliche "
+"Schichten und Milieus durchdringt und verbindet, sprachliche Barrieren "
+"überwindet. Wir wollen einen Ort für diesen Austausch bereitstellen und die "
 "Übersetzungsarbeit koordinieren, um den Gesellschaften in ihrer sprachlichen "
 "Vielfalt gerecht zu werden.\t\t\t  \n"
 "\t\t\t\t</p>\n"
@@ -597,8 +606,5 @@ msgid ""
 "again!"
 msgstr ""
 
-#~ msgid ""
-#~ "After opinions and articles are chosen, our team will publish your topic"
-#~ msgstr ""
-#~ "Nachdem die Beiträge ausgewählt sind, werden sie durch unser Team "
-#~ "veröffentlicht und frei zugänglich gemacht"
+#~ msgid "Statut"
+#~ msgstr "Statut"
