@@ -19,6 +19,7 @@
 		<li><a href="/#opinion">{% trans "Start" %}</a></li>
         <li><a href="/#contribute">{% trans "Contribute" %}</a></li>
         <li><a href="/#statut">{% trans "Statute" %}</a></li>
+          <!-- 
         {% if user.is_authenticated %}
         <li><a href="/profile">{% trans "My profile" %}</a></li>
         <li><a href="/dashboard/">{% trans "Explore" %}</a></li>
@@ -27,15 +28,17 @@
         	<li><a href="{% url 'pending_issues_view' %}">{% trans "Issues to be approved" %}</a></li>
         	{% endif %}
         {% endif %}
+-->
       </ul>
       {% include "magazine/set_language_view.html" %}
+        <!--
       <ul class="nav navbar-nav navbar-right">
        {% if user.is_authenticated %}
         <li><a href="/accounts/logout"><span class="glyphicon glyphicon-log-in"></span>  {% trans "Logout" %}</a></li>
         {% else %}
         <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span>  {% trans "Login" %}</a></li>
         <li><a href="/accounts/signup">{% trans "Signup" %}</a></li>
-        {% endif %}        
+        {% endif %}   -->     
       </ul>
     </div>
   </div>

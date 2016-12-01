@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 00:05+0000\n"
+"POT-Creation-Date: 2016-12-01 20:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -228,7 +228,7 @@ msgid "Your account is disabled :( "
 msgstr ""
 
 #: login/templates/login/login.html:5 login/templates/login/login.html.py:28
-#: magazine/templates/magazine/menu.html:36
+#: magazine/templates/magazine/menu.html:39
 msgid "Login"
 msgstr ""
 
@@ -313,36 +313,33 @@ msgid "Start"
 msgstr ""
 
 #: magazine/templates/magazine/menu.html:21
+#: magazine/templates/magazine/statut.html:6
 msgid "Statute"
-msgstr ""
+msgstr "Statuto"
 
-#: magazine/templates/magazine/menu.html:23
+#: magazine/templates/magazine/menu.html:24
 msgid "My profile"
 msgstr ""
 
-#: magazine/templates/magazine/menu.html:24
+#: magazine/templates/magazine/menu.html:25
 msgid "Explore"
 msgstr ""
 
-#: magazine/templates/magazine/menu.html:25
+#: magazine/templates/magazine/menu.html:26
 msgid "Propose an isue!"
 msgstr ""
 
-#: magazine/templates/magazine/menu.html:27
+#: magazine/templates/magazine/menu.html:28
 msgid "Issues to be approved"
 msgstr ""
 
-#: magazine/templates/magazine/menu.html:34
+#: magazine/templates/magazine/menu.html:37
 msgid "Logout"
 msgstr ""
 
-#: magazine/templates/magazine/menu.html:37
+#: magazine/templates/magazine/menu.html:40
 msgid "Signup"
 msgstr "Registrati"
-
-#: magazine/templates/magazine/statut.html:6
-msgid "Statue"
-msgstr ""
 
 #: magazine/templates/magazine/statut.html:8
 msgid ""
@@ -354,20 +351,19 @@ msgid ""
 "fate, who <mark>‘saw the cities of many peoples and […] learnt their ways, "
 "[…] to preserve his life and bring his comrades home’.*</mark>\n"
 "\t\t\t  </p>\n"
-"\t\t\t  <small><em>* 1 Homer, Odyssey, Book I, Lines 3-5.</em></small>\n"
+"\t\t\t  <small><em>* Homer, Odyssey, Book I, Lines 3-5.</em></small>\n"
 "\t\t\t\t"
 msgstr ""
 "\n"
 "\t          <h2>Restituire all’Europa la possibilitá di un’utopia</h2>\n"
 "\t          <p>\n"
-"\t\t\t  Vorremmo creare qualcosa di reale attorno all’idea del cosmopolitismo. Ci siamo lasciati inspirare "
-"dalla storia di Odisseoo, l’uomo <mark>“che cittá vide molti, e delle genti l’indole conobbe; "
-"che sovr’esso il Mare molti dentro del cor sofferse affanni”*</mark>, "
-"la storia del primo uomo moderno europeo, che riescí a governare sul proprio destino durante la sua peregrinazione.\n"
+"\t\t\t  Vorremmo creare qualcosa di reale attorno all’idea del cosmopolitismo. "
+"Ci siamo lasciati inspirare dalla storia di Odisseoo, l’uomo <mark>“che cittá vide molti, "
+"e delle genti l’indole conobbe; che sovr’esso il Mare molti dentro del cor sofferse affanni”*</mark>, la storia del primo "
+"uomo moderno europeo, che riescí a governare sul proprio destino durante la sua peregrinazione. \n"
 "\t\t\t  </p>\n"
-"\t\t\t  <small><em>* 1 Omero, Odissea, canto primo, versi 3-6.</em></small>\n"
+"\t\t\t  <small><em>* Omero, Odissea, canto primo, versi 3-6.</em></small>\n"
 "\t\t\t\t"
-
 #: magazine/templates/magazine/statut.html:17
 msgid ""
 "\t        \n"
@@ -389,16 +385,18 @@ msgstr ""
 "\t        \n"
 "\t        <h2>Dare una voce, trovare ascolto ed essere una voce</h2>\n"
 "\t          <p>\n"
-"\t\t\t\tIl magazine vuole offrire possibilitá di espressione a molte e svariate voci. "
-"Verrano elaborati, discussi e letti temi di politica mondiale.  <mark>Come le cinquedita della mano, "
-"verranno presentati cinque articoli nella forma di “contributi”, i quali serviranno da stimolo per nuove azioni. </mark> "
-"Qualunque punto di vista potrá trovare il suo spazio. "
-"Verrá dato un limite solamente nel caso in cui uno dei “contributi” violi diritti umani fondamentali.\n"
-"\t\t\t\tOgni edizione si baserá su una tematica particolare; un articolo di introduzione, "
-"neutrale e obiettivo, aprirá l’edizione. In questo modo cerchiamo di "
-"indebolire il collegamento tra comunicato, opinione e appello: aspiriamo a "
-"rendere qualunque atteggiamento riconoscibile nella sua molteplicitá, "
-"discutibile e criticabile.\n"
+"\t\t\t\tIl magazine vuole offrire possibilitá di espressione a molte e "
+"svariate voci. Verrano elaborati, discussi e letti temi di politica "
+"mondiale.  <mark>Come le cinquedita della mano, verranno presentati cinque "
+"articoli nella forma di “contributi”, i quali serviranno da stimolo per "
+"nuove azioni. </mark> Qualunque punto di vista potrá trovare il suo spazio. "
+"Verrá dato un limite solamente nel caso in cui uno dei “contributi” violi "
+"diritti umani fondamentali.\n"
+"\t\t\t\tOgni edizione si baserá su una tematica particolare; un articolo di "
+"introduzione, neutrale e obiettivo, aprirá l’edizione. In questo modo "
+"cerchiamo di indebolire il collegamento tra comunicato, opinione e appello: "
+"aspiriamo a rendere qualunque atteggiamento riconoscibile nella sua "
+"molteplicitá, discutibile e criticabile.\n"
 "\t\t\t\t</p>\n"
 "\t\t\t\t"
 
@@ -422,14 +420,15 @@ msgstr ""
 "\t          <p>\n"
 "Siamo alla ricerca della forma, in cui si possa partecipare realmente alla "
 "societá attuale e siamo dell’opinione che l’inizio di questo processo possa "
-"avvenire per mezzo di uno spazio virtuale, dal quale si trarranno poi nuovi frutti.\n"
-"Aspiriamo affinché il nostro agire e le nostre posizioni siano positive e cosí sostituire ogni forma distruttiva di "
-"critica: verranno mostrate incomprensioni, divergenze e differenze; "
-"al loro posto si scopriranno sviluppi positivi, "
-"ome anche reazioni e risposte da direzioni inaspettate. <mark>Il nostro obiettivo é di dar forma ad "
-"un giornalismo positivo e basato sulla performance.</mark>\n"
+"avvenire per mezzo di uno spazio virtuale, dal quale si trarranno poi nuovi "
+"frutti.\n"
+"Aspiriamo affinché il nostro agire e le nostre posizioni siano positive e "
+"cosí sostituire ogni forma distruttiva di critica: verranno mostrate "
+"incomprensioni, divergenze e differenze; al loro posto si scopriranno "
+"sviluppi positivi, ome anche reazioni e risposte da direzioni inaspettate. "
+"<mark>Il nostro obiettivo é di dar forma ad un giornalismo positivo e basato "
+"sulla performance.</mark>\n"
 "\t\t\t\t"
-
 
 #: magazine/templates/magazine/statut.html:35
 msgid ""
@@ -452,31 +451,31 @@ msgid ""
 "must, therefore, be challenged ourselves, and call upon others to "
 "challenge.\n"
 "\t\t\t\t</p>\n"
-"\t\t\t\t<small><em>* 3 In reference to Bertolt Brecht, The doubter.</em></"
+"\t\t\t\t<small><em>* In reference to Bertolt Brecht, The doubter.</em></"
 "small>\n"
 "\t\t\t\t"
 msgstr ""
 "\n"
 "\t        <h2>Connessione delle societá e delle lingue</h2>\n"
 "\t          <p>\n"
-"\t\t\t  <mark>“I limiti del mio linguaggio significano i limiti del mio mondo”*</"
-"mark> reclamiamo e sosteniamo una forma di discorso, che attraversi le diverse "
-"classi e i diversi ambienti sociali, che li unisca tra loro e sia in grado di "
-"superare le barriere linguistiche. Vogliamo preparare il terreno per questo scambio e "
-"coordinare i lavori di traduzioni, per rendere giustizia alle comunitá nella loro ricchezza linguistica.\t"
-"\t\t  \n"
+"\t\t\t  <mark>“I limiti del mio linguaggio significano i limiti del mio "
+"mondo”*</mark> reclamiamo e sosteniamo una forma di discorso, che attraversi "
+"le diverse classi e i diversi ambienti sociali, che li unisca tra loro e sia "
+"in grado di superare le barriere linguistiche. Vogliamo preparare il terreno "
+"per questo scambio e coordinare i lavori di traduzioni, per rendere "
+"giustizia alle comunitá nella loro ricchezza linguistica.\t\t\t  \n"
 "\t\t\t\t</p>\n"
 "\t\t\t\t<small><em>* Ludwig Wittgenstein, Tractatus logico-philosophicus, "
 "1922, 5.6.</em></small>\n"
 "\t\t\t\t<h2>Critica della critica</h2>\n"
 "\t\t\t\t<p>\n"
-"\t\t\t\tPuó e deve essere possibile una critica della critica. Vogliamo essere <mark>“il dubbio "
-"che contempla l’opera di ogni giorno”.*</mark> A questo scopo vogliamo e "
-"dobbiamo anche noi stessi essere messi in discussione e intimiamo, "
-"affinché ció avvenga.\n"
+"\t\t\t\tPuó e deve essere possibile una critica della critica. Vogliamo "
+"essere <mark>“il dubbio che contempla l’opera di ogni giorno”.*</mark> A "
+"questo scopo vogliamo e dobbiamo anche noi stessi essere messi in "
+"discussione e intimiamo, affinché ció avvenga.\n"
 "\t\t\t\t</p>\n"
-"\t\t\t\t<small><em>* 3 Brecht Bertolt, The doubter.</em></"
-"small>\n"
+"\t\t\t\t<small><em>* Facendo riferimento a Bertolt Brecht, “Der Zweifler”.</"
+"em></small>\n"
 "\t\t\t\t"
 
 #: magazine/templates/magazine/welcome_homepage_view.html:8
@@ -485,9 +484,9 @@ msgid ""
 "and the need for new opportunities for action, we feel we have a "
 "responsibility."
 msgstr ""
-"Considerando le svariate crisi che distinguono attualmente il continente Europeo "
-"e con riguardo alla necessitá di pensare a nuovi possibili modi di agire, sosteniamo di avere una parte della "
-"responsabilitá."
+"Considerando le svariate crisi che distinguono attualmente il continente "
+"Europeo e con riguardo alla necessitá di pensare a nuovi possibili modi di "
+"agire, sosteniamo di avere una parte della responsabilitá."
 
 #: magazine/templates/magazine/welcome_homepage_view.html:10
 msgid ""
@@ -495,17 +494,17 @@ msgid ""
 "write, and a desire for productive debate and discussion – to found a "
 "European magazine."
 msgstr ""
-"Vogliamo investire il nostro potenziale – le nostre conoscenze in diversi paesi, "
-"la voglia di scrivere e di confrontarsi in maniera produttiva su tematiche differenti – "
-"fondando un magazine europeo."
+"Vogliamo investire il nostro potenziale – le nostre conoscenze in diversi "
+"paesi, la voglia di scrivere e di confrontarsi in maniera produttiva su "
+"tematiche differenti – fondando un magazine europeo."
 
 #: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid ""
 "With this magazine, we want to contribute to a European public. To this end, "
 "we set ourselves the "
 msgstr ""
-"Vogliamo infatti contribuire attivamente all’opinione pubblica Europea. "
-"In questo progetto ci siamo "
+"Vogliamo infatti contribuire attivamente all’opinione pubblica Europea. In "
+"questo progetto ci siamo "
 
 #: magazine/templates/magazine/welcome_homepage_view.html:12
 msgid "following goals"
