@@ -45,3 +45,6 @@ def publish_earliest_approved_issue():
 
 def imprint(request):
     return render(request, 'magazine/imprint.html')
+
+def credits(request):
+    return render(request, 'magazine/credits.html')

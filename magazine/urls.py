@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', views.homepage, name='odisseia'),
     url(r'^imprint/$', views.imprint, name='imprint'),
+    url(r'^credits/$', views.credits, name='credits'),
     url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 );
