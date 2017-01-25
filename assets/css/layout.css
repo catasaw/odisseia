@@ -71,7 +71,6 @@ body > header .logo {
 
 .welcomeimage {
 	background-image: url('../img/backgroundImage.jpg') ; 
-    margin-right: -15px;
     margin-left: -15px;  
     padding-bottom: 62.5%;
     background-position: 50% 50%;

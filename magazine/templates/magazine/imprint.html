@@ -1,21 +1,20 @@
 {% extends "magazine/layout.html" %}
-{% load static from staticfiles %}
 {% load i18n %}
 {% block content %}
-<div class="block">
-   <div class="row">
-       
- 
 
-<h1>Impressum</h1>
-<p>Dienstanbieter für www.odisseia.eu ist der eingetragene Verein odisseia e.V.</p>
-<p>Kottbusser Str. 9</p>
-<p>10999 Berlin</p>
-<p>Amtsgericht Berlin (Charlottenburg) VR 35354</p>
-<p>Vertretungsberechtigte: Catharina Caspari (Anschrift wie oben)</p>
-<p>Schnelle Kontaktaufnahme ist möglich über odisseia@gmx.net</p>
-<p>Verantwortliche im i.S.v. § 55 Abs. 2 RStV ist</p>
-<p>Catharina Caspari</p>
-    </div>
-       </div>
+<div id="imprint" class="container">
+<p class="menu-item-horizontal-text">{% trans "Imprint" %}</p>
+<div class="row">
+<div class="col-md-12">
+	<p>Dienstanbieter für www.odisseia.eu ist der eingetragene Verein odisseia e.V.</p>
+	<p>Kottbusser Str. 9</p>
+	<p>10999 Berlin</p>
+	<p>Amtsgericht Berlin (Charlottenburg) VR 35354</p>
+	<p>Vertretungsberechtigte: Catharina Caspari (Anschrift wie oben)</p>
+	<p>Schnelle Kontaktaufnahme ist möglich über odisseia@gmx.net</p>
+	<p>Verantwortliche im i.S.v. § 55 Abs. 2 RStV ist</p>
+	<p>Catharina Caspari</p>
+	</div>
+</div>
+</div>
 {% endblock %}

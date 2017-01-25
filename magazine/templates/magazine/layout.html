@@ -12,9 +12,9 @@
 
     <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
    
     <link rel="shortcut icon" href= "{% static 'img/favicon.ico' %}" type="image/x-icon"/>
 </head>
@@ -22,7 +22,7 @@
 <body id="myPage">
     <header>
     	<div class='mobile-hide'>
-        	<div class='logo sprite headerLogo'></div>
+        	<a href="/"><div class='logo sprite headerLogo'></div></a>
         </div>
     {% include "magazine/menu.html" with user=user %}
     </header>
