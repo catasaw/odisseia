@@ -394,6 +394,69 @@ select {
         	color: #fff;
         }
         
+        
+/*Homepage hover*/
+
+    .h_form_hover {
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+    }
+    
+    .h_form_hover .panel-body{
+      	background:linear-gradient(rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('../img/robert-delaunay-1912.JPG') ;
+      	color:white;
+      	height: 200px; 
+    }
+    
+        .h_form_hover:hover .header {
+            opacity: 1;
+            transform: translateY(-320px);
+            -webkit-transform: translateY(-320px);
+            -moz-transform: translateY(-320px);
+            -ms-transform: translateY(-320px);
+            -o-transform: translateY(-320px);
+        }
+
+        .h_form_hover img {
+            z-index: 4;
+        }
+
+        .h_form_hover .header {
+            position: absolute;
+            top: 320px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .h_form_hover .blur {
+            height: 240px;
+            z-index: 5;
+            position: absolute;
+            width: 100%;
+        }
+
+        .form_hover .caption-text {
+            z-index: 10;
+            color: #fff;
+            position: absolute;
+            height: 240px;
+            text-align: center;
+            top: -20px;
+            width: 100%;
+        }
+        
+        .h_form_hover .panel-footer {
+        	background-color: #3c4ba7;
+        	color: #fff;
+        	height: 200px;
+        }
+        
 /*Styling for buttons */
 .btn {
     display: inline-block;
