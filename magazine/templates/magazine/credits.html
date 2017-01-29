@@ -1,0 +1,19 @@
+{% extends "magazine/layout.html" %}
+{% load i18n %}
+{% block content %}
+
+<div id="credits" class="container">
+<p class="menu-item-horizontal-text">{% trans "Credits" %}</p>
+<div class="row">
+        <div class="col-md-12">
+          {% blocktrans %}
+          <p>Icon 'Document' on <a href="/#statut">Statute Propose</a> Created by Dreshad Williams from Noun Project </p>
+          <p>Icon 'Communicate' on <a href="/#statut">Statute Discuss</a> Created by Lemon Liu from Noun Project </p>
+          <p>Icon 'Check Mark' on <a href="/#statut">Statute Vote</a> Created by Alex Podolsky from Noun Project </p>
+          <p>Icon 'Paper Plane' on <a href="/#statut">Statute Publish</a> Created by David from Noun Project </p>
+          {% endblocktrans %}
+        </div>
+</div>
+
+
+{% endblock %}
