@@ -6,12 +6,19 @@
 <div class="container text-center">
 	<div class="row">
 		<div class="col-sm-12">
+<!-- 		Display introduction, have placeholder if not existing -->
 		        <div class="col-sm-12">
 		          <div class="panel panel-default h_form_hover">
 		          <div class="panel-body panel-content">
-				  <h2>PRISONS</h2>
-				  <h3>Anna-Julia Saiger</h3>
+				  {% if issue.title %}
+				  	<h2>{{ issue.title }}</h2>
+				  {% endif %} 
+				  {% if issue.introduction_set.all.0.writer_name %}
+				  <h3>{{ issue.introduction_set.all.0.writer_name }}</h3>
 				  <div class="flag-de"></div>
+				  {% else %}
+	        	  <h5>{% trans "Write an introduction here." %}</h5>
+	       		  {% endif %} 
 			       </div>
 		          <div class="header">
 			      <div class="panel-footer">
@@ -28,17 +35,18 @@ punishment legitimate? How is the punished person treated? [...]</h4>
 	</div>
   <div class="row">
 	<div class="col-sm-12">
+	
+<!-- 	Display articles -->
 	{% for article in issue.article_set.all %}
         <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">
           <div class="panel-body panel-content">
-		  <h3>{{article.publisher_name }}</h3>
-		  <h4>{{article.publisher_description }}</h4>
+		  <h3>{{article.writer_name }}</h3>
+		  <h4>{{article.writer_description }}</h4>
 		  <div class="flag-it"></div>
 	       </div>
           <div class="header">
 	      <div class="panel-footer">
-	      
 	      	<h3>{{article.content}}</h3>
 	       </div>
 	       </div>
@@ -46,23 +54,9 @@ punishment legitimate? How is the punished person treated? [...]</h4>
         </div>
         {% endfor %}
         
-                <div class="col-md-15 col-sm-3">
-          <div class="panel panel-default h_form_hover">
-          <div class="panel-body panel-content">
-		  <h3>Tuomo Junkkari</h3>
-		  <h4>Prison Director</h4>
-		  <div class="flag-fi"></div>
-	       </div>
-          <div class="header">
-	      <div class="panel-footer">
-	      
-	      	<h4>A society in which there is no order is in danger to drift into chaos and violence. [...]</h4>
-	       </div>
-	       </div>
-          </div>
-        </div>
-        
-                <div class="col-md-15 col-sm-3">
+<!-- Display articles empty sports for contributors   -->
+        {% for none_article in none_articles %}
+        <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">
           <div class="panel-body panel-free">
 		  <h3>Write your contribution here.
@@ -70,25 +64,7 @@ punishment legitimate? How is the punished person treated? [...]</h4>
 	       </div>
           </div>
         </div>
-        
-                <div class="col-md-15 col-sm-3">
-          <div class="panel panel-default h_form_hover">
-          <div class="panel-body panel-free">
-		  <h3>Write your contribution here.
-	       </h3>
-	       </div>
-          </div>
-        </div>
-        
-                        <div class="col-md-15 col-sm-3">
-          <div class="panel panel-default h_form_hover">
-          <div class="panel-body panel-free">
-		  <h3>Write your contribution here.
-	       </h3>
-	       </div>
-          </div>
-        </div>
-      
+        {% endfor %}
     </div>
   </div>
 </div>
