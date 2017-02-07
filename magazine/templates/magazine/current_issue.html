@@ -8,6 +8,7 @@
 		<div class="col-sm-12">
 <!-- 		Display introduction, have placeholder if not existing -->
 		        <div class="col-sm-12">
+		        <a href="{% url 'introduction_view' issue.id issue.introduction_set.all.0.id %}">
 		          <div class="panel panel-default h_form_hover">
 		          <div class="panel-body panel-content">
 				  {% if issue.title %}
@@ -30,6 +31,7 @@ punishment legitimate? How is the punished person treated? [...]</h4>
 			       </div>
 			       </div>
 		          </div>
+		          </a>
 		        </div>
 	        </div>
 	</div>

@@ -29,6 +29,8 @@ SECRET_KEY = '-a&bj_$#_%_a#d3uajyr%$rll2*kzvhu^qbwls%!num0karl^g'
 DEBUG = True
 
 
+
+
 # Application definition
 AUTH_USER_MODEL = 'magazine.Contributor'
 
@@ -43,13 +45,13 @@ INSTALLED_APPS = (
     'login',
     'dashboard',
     'forum',
-    'article',
     'opinion',
     'issue',
     'contributor_profile',
     'django_wysiwyg',
     'ckeditor',
     'django_bootstrap_breadcrumbs',
+    'introduction',
 )
 
 MIDDLEWARE_CLASSES = (
