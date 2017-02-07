@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, AbstractBaseUser, UserManager,\
 from django.db.models.fields import IntegerField
 from django.db.models.signals import post_save
 from django.db.models import Sum
+from ckeditor.fields import RichTextField
 
 #TODO: Check a better way to set default encoding
 import sys
@@ -161,7 +162,7 @@ class Introduction(models.Model):
     language = models.ForeignKey(Language)
     writer_name = models.CharField(max_length=60)
     writer_description = models.CharField(max_length=60)
-    content = models.TextField()
+    content = RichTextField()
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
