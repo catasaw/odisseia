@@ -185,6 +185,10 @@ body > header .logo {
     font-size: 350%;
 }
 
+.single-introduction {
+	text-align: center;
+}
+
 @media only screen and (max-width: 28.75em) {
   .menu-item-horizontal-text {
    font-size: 250%;
@@ -397,6 +401,12 @@ select {
         
 /*Homepage hover*/
 
+	.form_published_issue {
+		color:white;
+		background:linear-gradient(rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('../img/robert-delaunay-1912.JPG') ;
+	}
+	
+	
     .h_form_hover {
         padding: 0px;
         position: relative;
@@ -463,6 +473,14 @@ select {
         	color: #fff;
         	height: 200px;
         }
+        
+/* Styling introductions and articles published */
+
+.published-contributor {
+	color: #3c4ba7;
+	font-weight: bold;
+}
+
         
 /*Styling for buttons */
 .btn {
