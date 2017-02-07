@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from magazine.models import Opinion, Opinion_Vote, Issue
+from magazine.models import Article, Article_Vote, Issue
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from opinion.opinionform import OpinionForm
@@ -21,7 +21,7 @@ def opinions_view(request, issue_id):
     
     # TODO: Order by most positive votes
     # TODO: Write this in a Manager?
-    all_opinions = Opinion.objects.filter(issue_id=issue_id).order_by('-created_at').select_related().all()
+    all_opinions = Article.objects.filter(issue_id=issue_id).order_by('-created_at').select_related().all()
     
     # TODO: THe status should be gotten from the session? so there is not query to DB every time!
     context['issue_is_pending'] = Issue.objects.get(id=issue_id).is_pending()                                                                                    
@@ -41,22 +41,22 @@ def vote_view(request, issue_id, opinion_id, vote_type):
         vote = -1
         
     # Check if contributor has voted already this vote_type on that issue
-    amount_vote_type = Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote = vote).count()
+    amount_vote_type = Article_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote = vote).count()
     
     if (amount_vote_type > 0):
         return render(request, 'opinion/invalid_vote_view.html', {'message': _('You have already voted for this opinion!',)})
     
     # Check if contributor has voted opposite in that opinion
-    opposite_votes = Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote = (-1)* vote)
+    opposite_votes = Article_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote = (-1)* vote)
     
     if opposite_votes:
         opposite_votes[0].delete()
     else:
         # Check if contributor is allowed to vote: If it has more than 5 votes
-        amount_contributor_votes = Opinion_Vote.objects.filter(issue_id = issue_id).filter(contributor_id = request.user.id).count()
-        if amount_contributor_votes < Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
+        amount_contributor_votes = Article_Vote.objects.filter(issue_id = issue_id).filter(contributor_id = request.user.id).count()
+        if amount_contributor_votes < Article_Vote.MAX_VOTES_PER_CONTRIBUTOR:
             # Make new vote
-            new_vote = Opinion_Vote.objects.create(
+            new_vote = Article_Vote.objects.create(
             issue_id = issue_id,
             opinion_id = opinion_id,
             contributor=request.user,
@@ -81,13 +81,13 @@ def is_issue_to_be_pending(issue_id):
         return False
 
     # Every opinion must have a positive vote.
-    total_opinions_up_votes =  Opinion_Vote.objects.filter(issue_id = issue_id).filter(vote=1).values_list('opinion_id', flat=True).distinct().count()
-    if total_opinions_up_votes < Opinion.TOTAL_OPINIONS_IN_ISSUE:
+    total_opinions_up_votes =  Article_Vote.objects.filter(issue_id = issue_id).filter(vote=1).values_list('opinion_id', flat=True).distinct().count()
+    if total_opinions_up_votes < Article.TOTAL_OPINIONS_IN_ISSUE:
         return False
     
     # Total amount of possible votes must be 80%
-    total_votes_in_opinions = Opinion_Vote.objects.filter(issue_id = issue_id).count()
-    if total_votes_in_opinions < issue_array['issue_contributor__count'] * Opinion_Vote.MIN_PERCENTAGE_VOTES_IN_ISSUE * Opinion_Vote.MAX_VOTES_PER_CONTRIBUTOR:
+    total_votes_in_opinions = Article_Vote.objects.filter(issue_id = issue_id).count()
+    if total_votes_in_opinions < issue_array['issue_contributor__count'] * Article_Vote.MIN_PERCENTAGE_VOTES_IN_ISSUE * Article_Vote.MAX_VOTES_PER_CONTRIBUTOR:
         return False
     
     # Change status of issue
@@ -100,9 +100,9 @@ def is_issue_to_be_pending(issue_id):
     
 def create_opinion_view(request, issue_id):
     if request.method == 'POST':
-        form = OpinionForm(request.POST)
+        form = IntroductionnForm(request.POST)
         if form.is_valid():
-            opinion = Opinion.objects.create(
+            opinion = Article.objects.create(
             content=form.cleaned_data['content'],
             contributor=request.user,
             issue_id = issue_id,
@@ -123,23 +123,23 @@ def read_opinion_view(request, issue_id, opinion_id):
     context['contributor_id'] = request.user.id
     context['issue_id'] = issue_id
     # TODO: NOT DO IT HERE!
-    is_user_opinion= True
+    is_user_opinion= False
     try:
-        is_user_opinion = Opinion.objects.filter(id = opinion_id).filter(contributor_id = request.user.id)
-    except Opinion.DoesNotExist:
+        is_user_opinion = Article.objects.filter(id = opinion_id).filter(contributor_id = request.user.id).count()
+    except Article.DoesNotExist:
         is_user_opinion= False
         
     context['is_user_opinon']= is_user_opinion
-    user_voted =  Opinion_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
+    user_voted =  Article_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
     if user_voted == 1:
         context['user_voted']= True
     else:
         context['user_voted'] = False
-    context['total_votes'] = Opinion_Vote.objects.filter(opinion_id = opinion_id).count()
+    context['total_votes'] = Article_Vote.objects.filter(opinion_id = opinion_id).count()
     
     # TODO: Order by most positive votes
     # TODO: Write this in a Manager?
-    opinion = Opinion.objects.get(id=opinion_id)
+    opinion = Article.objects.get(id=opinion_id)
                                                                                  
     context['opinion'] = opinion
     return render(request, 'opinion/read_opinion_view.html', context)

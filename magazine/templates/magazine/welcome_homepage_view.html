@@ -23,9 +23,9 @@
 </div>
 </div>
 
-{% include "magazine/current_issue.html" %}
+{% include "magazine/current_issue.html" with issue=issue%}
 
-{% include "magazine/statut.html" with issue=issue %}
+{% include "magazine/statut.html" %}
 
 {% include "magazine/contribute.html" %}
 

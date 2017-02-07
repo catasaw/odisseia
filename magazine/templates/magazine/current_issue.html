@@ -28,21 +28,23 @@ punishment legitimate? How is the punished person treated? [...]</h4>
 	</div>
   <div class="row">
 	<div class="col-sm-12">
+	{% for article in issue.article_set.all %}
         <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">
           <div class="panel-body panel-content">
-		  <h3>Salvatore Ricciardi</h3>
-		  <h4>Prisoner</h4>
+		  <h3>{{article.publisher_name }}</h3>
+		  <h4>{{article.publisher_description }}</h4>
 		  <div class="flag-it"></div>
 	       </div>
           <div class="header">
 	      <div class="panel-footer">
 	      
-	      	<h3>Each country or society itself defines a crime, what are the consequences of a crime ...</h3>
+	      	<h3>{{article.content}}</h3>
 	       </div>
 	       </div>
           </div>
         </div>
+        {% endfor %}
         
                 <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">

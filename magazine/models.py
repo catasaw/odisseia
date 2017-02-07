@@ -146,31 +146,33 @@ class Issue(models.Model):
     def amount_contributors(self):
         return self.issue_contributors.count()
     
-    def amount_opinions(self):
-        return Opinion.objects.filter(issue_id=self.id).count()
-    
     def amount_articles(self):
         return Article.objects.filter(issue_id=self.id).count()
+    
+    def amount_introductions(self):
+        return Introduction.objects.filter(issue_id=self.id).count()
     
     def is_pending(self):
         return self.status == Issue.PENDING
 
-class Article(models.Model):
+class Introduction(models.Model):
     issue = models.ForeignKey(Issue)
     contributor = models.ForeignKey(Contributor)
     language = models.ForeignKey(Language)
     publisher_name = models.CharField(max_length=60)
+    publisher_description = models.CharField(max_length=60)
     content = models.TextField()
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
-class Opinion(models.Model):
+class Article(models.Model):
     TOTAL_OPINIONS_IN_ISSUE = 5
     
     issue           = models.ForeignKey(Issue)
     contributor     = models.ForeignKey(Contributor)
     language        = models.ForeignKey(Language)
     publisher_name  = models.CharField(max_length=60)
+    publisher_description = models.CharField(max_length=60)
     content         = models.TextField()
     is_approved     = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True)
@@ -180,7 +182,7 @@ class Opinion(models.Model):
     
     # TODO: Move to Manager?
     def get_votes_count(self):
-        votes_array = Opinion_Vote.objects.filter(opinion_id=self.id).aggregate(Sum(('vote')))
+        votes_array = Article_Vote.objects.filter(article_id=self.id).aggregate(Sum(('vote')))
         return votes_array['vote__sum']
 
 class Comment(models.Model):
@@ -194,25 +196,25 @@ class Issue_Contributor(models.Model):
     contributor = models.ForeignKey(Contributor)
     joined_at = models.DateTimeField(auto_now_add=True)
 
-class Article_Vote(models.Model):
+class Introduction_Vote(models.Model):
     issue = models.ForeignKey(Issue)
-    article = models.ForeignKey(Article)
+    introduction = models.ForeignKey(Introduction)
     contributor = models.ForeignKey(Contributor)
     vote = IntegerField()
     
-class Opinion_Vote(models.Model):
+class Article_Vote(models.Model):
     MAX_VOTES_PER_CONTRIBUTOR = 5
     MIN_PERCENTAGE_VOTES_IN_ISSUE = 0.8
     # TODO: do we need a foreign key to issue?
     issue       = models.ForeignKey(Issue)
-    opinion     = models.ForeignKey(Opinion)
+    article     = models.ForeignKey(Article)
     contributor = models.ForeignKey(Contributor)
     vote        = IntegerField()
     
-class Article_Translation(models.Model):
-    article = models.ForeignKey(Article)
-    language_from = models.ForeignKey(Language, related_name='article_language_from')
-    language_to = models.ForeignKey(Language, related_name='article_language_to')
+class Introduction_Translation(models.Model):
+    introduction = models.ForeignKey(Introduction)
+    language_from = models.ForeignKey(Language, related_name='introduction_language_from')
+    language_to = models.ForeignKey(Language, related_name='introduction_language_to')
     contributor = models.ForeignKey(Contributor)
     content = models.TextField()
     publisher_name = models.CharField(max_length=60)
@@ -220,10 +222,10 @@ class Article_Translation(models.Model):
     updated_at = models.DateTimeField(null=True)
     is_approved = models.BooleanField(default=False)
 
-class Opinion_Translation(models.Model):
-    opinion = models.ForeignKey(Opinion)
-    language_from = models.ForeignKey(Language, related_name='opinion_language_from')
-    language_to = models.ForeignKey(Language, related_name='opinion_language_to')
+class Article_Translation(models.Model):
+    article = models.ForeignKey(Article)
+    language_from = models.ForeignKey(Language, related_name='article_language_from')
+    language_to = models.ForeignKey(Language, related_name='article_language_to')
     contributor = models.ForeignKey(Contributor)
     content = models.TextField()
     publisher_name = models.CharField(max_length=60)

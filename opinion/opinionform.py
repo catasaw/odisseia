@@ -1,5 +1,5 @@
 from django import forms
-from magazine.models import Opinion, Language
+from magazine.models import Introduction, Language
 from django.utils.translation import ugettext_lazy as _
 from ckeditor.widgets import CKEditorWidget
  
