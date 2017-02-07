@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<div id="contribute" class="container">
+<div id="current_issue" class="container">
 <p class="menu-item-horizontal-text">{% trans "Our issues" %}</p>
 
 <div class="container text-center">
@@ -51,18 +51,21 @@ punishment legitimate? How is the punished person treated? [...]</h4>
 	       </div>
 	       </div>
           </div>
+          
         </div>
         {% endfor %}
         
 <!-- Display articles empty sports for contributors   -->
         {% for none_article in none_articles %}
         <div class="col-md-15 col-sm-3">
+                <a href="/#contribute">
           <div class="panel panel-default h_form_hover">
           <div class="panel-body panel-free">
 		  <h3>Write your contribution here.
 	       </h3>
 	       </div>
           </div>
+          </a>
         </div>
         {% endfor %}
     </div>

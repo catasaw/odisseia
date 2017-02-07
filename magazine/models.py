@@ -159,20 +159,20 @@ class Introduction(models.Model):
     issue = models.ForeignKey(Issue)
     contributor = models.ForeignKey(Contributor)
     language = models.ForeignKey(Language)
-    publisher_name = models.CharField(max_length=60)
-    publisher_description = models.CharField(max_length=60)
+    writer_name = models.CharField(max_length=60)
+    writer_description = models.CharField(max_length=60)
     content = models.TextField()
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Article(models.Model):
-    TOTAL_OPINIONS_IN_ISSUE = 5
+    TOTAL_ARTICLES_IN_ISSUE = 5
     
     issue           = models.ForeignKey(Issue)
     contributor     = models.ForeignKey(Contributor)
     language        = models.ForeignKey(Language)
-    publisher_name  = models.CharField(max_length=60)
-    publisher_description = models.CharField(max_length=60)
+    writer_name  = models.CharField(max_length=60)
+    writer_description = models.CharField(max_length=60)
     content         = models.TextField()
     is_approved     = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True)
