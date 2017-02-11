@@ -174,7 +174,7 @@ class Article(models.Model):
     language        = models.ForeignKey(Language)
     writer_name  = models.CharField(max_length=60)
     writer_description = models.CharField(max_length=60)
-    content         = models.TextField()
+    content         = RichTextField()
     is_approved     = models.BooleanField(default=False)
     created_at      = models.DateTimeField(auto_now_add=True)
     
