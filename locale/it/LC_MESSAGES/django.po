@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 21:45+0100\n"
+"POT-Creation-Date: 2017-02-19 15:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\article\templates\article\article_view.html:5
-msgid "List of Articles"
+#: .\article\templates\article\article_view.html:7
+#: .\forum\templates\forum\issue_view.html:87
+#: .\introduction\templates\introduction\introduction_view.html:7
+#: .\opinion\templates\opinion\create_opinion_view.html:85
+#: .\opinion\templates\opinion\opinion_view.html:34
+#: .\opinion\templates\opinion\read_opinion_view.html:25
+msgid "By: "
+msgstr ""
+
+#: .\article\templates\article\article_view.html:9
+#: .\introduction\templates\introduction\introduction_view.html:9
+msgid "Translated by: "
+msgstr ""
+
+#: .\article\templates\article\article_view.html:21
+#: .\introduction\templates\introduction\introduction_view.html:20
+#: .\magazine\templates\magazine\welcome_homepage_view.html:14
+#: .\magazine\templates\magazine\welcome_homepage_view.html:21
+msgid "Photo Rights"
+msgstr ""
+
+#: .\article\templates\article\article_view.html:25
+#: .\introduction\templates\introduction\introduction_view.html:24
+msgid "Original text"
 msgstr ""
 
 #: .\contributor_profile\templates\contributor_profile\profile_view.html:9
@@ -172,11 +194,14 @@ msgstr ""
 msgid "Submit comment"
 msgstr ""
 
-#: .\forum\templates\forum\issue_view.html:87
-#: .\opinion\templates\opinion\create_opinion_view.html:85
-#: .\opinion\templates\opinion\opinion_view.html:34
-#: .\opinion\templates\opinion\read_opinion_view.html:25
-msgid "By: "
+#: .\introduction\templates\introduction\introduction_view.html:18
+#: .\magazine\templates\magazine\current_issue.html:15
+msgid "Prisons"
+msgstr ""
+
+#: .\introduction\templates\introduction\introduction_view.html:19
+#: .\magazine\templates\magazine\current_issue.html:17
+msgid "Introduction"
 msgstr ""
 
 #: .\issue\templates\issue\pending_issues_view.html:23
@@ -255,6 +280,7 @@ msgid "Sign up"
 msgstr "Registrati"
 
 #: .\magazine\templates\magazine\contribute.html:4
+#: .\magazine\templates\magazine\contribute.html:32
 #: .\magazine\templates\magazine\menu.html:20
 msgid "Contribute"
 msgstr "Contribuisci"
@@ -310,6 +336,18 @@ msgid ""
 "          <p>Icon 'Paper Plane' on <a href=\"/#statut\">Statute Publish</a> "
 "Created by David from Noun Project </p>\n"
 "          "
+msgstr ""
+
+#: .\magazine\templates\magazine\current_issue.html:4
+msgid "Current issue"
+msgstr ""
+
+#: .\magazine\templates\magazine\current_issue.html:22
+msgid "Write an introduction here."
+msgstr ""
+
+#: .\magazine\templates\magazine\current_issue.html:54
+msgid "Write your contribution here."
 msgstr ""
 
 #: .\magazine\templates\magazine\footer.html:11
@@ -533,33 +571,28 @@ msgstr ""
 msgid "following goals"
 msgstr "posti i seguenti obiettivi"
 
-#: .\magazine\templates\magazine\welcome_homepage_view.html:14
-#: .\magazine\templates\magazine\welcome_homepage_view.html:21
-msgid "Photo Rights"
-msgstr ""
-
 #: .\magazine\templates\magazine\welcome_homepage_view.html:19
 msgid "We want to use our potential to found a European magazine."
 msgstr ""
 
-#: .\odisseia_site\settings.py:128
+#: .\odisseia_site\settings.py:129
 msgid "German"
 msgstr ""
 
-#: .\odisseia_site\settings.py:129
+#: .\odisseia_site\settings.py:130
 msgid "English"
 msgstr ""
 
-#: .\odisseia_site\settings.py:130
+#: .\odisseia_site\settings.py:131
 msgid "French"
 msgstr ""
 
-#: .\odisseia_site\settings.py:131
-msgid "Italian"
+#: .\odisseia_site\settings.py:132
+msgid "Finnish"
 msgstr ""
 
-#: .\odisseia_site\settings.py:132
-msgid "Spanish"
+#: .\odisseia_site\settings.py:133
+msgid "Italian"
 msgstr ""
 
 #: .\opinion\opinionform.py:13

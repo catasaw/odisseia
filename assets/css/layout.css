@@ -435,7 +435,7 @@ select {
     }
     
     .panel-content {
-        background:linear-gradient(rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('../img/robert-delaunay-1912.JPG') ;
+    	background-color: #181628;
     }
     
     .panel-free {
