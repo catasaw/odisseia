@@ -322,7 +322,7 @@ msgstr ""
 #: .\magazine\templates\magazine\credits.html:6
 #: .\magazine\templates\magazine\footer.html:17
 msgid "Credits"
-msgstr ""
+msgstr "Nachweise und Dank"
 
 #: .\magazine\templates\magazine\credits.html:9
 msgid ""
