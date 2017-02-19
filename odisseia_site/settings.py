@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'django_bootstrap_breadcrumbs',
     'introduction',
+    'article',
 )
 
 MIDDLEWARE_CLASSES = (

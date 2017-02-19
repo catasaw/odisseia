@@ -31,6 +31,7 @@
 	
 <!-- 	Display articles -->
 	{% for article in issue.article_set.all %}
+	<a href="{% url 'article_view' issue.id article.id %}">
         <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">
           <div class="panel-body panel-content">
@@ -39,8 +40,8 @@
 		  <div class="flag-it"></div>
 	       </div>
           </div>
-          
         </div>
+        </a>
         {% endfor %}
         
 <!-- Display articles empty sports for contributors   -->

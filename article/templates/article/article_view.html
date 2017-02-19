@@ -1,0 +1,42 @@
+{% extends "magazine/layout.html" %}
+{% load i18n %}
+{% block content %}
+<div id="current_issue" class="container">
+<!-- <p class="menu-item-horizontal-text">{{introduction.issue.title}}: Introduction</p> -->
+<!-- <p class="menu-item-horizontal-text">{{introduction.write_name}}</p>  -->
+<!-- <span class="opinion-contributor">{% trans "By: " %} {{introduction.contributor.email}}</span>  -->
+<!-- <span class="opinion-created_at">| {{introduction.created_at|date:"M d'y "}}</span> -->
+<!-- <span class="opinion-contributor">| {% trans "Translated by: " %} {{introduction.contributor.email}}</span> -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+		        <div class="col-sm-12">
+		      
+		          <div class="panel panel-default h_form_hover text-center">
+		          <div class="panel-body panel-content">
+				  	<h1>{{ article.issue.title }}</h1>
+				  <h3>{{ article.writer_name }}</h3>
+				  <div class="flag-de"></div>
+				  <p  class="text-left">{% trans "Photo Rights"%}: Robert Delaunay, 1912</p>
+
+			       </div>
+		          </div>
+		          <span class="published-contributor text-left">{{article.created_at|date:"M d'y "}} | {% trans "Original text" %}</span>
+		          
+
+		        </div>
+		        <div class="col-sm-12">
+		        <div>
+				          <p class="text-left">{{ article.content |safe }}</p>
+				    </div>
+		          </div>
+
+		        </div>
+	        </div>
+	</div>
+</div>
+
+</div>
+
+{% endblock %}
