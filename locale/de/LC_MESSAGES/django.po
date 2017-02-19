@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-19 14:48+0100\n"
+"POT-Creation-Date: 2017-02-19 15:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,14 +33,14 @@ msgid "Translated by: "
 msgstr ""
 
 #: .\article\templates\article\article_view.html:21
-#: .\introduction\templates\introduction\introduction_view.html:21
+#: .\introduction\templates\introduction\introduction_view.html:20
 #: .\magazine\templates\magazine\welcome_homepage_view.html:14
 #: .\magazine\templates\magazine\welcome_homepage_view.html:21
 msgid "Photo Rights"
 msgstr "Bildrechte"
 
 #: .\article\templates\article\article_view.html:25
-#: .\introduction\templates\introduction\introduction_view.html:25
+#: .\introduction\templates\introduction\introduction_view.html:24
 msgid "Original text"
 msgstr ""
 
@@ -128,11 +128,11 @@ msgstr ""
 msgid "Be te first one to write a comment!"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:34
+#: .\dashboard\templates\dashboard\single_issue_view.html:35
 msgid "Previous"
 msgstr ""
 
-#: .\dashboard\templates\dashboard\single_issue_view.html:39
+#: .\dashboard\templates\dashboard\single_issue_view.html:40
 msgid "Next"
 msgstr ""
 
@@ -193,6 +193,16 @@ msgstr ""
 #: .\forum\templates\forum\issue_view.html:73
 msgid "Submit comment"
 msgstr ""
+
+#: .\introduction\templates\introduction\introduction_view.html:18
+#: .\magazine\templates\magazine\current_issue.html:15
+msgid "Prisons"
+msgstr "Gefängnisse"
+
+#: .\introduction\templates\introduction\introduction_view.html:19
+#: .\magazine\templates\magazine\current_issue.html:17
+msgid "Introduction"
+msgstr "Einführung"
 
 #: .\issue\templates\issue\pending_issues_view.html:23
 msgid "Approve"
@@ -332,11 +342,11 @@ msgstr ""
 msgid "Current issue"
 msgstr "Aktuelle Ausgabe"
 
-#: .\magazine\templates\magazine\current_issue.html:21
+#: .\magazine\templates\magazine\current_issue.html:22
 msgid "Write an introduction here."
 msgstr ""
 
-#: .\magazine\templates\magazine\current_issue.html:53
+#: .\magazine\templates\magazine\current_issue.html:54
 msgid "Write your contribution here."
 msgstr "Beitrag vorschlagen."
 

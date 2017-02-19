@@ -12,11 +12,12 @@
 		          <div class="panel panel-default h_form_hover">
 		          <div class="panel-body panel-content">
 				  {% if issue.title %}
-				  	<h2>{{ issue.title }}</h2>
+				  	<h2>{% trans "Prisons" %}</h2>
 				  {% endif %} 
-				  {% if issue.introduction_set.all.0.writer_name %}
-				  <h3>{{ issue.introduction_set.all.0.writer_name }}</h3>
-				  <div class="flag-{{issue.introduction_set.all.0.country}}"></div>
+				  <h3>{% trans "Introduction" %}</h3>
+<!-- 				  {% if issue.introduction_set.all.0.writer_name %} -->
+<!-- 				  <h3>{{ issue.introduction_set.all.0.writer_name }}</h3> -->
+<!-- 				  <div class="flag-{{issue.introduction_set.all.0.country}}"></div> -->
 				  {% else %}
 	        	  <h5>{% trans "Write an introduction here." %}</h5>
 	       		  {% endif %} 
