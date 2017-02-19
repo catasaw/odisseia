@@ -572,7 +572,7 @@ msgstr "folgende Ziele"
 
 #: .\magazine\templates\magazine\welcome_homepage_view.html:19
 msgid "We want to use our potential to found a European magazine."
-msgstr ""
+msgstr "Wir wollen unser Potential einsetzen, um ein europäisches Magazin zu gründen."
 
 #: .\odisseia_site\settings.py:129
 msgid "German"
