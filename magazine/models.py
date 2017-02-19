@@ -157,26 +157,28 @@ class Issue(models.Model):
         return self.status == Issue.PENDING
 
 class Introduction(models.Model):
-    issue = models.ForeignKey(Issue)
-    contributor = models.ForeignKey(Contributor)
-    language = models.ForeignKey(Language)
-    writer_name = models.CharField(max_length=60)
-    writer_description = models.CharField(max_length=60)
-    content = RichTextField()
-    is_approved = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    issue               = models.ForeignKey(Issue)
+    contributor         = models.ForeignKey(Contributor)
+    language            = models.ForeignKey(Language)
+    country             = models.CharField(max_length=2)
+    writer_name         = models.CharField(max_length=60)
+    writer_description  = models.CharField(max_length=60)
+    content             = RichTextField()
+    is_approved          = models.BooleanField(default=False)
+    created_at          = models.DateTimeField(auto_now_add=True)
 
 class Article(models.Model):
     TOTAL_ARTICLES_IN_ISSUE = 5
     
-    issue           = models.ForeignKey(Issue)
-    contributor     = models.ForeignKey(Contributor)
-    language        = models.ForeignKey(Language)
-    writer_name  = models.CharField(max_length=60)
-    writer_description = models.CharField(max_length=60)
-    content         = RichTextField()
-    is_approved     = models.BooleanField(default=False)
-    created_at      = models.DateTimeField(auto_now_add=True)
+    issue               = models.ForeignKey(Issue)
+    contributor         = models.ForeignKey(Contributor)
+    language            = models.ForeignKey(Language)
+    country             = models.CharField(max_length=2)
+    writer_name         = models.CharField(max_length=60)
+    writer_description  = models.CharField(max_length=60)
+    content             = RichTextField()
+    is_approved         = models.BooleanField(default=False)
+    created_at          = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.content[:4]
