@@ -223,6 +223,7 @@ class Article_Vote(models.Model):
     
 class Introduction_Translation(models.Model):
     introduction    = models.ForeignKey(Introduction)
+    issue_translation = models.ForeignKey(Issue_Translation)
     language_from   = models.ForeignKey(Language, related_name='introduction_language_from')
     language_to     = models.ForeignKey(Language, related_name='introduction_language_to')
     contributor     = models.ForeignKey(Contributor)
@@ -237,6 +238,7 @@ class Introduction_Translation(models.Model):
 
 class Article_Translation(models.Model):
     article        = models.ForeignKey(Article)
+    issue_translation = models.ForeignKey(Issue_Translation)
     language_from  = models.ForeignKey(Language, related_name='article_language_from')
     language_to    = models.ForeignKey(Language, related_name='article_language_to')
     contributor    = models.ForeignKey(Contributor)

@@ -3,14 +3,23 @@ from django.http import HttpResponse
 from .models import Introduction,Article,Issue
 from datetime import datetime, timedelta
 from django.utils.timezone import utc
+from magazine.models import Article_Translation, Issue_Translation
 
 def homepage(request):
     # return render(request, 'magazine/welcome_homepage_view.html')
     # TODO: If first time to query issue, then cache it?
     # Check latest PUBLISHED issue
     try:
+        
         last_published_issue = Issue.objects.filter(status = Issue.PUBLISHED).latest('status_changed_at')
-        return render(request, 'magazine/welcome_homepage_view.html', {'issue': last_published_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - last_published_issue.article_set.count())}) 
+        issue_title = last_published_issue.title
+        issue_translation = Issue_Translation.objects.filter(issue = last_published_issue).filter(language_to__iso1_code = request.LANGUAGE_CODE).first()
+        articles = last_published_issue.article_set.all
+        if issue_translation:
+            issue_title = issue_translation.title 
+            articles = Article_Translation.objects.filter(issue_translation = issue_translation)
+        return render(request, 'magazine/welcome_homepage_view.html', {'issue': last_published_issue, 'issue_title': issue_title, 'articles': articles, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - last_published_issue.article_set.count())}) 
+   
     except Issue.DoesNotExist:
         earliest_approved_issue= publish_earliest_approved_issue()
         if earliest_approved_issue is None:
