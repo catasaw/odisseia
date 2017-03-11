@@ -2,9 +2,7 @@
 
 <div id="current_issue" class="container">
 <p class="menu-item-horizontal-text">{% trans "Current issue" %}</p>
-
-<div class="container text-center">
-	<div class="row">
+	<div class="row text-center">
 		<div class="col-sm-12">
 <!-- 		Display introduction, have placeholder if not existing -->
 		        <div class="col-sm-12">
@@ -27,9 +25,7 @@
 		        </div>
 	        </div>
 	</div>
-  <div class="row">
-	<div class="col-sm-12">
-	
+  <div class="row text-center">
 <!-- 	Display articles -->
 	{% for article in issue.article_set.all %}
 	<a href="{% url 'article_view' issue.id article.id %}">
@@ -57,8 +53,7 @@
           </a>
         </div>
         {% endfor %}
-    </div>
+    
   </div>
 </div>
 
-</div>
