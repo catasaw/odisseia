@@ -10,14 +10,16 @@ def homepage(request):
     # Check latest PUBLISHED issue
     try:
         last_published_issue = Issue.objects.filter(status = Issue.PUBLISHED).latest('status_changed_at')
+        return render(request, 'magazine/welcome_homepage_view.html', {'issue': last_published_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - last_published_issue.article_set.count())}) 
     except Issue.DoesNotExist:
         earliest_approved_issue= publish_earliest_approved_issue()
         if earliest_approved_issue is None:
             # Render expectation page
             return render(request, 'magazine/welcome_homepage_view.html')
         
-        return render(request, 'magazine//welcome_homepage_view.html', {'issue': earliest_approved_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - earliest_approved_issue.last_published_issue)})
-
+        return render(request, 'magazine/welcome_homepage_view.html', {'issue': earliest_approved_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - earliest_approved_issue.article_set.count())})
+    
+    
     # if Issue exist, check that is longer than 2 weeks
     earliest_approved_issue = publish_earliest_approved_issue()
     
@@ -25,7 +27,7 @@ def homepage(request):
     #if datetime.now() -  timedelta(weeks=2) < last_published_issue.status_changed_at  :
         if earliest_approved_issue is None:
             # Render homepage with previous issue
-            return render(request, 'magazine/welcome_homepage_view.html', {'issue': last_published_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - last_published_issue.last_published_issue)})
+            return render(request, 'magazine/welcome_homepage_view.html', {'issue': last_published_issue, 'none_articles': range(Article.TOTAL_ARTICLES_IN_ISSUE - last_published_issue.article_set.count())})
         
     
     # Render homepage with earliest approved issue
