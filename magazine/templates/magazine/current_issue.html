@@ -9,9 +9,7 @@
 		        <a href="{% url 'introduction_view' issue.id issue.introduction_set.all.0.id %}">
 		          <div class="panel panel-default h_form_hover">
 		          <div class="panel-body panel-content">
-				  {% if issue.title %}
-				  	<h2>{% trans "Prisons" %}</h2>
-				  {% endif %} 
+				  <h2>{{ issue_title }}</h2>
 				  <h3>{% trans "Introduction" %}</h3>
 <!-- 				  {% if issue.introduction_set.all.0.writer_name %} -->
 <!-- 				  <h3>{{ issue.introduction_set.all.0.writer_name }}</h3> -->
@@ -27,7 +25,7 @@
 	</div>
   <div class="row text-center">
 <!-- 	Display articles -->
-	{% for article in issue.article_set.all %}
+	{% for article in articles %}
 	<a href="{% url 'article_view' issue.id article.id %}">
         <div class="col-md-15 col-sm-3">
           <div class="panel panel-default h_form_hover">
