@@ -91,6 +91,7 @@ body > header .logo {
     background-repeat: no-repeat;
     background-size: cover;
     height: 479px;
+    position: relative; /*for picture credits to be to the right bottom */
 }
 
 .welcomeimage h2 { 
@@ -110,6 +111,12 @@ body > header .logo {
 
 .welcomeimage a {
 	color: white !important;
+}
+
+.welcomeimage .photo-rights {
+	position: absolute; 
+	bottom: 10px; 
+	right: 50px;
 }
 
 
