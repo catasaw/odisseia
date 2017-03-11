@@ -156,6 +156,13 @@ class Issue(models.Model):
     def is_pending(self):
         return self.status == Issue.PENDING
 
+class Issue_Translation(models.Model):
+    issue           = models.ForeignKey(Issue)
+    language_from   = models.ForeignKey(Language, related_name='issue_language_from')
+    language_to     = models.ForeignKey(Language, related_name='issue_language_to')
+    title           = models.CharField(max_length=60)
+    created_at      = models.DateTimeField(auto_now_add=True)
+    
 class Introduction(models.Model):
     issue               = models.ForeignKey(Issue)
     contributor         = models.ForeignKey(Contributor)
