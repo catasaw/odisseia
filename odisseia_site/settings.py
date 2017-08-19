@@ -29,7 +29,7 @@ SECRET_KEY = '-a&bj_$#_%_a#d3uajyr%$rll2*kzvhu^qbwls%!num0karl^g'
 DEBUG = True
 
 
-
+ALLOWED_HOSTS = ['localhost', 'localhost:8000', '127.0.0.1', '127.0.0.1:8000', 'staging.odisseia.eu', 'odisseia.herokuapp.com']
 
 # Application definition
 AUTH_USER_MODEL = 'magazine.Contributor'
@@ -102,8 +102,8 @@ DATABASES = {
          'ENGINE': 'django.db.backends.mysql',
          'NAME': 'odisseia',
          'USER': 'root',
-         'PASSWORD': 'root',
-         'HOST': 'localhost',
+         'PASSWORD': '1234',
+         'HOST': 'mysql',
          'PORT': '3306'
                 }
 }

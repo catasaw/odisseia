@@ -4,8 +4,12 @@ services:
   app:
     build:
       context: .
+    volumes:
+        - .:/app
+    working_dir: /app
+    command: python /app/manage.py runserver
     ports:
-        - "80:80"
+        - "8000:8000"
   mysql:
     image: mysql
     environment:

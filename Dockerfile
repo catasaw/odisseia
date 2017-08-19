@@ -1,8 +1,10 @@
-FROM python
+FROM python:2.7
+
+ADD requirements.txt /app/requirements.txt
 
 RUN apt-get update
 
-RUN apt-get install -y mysql-client
+RUN pip install -r /app/requirements.txt
 
-CMD sleep infinity
+EXPOSE 8000
 
