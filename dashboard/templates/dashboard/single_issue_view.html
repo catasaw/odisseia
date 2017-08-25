@@ -1,32 +1,52 @@
 {% load i18n %}
+<div class="row">
+	<div class="col-md-11">
+	{% for issue in issues %}
+	<div class="col-sm-4">
+		<div class="panel panel-default form_hover">
+			<div class="panel-body">
+				<h2><a href="{% url 'issue_view' issue.id %}">{{issue.title}}</a></h2>
+				<p>
+					<span>{% trans "Contributors" %} </span> <span class="label label-primary"> {{issue.issue_contributors.count}}</span>
+					<span>{% trans "Comments" %} </span> <span class="label label-primary">{{issue.comment_set.count}}</span>
+					<span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
+					<span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
+				</p>
+			</div>
+			<div class="header">
+				<div class="panel-footer">
+					{% if issue.comment_set.last.content %}
+					<h5>{{issue.comment_set.last.content|truncatewords:10 }}</h5>
+					{% else %}
+					<h5>{% trans "Be te first one to write a comment!" %}</h5>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+	<div class="col-md-1">
+		<div class="sidebar-nav-fixed affix">
+			<div class="well">
+                    <ul class="nav ">
+                        <li class="nav-header">Steps</li>
+                        </li>
+                        <li class="active"><a href="#active">Propose a topic</a>
+                        </li>
+                        <li><a href="#">Work with the crowd</a>
+                        </li>
+                        <li><a href="#">Publish</a>
+                        </li>
 
-      <div class="row">
-      {% for issue in issues %}
-        <div class="col-sm-3">
-          <div class="panel panel-default form_hover">
-          <div class="panel-body">
-          <h2><a href="{% url 'issue_view' issue.id %}">{{issue.title}}</a></h2>
-		  <p>
-	          <span>{% trans "Contributors" %} </span> <span class="label label-primary"> {{issue.issue_contributors.count}}</span> 
-	          <span>{% trans "Comments" %} </span> <span class="label label-primary">{{issue.comment_set.count}}</span>
-	          <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
-	          <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
-	       </p>
-	       </div>
-          <div class="header">
-	      <div class="panel-footer">
-	      {% if issue.comment_set.last.content %}
-	      	<h5>{{issue.comment_set.last.content|truncatewords:10 }}</h5>
-	      {% else %}
-	        <h5>{% trans "Be te first one to write a comment!" %}</h5>
-	       {% endif %}   
-	       </div>
-	       </div>
-	          
-          </div>
-        </div>
-      {% endfor %}
-      </div>
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+
+
+	</div>
+</div>
       
       <nav>
       <ul class="pagination">

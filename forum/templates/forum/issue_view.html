@@ -1,103 +1,101 @@
 {% extends "magazine/layout.html" %}
-{% load django_bootstrap_breadcrumbs %}	
+{% load django_bootstrap_breadcrumbs %}
 {% load i18n %}
 {% block content %}
 
 {% block breadcrumbs %}
 {% clear_breadcrumbs %}
-	{% breadcrumb "Dashboard" "dashboard" %}
-	{% breadcrumb "Issue" "issue_view" issue_id %}
+{% breadcrumb "Dashboard" "dashboard" %}
+{% breadcrumb "Issue" "issue_view" issue_id %}
 {% endblock %}
 
 {% render_breadcrumbs %}
-<div class="container text-center">    
-  <div class="row">
-    <div class="col-sm-3 well">
-      <div class="well">
-        <h2>{{ issue.title }}</h2>
-        {% if is_contributor = False %}
-      		<a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
-      	{% else %}
-      		<p>{% trans "You are already part of this issue!" %}</p>
-      	{% endif %}
-        <p><span class="label label-success">{% trans "Created at" %} {{issue.created_at|date:"M d'y "}}</span></p>
-      </div>
-      <div class="well">
-      	<h3>{% trans "Number of Contributors: " %}</h3>
-        <h3><span class="label label-warning">{{ issue.amount_contributors }}</span></h3>
-        <ul class="list-unstyled">
-        {% for contributor in contributors %}
-        	<li>{{ contributor.email }}</li>
-        {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <div class="col-sm-9">
+<div class="container text-center">
     <div class="row">
-    	<div class="col-sm-6">
-    	    	<div class="well">
-    		<h3>{% trans "Number of Articles" %}</h3>
-    		<h3><span class="label label-warning">{{ issue.amount_articles }}</span></h3>
-	        {% if issue.amount_articles = 0 %}
-	        	<p>{% trans "Be the first one to propose an Article!" %}</p>
-	        {% endif %}
-
-      	</div>
-    	</div>
-    	<div class="col-sm-6">
-    	      	<div class="well">
-	        <h3>{% trans "Number of Opinions" %}</h3>
-	        <h3><span class="label label-warning">{{ issue.amount_opinions }}</span></h3>
-	        {% if issue.amount_opinions = 0%}
-	         <p>{% trans "Be the first one to propose an Opinion!" %}</p>
-	         <p><a class="btn btn-info" href="{% url 'create_opinion_view' issue.id %}">{% trans "Propose an opinion" %}</a></p>
-	        {% else %}
-	        <p><a class="btn btn-info" href="{% url 'opinions_view' issue.id %}">{% trans "Check Opinions!" %}</a></p>
-	        {% endif %}
-      	</div> 
-    	</div>   
-    </div>
-	<div class="row">
-	{% if is_contributor = True %}
-	  {% if not comments %}
-	  	<h3>{% trans "Be the first one to write an opinion about it!" %}</h3>
-	  {% endif %}
-	  
-	  <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default">
-            <div class="panel-body">
-            	<form action="." method="post">{% csrf_token %}
-            	{{ form }}
-      			<div>
-        			<button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Submit comment" %}</button>
-    			</div>
-      			</form>  
+        <div class="col-sm-3 well">
+            <div class="well">
+                <h2>{{ issue.title }}</h2>
+                {% if is_contributor = False %}
+                <a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
+                {% else %}
+                <p>{% trans "You are already part of this issue!" %}</p>
+                {% endif %}
+                <p><span class="label label-success">{% trans "Created at" %} {{issue.created_at|date:"M d'y "}}</span>
+                </p>
             </div>
-          </div>
+            <div class="well">
+                <h3>{% trans "Number of Contributors: " %}</h3>
+                <h3><span class="label label-warning">{{ issue.amount_contributors }}</span></h3>
+                <ul class="list-unstyled">
+                    {% for contributor in contributors %}
+                    <li>{{ contributor.email }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-       </div>
-       
-       {% endif %}
-	  
-      {% for comment in comments %}
-        <div class="col-sm-12">
-          <div class="panel panel-default">
-	          <div class="panel-heading">
-	          <span class="label label-primary">{% trans "By: " %} {{comment.contributor.get_short_name}}</span>
-	          <span class="label label-success">{{comment.created_at}}</span>
-	          </div>
-	          <div class="panel-body text-left">
-	          <p>{{comment.content | safe}}</p>
-	          </div>
-          </div>
-        </div>
-      {% endfor %}
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h3>{% trans "Number of Articles" %}</h3>
+                        <h3><span class="label label-warning">{{ issue.amount_articles }}</span></h3>
+                        {% if issue.amount_articles = 0 %}
+                        <p>{% trans "Be the first one to propose an Article!" %}</p>
+                        {% endif %}
 
-      </div>
-      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    {% include "forum/chat.html" %}
+                </div>
+
+            </div>
+
+            <div class="row">
+                {% if is_contributor = True %}
+                {% if not comments %}
+                <h3>{% trans "Be the first one to write an opinion about it!" %}</h3>
+                {% endif %}
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form action="." method="post">{% csrf_token %}
+                                    {{ form }}
+                                    <div>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Submit
+                                            comment" %}
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+
+                {% for comment in comments %}
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="label label-primary">{% trans "By: " %} {{comment.contributor.get_short_name}}</span>
+                            <span class="label label-success">{{comment.created_at}}</span>
+                        </div>
+                        <div class="panel-body text-left">
+                            <p>{{comment.content | safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock %}
