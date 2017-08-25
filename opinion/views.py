@@ -130,12 +130,12 @@ def read_opinion_view(request, issue_id, opinion_id):
         is_user_opinion= False
         
     context['is_user_opinon']= is_user_opinion
-    user_voted =  Article_Vote.objects.filter(opinion_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
+    user_voted =  Article_Vote.objects.filter(article_id = opinion_id).filter(contributor_id = request.user.id).filter(vote=1).values_list('vote', flat=True).distinct().count()
     if user_voted == 1:
         context['user_voted']= True
     else:
         context['user_voted'] = False
-    context['total_votes'] = Article_Vote.objects.filter(opinion_id = opinion_id).count()
+    context['total_votes'] = Article_Vote.objects.filter(article_id = opinion_id).count()
     
     # TODO: Order by most positive votes
     # TODO: Write this in a Manager?
