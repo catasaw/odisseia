@@ -581,10 +581,7 @@ hr {
    border-bottom: 1px solid #ffffff;
 }
 
-/*CHAT*/
-
-
-
+/*CHAT inside*/
 
 .chat_window {
   position: absolute;
@@ -772,6 +769,20 @@ hr {
   display: none;
 }
 
+/*CHAT published*/
+.chat_window_homepage {
+  position: relative;
+  width: calc(100% - 20px);
+
+  border-radius: 10px;
+  background-color: #fff;
+  left: 50%;
+
+  transform: translateX(-50%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
 
 /*Sprite for flags */
  

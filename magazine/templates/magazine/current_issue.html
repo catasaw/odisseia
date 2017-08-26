@@ -23,35 +23,12 @@
             </div>
         </div>
     </div>
-    <div class="row text-center">
-
-        <!-- 	Display articles -->
-        {% for article in articles %}
-        <a href="{% url 'article_view' issue.id article.id %}">
-            <div class="col-md-15 col-sm-3">
-                <div class="panel panel-default h_form_hover">
-                    <div class="panel-body panel-content">
-                        <h3>{{article.writer_name }}</h3>
-                        <h4>{{article.writer_description }}</h4>
-                        <div class="flag-{{article.country}}"></div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
-
-        <!-- Display articles empty sports for contributors   -->
-        {% for none_article in none_articles %}
-        <div class="col-md-15 col-sm-3">
-            <a href="/#contribute">
-                <div class="panel panel-default h_form_hover">
-                    <div class="panel-body panel-free">
-                        <h3>{% trans "Write your contribution here." %}</h3>
-                    </div>
-                </div>
-            </a>
+</div>
+<div id="current_issue_chat" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% include "magazine/chat.html" %}
         </div>
-        {% endfor %}
 
     </div>
 </div>
