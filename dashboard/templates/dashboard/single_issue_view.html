@@ -1,34 +1,46 @@
 {% load i18n %}
 <div class="row">
     <div class="col-md-12">
-        {% for issue in issues %}
         <div class="col-sm-3">
-            <div class="panel panel-default form_hover">
+            <div class="panel sample-room panel-default form_hover">
                 <div class="panel-body">
-                    <h2><a href="{% url 'issue_view' issue.id %}">{{issue.title}}</a></h2>
-                    <p>
-                        <span>{% trans "Contributors" %} </span> <span class="label label-primary"> {{issue.issue_contributors.count}}</span>
-                        <span>{% trans "Comments" %} </span> <span class="label label-primary">{{issue.comment_set.count}}</span>
-                        <span class="label label-success">{% trans "Proposed articles" %} {{issue.article_set.count}}</span>
-                        <span class="label label-default">{% trans "Proposed opinions" %} {{issue.opinion_set.count}}</span>
-                    </p>
+                    <h2><a href="/en/issue/4/">Prisons in Europe</a></h2>
                 </div>
                 <div class="header">
                     <div class="panel-footer">
-                        {% if issue.comment_set.last.content %}
-                        <h5>{{issue.comment_set.last.content|truncatewords:10 }}</h5>
-                        {% else %}
-                        <h5>{% trans "Be te first one to write a comment!" %}</h5>
-                        {% endif %}
+                        <h5>And the point is..</h5>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
+        <div class="col-sm-3">
+            <div class="panel sample-room panel-default form_hover">
+                <div class="panel-body">
+                    <h2><a href="/en/issue/3/">Study Fees in Europe</a></h2>
+                </div>
+                <div class="header">
+                    <div class="panel-footer">
+                        <h5>What I think is that the fees are ...</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel sample-room panel-default form_hover">
+                <div class="panel-body">
+                    <h2><a href="/en/issue/2/">Democratic cities</a></h2>
+                </div>
+                <div class="header">
+                    <div class="panel-footer">
+                        <h5>The other day I read this article ...</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-sm-3">
             <div class="panel create-room panel-default form_hover">
                 <div class="panel-body">
-                    <h2><a href="/en/issue/3/">New room</a></h2>
+                    <h2><a href="/en/issue/4/">New room</a></h2>
                     <h2 style="font-size:60px;"><a href="">+</a></h2>
                 </div>
             </div>

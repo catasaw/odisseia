@@ -429,6 +429,7 @@ select {
         .form_hover .panel-footer {
         	background-color: #3c4ba7;
         	color: #fff;
+        	border-top:#3c4ba7;
         }
         
         
@@ -524,6 +525,26 @@ background-color: #3c4ba7 !important;
     color: white;
 }
 
+/*Styiling create new room*/
+.sample-room {
+    background-image:url('../img/people.jpeg');
+    padding-bottom: 62.5%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.sample-room .panel-body {
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.6);
+   padding: 50px;
+   paddin-top: 40px;
+}
+
+.sample-room .panel-body a {
+ color: white;
+}
         
 /*Styling for buttons */
 .btn {
