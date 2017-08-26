@@ -16,9 +16,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-		<li><a href="/#opinion">{% trans "Democracy" %}</a></li>
-        <li><a href="/#opinion">{% trans "Problem" %}</a></li>
-        <li><a href="/#contribute">{% trans "Odisseia" %}</a></li>
+		<li><a href="/#opinion">{% trans "Start" %}</a></li>
+        <li><a href="/#contribute">{% trans "Contribute" %}</a></li>
+        <li><a href="/#contribute">{% trans "Statute" %}</a></li>
           <!-- 
         {% if user.is_authenticated %}
         <li><a href="/profile">{% trans "My profile" %}</a></li>
@@ -93,22 +93,22 @@
                 return sendMessage(getMessageText());
             }
         });
-        sendMessage('Welcome to our conversation about prisons. Let me give you some input about the topic.');
+        sendMessage('Welcome to our conversation about prisons. Let me give you some input about the topic...');
         setTimeout(function () {
-            return sendMessage('Good Evening, my name is Lara. I have been in prison for ten years.');
+            return sendMessage('Good Evening, my name is Salvatore. I have been in prison for ten years.');
         }, 3000);
                 setTimeout(function () {
-            return sendMessage('Hey, I am Chris. I invented the Video game called Prison Architect.');
+            return sendMessage('Hey, I am Lara. I am the architect of a prison in the UK.');
         }, 4000);
                         setTimeout(function () {
-            return sendMessage('That is interesting. Have you been to a prison?');
+            return sendMessage('That is interesting. What was important for you?');
         }, 5000);
                                 setTimeout(function () {
-            return sendMessage('Actually no. I was more interested in the organization and the structure of prisons. I think every prison is a little mirror of society.');
+            return sendMessage('I was interested in the organization and the structure of prisons. I think every prison is a little mirror of society.');
         }, 6000);
 
         return setTimeout(function () {
-            return sendMessage('Hello everyone, Im Peter Prison Chief in Bamberg');
+            return sendMessage('Hello everyone, I am Ole, Prison Chief in Helsinki.');
         }, 2000);
 
     });

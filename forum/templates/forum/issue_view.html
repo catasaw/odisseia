@@ -14,7 +14,7 @@
             <div class="well">
                 <h2>{{ issue.title }}</h2>
                 {% if is_contributor = False %}
-                <a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the team!" %}</a>
+                <a class="btn btn-info" href="{% url 'join_issue_view' issue.id %}">{% trans "Join the conversation" %}</a>
                 {% else %}
                 <p>{% trans "You are already part of this issue!" %}</p>
                 {% endif %}

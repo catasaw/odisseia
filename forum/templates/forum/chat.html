@@ -1,10 +1,13 @@
 <div class="chat_window">
-    <ul class="messages"></ul>
+    <a style="margin-top:15px;" class="btn btn-info" onclick="showDiv()">Join the Conversation</a>
+    <div style="display:none;" id="welcomeDiv">
+    <ul  class="messages"></ul>
     <div class="bottom_wrapper clearfix">
         <div class="">
             <a class="btn btn-info" href="/en/#current_issue">Publish</a>
         </div>
     </div>
+        </div>
 </div>
 <div class="message_template">
     <li class="message">
@@ -14,3 +17,9 @@
         </div>
     </li>
 </div>
+<script>
+
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+</script>
