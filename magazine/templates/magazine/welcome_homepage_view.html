@@ -3,26 +3,27 @@
 {% block content %}
 
 <div class="welcomeimage">
-<div class="mobile-hide">
-<h2>
-<span>{% trans "#Democracy" %}
-<span class='spacer'></span><br />
+    <div class="mobile-hide">
+        <h2>
+<span>{% trans "Elections alone do not make Democracy" %}
+<span class='spacer'></span><br/>
+    <span class='spacer'></span><br/>
+<span class='spacer'></span>{% trans "Barack Obama" %}
+<span class='spacer'></span><br/>
 
-</h2>
-</div>
-<div class="mobile-show">
-<h2>
+        </h2>
+    </div>
+    <div class="mobile-show">
+        <h2>
 <span>{% trans "We want to use our potential to found a European magazine." %}
-<span class='spacer'></span><br />
-</h2>
-</div>
-<span class="photo-rights"><a href="http://www.fabiopennacchia.com">© Fabio Pennacchia</a></span>
+<span class='spacer'></span><br/>
+        </h2>
+    </div>
+    <span class="photo-rights"><a href="http://www.fabiopennacchia.com">© Fabio Pennacchia</a></span>
 </div>
 
 {% include "magazine/contribute.html" %}
 {% include "magazine/current_issue.html" with issue=issue articles=articles none_articles=none_articles%}
-
-
 
 
 <script>
@@ -58,5 +59,6 @@ $(document).ready(function(){
     });
   });
 })
+
 </script>
 {% endblock %}
