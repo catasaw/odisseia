@@ -1,8 +1,8 @@
 {% load i18n %}
 <div class="row">
-	<div class="col-md-11">
+	<div class="col-md-12">
 	{% for issue in issues %}
-	<div class="col-sm-4">
+	<div class="col-sm-3">
 		<div class="panel panel-default form_hover">
 			<div class="panel-body">
 				<h2><a href="{% url 'issue_view' issue.id %}">{{issue.title}}</a></h2>
@@ -25,26 +25,6 @@
 		</div>
 	</div>
 	{% endfor %}
-	</div>
-	<div class="col-md-1">
-		<div class="sidebar-nav-fixed affix">
-			<div class="well">
-                    <ul class="nav ">
-                        <li class="nav-header">Steps</li>
-                        </li>
-                        <li class="active"><a href="#active">Propose a topic</a>
-                        </li>
-                        <li><a href="#">Work with the crowd</a>
-                        </li>
-                        <li><a href="#">Publish</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <!--/.well -->
-            </div>
-
-
 	</div>
 </div>
       
