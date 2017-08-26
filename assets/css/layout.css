@@ -135,6 +135,18 @@ body > header .logo {
 	background-image: url('../img/contribute-thumbnail.png') ; 
 }
 
+.meeting-thumbnail {
+	width: 60%;
+
+	background-image: url('../img/meeting-thumbnail.png') ;
+}
+
+.envelop-thumbnail {
+	width: 60%;
+	background-image: url('../img/envelop-thumbnail.png') ;
+}
+
+
 .propose-thumbnail {
 	width: 60%;
 	background-image: url('../img/propose-thumbnail.png') ; 
